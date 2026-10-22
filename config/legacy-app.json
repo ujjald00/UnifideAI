@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "sourceDeployment": "11c6d416-bdae-4ae2-b092-5f9ba94c1d69",
+  "sourceOrigin": "https://11c6d416.unifideai.pages.dev",
+  "baselineDirectory": "legacy-app/baseline",
+  "baselineFiles": [
+    { "file": "index.html", "bytes": 1349, "sha256": "80aafb4e2ed0dc981a0b3ce1a3d48f72e77589b3dbbb710dd310cb281b8f7f6a" },
+    { "file": "assets/index-Dn-nqYxi.js", "bytes": 335812, "sha256": "11e1e7b79d2947dd153b90acb35662bf8cbc4f26aae80d69f25f1470738dcf13" }
+  ],
+  "appEntry": "__app/index.html",
+  "rewriteTarget": "/__app/",
+  "bridgeSource": "legacy-app/root-navigation.js",
+  "bridgeOutput": "__app/root-navigation.js",
+  "rewrites": ["/dashboard", "/demo", "/login", "/jobs/:id"],
+  "normalizations": { "/dashboard/": "/dashboard", "/demo/": "/demo", "/login/": "/login", "/jobs/:id/": "/jobs/:id" },
+  "shellRedirects": { "/__app": "/dashboard", "/__app/": "/dashboard", "/__app/index.html": "/dashboard" },
+  "omittedAssets": [
+    "images/hero-visual.jpg", "images/product-visual.jpg", "images/ujjal.jpg",
+    "images/rahman.jpg", "images/saurabh.jpg", "images/sasa.jpg"
+  ],
+  "omissionReason": "All six image references belong to the old marketing homepage, not the preserved app-route views; they remain only in the private eight-file recovery snapshot.",
+  "routingChange": "The baseline wildcard /* /index.html 200 is replaced by four exact app-route rewrites to the canonical /__app/ asset path. Trailing slashes normalize with 301 redirects. Direct shell aliases redirect to /dashboard. Unsupported job-child paths and unknown marketing paths return 404; /api is never rewritten or proxied.",
+  "backendStatus": "Unverified: the app calls same-origin /api, but the observed baseline catch-all serves HTML for API HEAD requests; no production API response bodies were read and no backend is added or repaired.",
+  "productionGate": "The release owner must explicitly accept the existing backend limitation before production deployment."
+}

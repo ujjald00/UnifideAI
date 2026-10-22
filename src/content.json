@@ -1,0 +1,286 @@
+{
+  "groups": [
+    {
+      "id": "product",
+      "label": "Platform",
+      "pages": [
+        {
+          "slug": "adapt-ai-to-your-business",
+          "title": "Adapt AI to your business",
+          "nav": "Teach AI your industry and workflows",
+          "lede": "Adapt an existing model to your terminology, tasks, policies, and standards.",
+          "decision": "What should the model understand and do better?",
+          "users": "Industry experts, AI teams, and product owners",
+          "output": "A tested domain model with clear operating limits"
+        },
+        {
+          "slug": "deploy-ai-efficiently",
+          "title": "Deploy AI efficiently",
+          "nav": "Run smaller, faster, and more private models",
+          "lede": "Compress and deploy models in the environment that fits your cost, speed, and privacy needs.",
+          "decision": "What is the smallest model that meets the required quality?",
+          "users": "AI, platform, security, and infrastructure teams",
+          "output": "A qualified model package and deployment plan"
+        },
+        {
+          "slug": "decide-and-act-with-confidence",
+          "title": "Decide and act with confidence",
+          "nav": "Turn AI into governed enterprise action",
+          "lede": "Connect AI to enterprise data, optimization, scenarios, approvals, and controlled actions.",
+          "decision": "Which feasible action should the business take?",
+          "users": "Business, planning, operations, and finance teams",
+          "output": "Feasible options, named approval, controlled action, and a decision record"
+        }
+      ]
+    },
+    {
+      "id": "solutions",
+      "label": "Solutions",
+      "pages": [
+        {
+          "slug": "industry-ai-models",
+          "title": "Industry AI models",
+          "nav": "AI that understands your domain",
+          "lede": "Turn a general model into a specialized model for your industry and workflows.",
+          "decision": "How can AI become useful for our specific work?",
+          "users": "Industry leaders, AI teams, product owners, and domain experts",
+          "output": "A specialized model with measured quality and clear limits"
+        },
+        {
+          "slug": "efficient-ai-deployment",
+          "title": "Efficient AI deployment",
+          "nav": "Smaller, faster, and more private AI",
+          "lede": "Reduce model cost and complexity while preserving the quality required for the task.",
+          "decision": "How can we run useful AI within our operating limits?",
+          "users": "AI leaders, technology teams, security, and infrastructure owners",
+          "output": "A deployment-ready model for the selected environment"
+        },
+        {
+          "slug": "enterprise-decision-optimization",
+          "title": "Enterprise decision optimization",
+          "nav": "Better decisions under real constraints",
+          "lede": "Combine AI with enterprise evidence, business constraints, optimization, and human approval.",
+          "decision": "Which feasible action best supports the business objective?",
+          "users": "Business, planning, operations, finance, and decision owners",
+          "output": "Feasible options, clear trade-offs, approval, and controlled action"
+        }
+      ]
+    },
+    {
+      "id": "capabilities",
+      "label": "Technology",
+      "pages": [
+        {
+          "slug": "model-post-training-and-evaluation",
+          "title": "Model post-training & evaluation",
+          "nav": "Adapt models to industry tasks",
+          "lede": "Improve an existing model for specific industry language, workflows, and behaviors—and test whether it works.",
+          "decision": "Which post-training method improves the target task?",
+          "users": "AI engineers, domain experts, product owners, and risk teams",
+          "output": "A post-trained model, evaluation report, and documented limits"
+        },
+        {
+          "slug": "model-compression-and-efficient-inference",
+          "title": "Model compression & efficient inference",
+          "nav": "Reduce size, latency, memory, and cost",
+          "lede": "Use compression and inference techniques to make useful models easier to deploy and operate.",
+          "decision": "What is the smallest and fastest model that still meets the task standard?",
+          "users": "Model engineers, platform teams, infrastructure owners, and security teams",
+          "output": "A compressed model and qualified inference configuration"
+        },
+        {
+          "slug": "decision-optimization",
+          "title": "Decision optimization",
+          "nav": "Calculate feasible actions under constraints",
+          "lede": "Translate business objectives, constraints, policies, and uncertainty into feasible alternatives.",
+          "decision": "Which feasible action best supports the business objective?",
+          "users": "Operations research, planning, finance, product owners, and decision authorities",
+          "output": "Feasibility status, ranked alternatives, binding constraints, and clear trade-offs"
+        }
+      ]
+    },
+    {
+      "id": "industries",
+      "label": "Industries",
+      "pages": [
+        {
+          "slug": "semiconductor-and-advanced-manufacturing",
+          "title": "Semiconductor",
+          "nav": "Supply, capacity, and quality",
+          "lede": "Use industry AI and optimization to plan supply, production, and customer commitments.",
+          "decision": "What can we deliver when demand or supply changes?",
+          "users": "Planning, manufacturing, quality, and business teams",
+          "output": "Feasible options and a plan for approval"
+        },
+        {
+          "slug": "data-centres",
+          "title": "Data centres",
+          "nav": "Power, equipment, and capacity",
+          "lede": "Plan capacity around power, equipment, and site readiness.",
+          "decision": "Which capacity can we deliver, and when?",
+          "users": "Data centre, infrastructure, and finance teams",
+          "output": "A capacity plan with clear costs and delivery risks"
+        },
+        {
+          "slug": "energy-and-grid-infrastructure",
+          "title": "Energy & grid infrastructure",
+          "nav": "Projects, equipment, and delivery",
+          "lede": "Prioritize projects around grid access, equipment, and delivery limits.",
+          "decision": "Which projects should move first?",
+          "users": "Utilities, developers, and project teams",
+          "output": "A project plan with clear priorities and delivery risks"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "label": "Security & Trust",
+      "pages": [
+        {
+          "slug": "",
+          "title": "Security & Trust",
+          "nav": "Control stays outside the model",
+          "lede": "Keep data access, approval, and writeback under clear controls outside the AI model.",
+          "decision": "Which data and actions are allowed for this user and purpose?",
+          "users": "Security, architecture, data, AI governance, risk, product, and operations teams",
+          "output": "Allowed context, blocked actions, approval proof, audit record, and monitored system state"
+        },
+        {
+          "slug": "deployment-options",
+          "title": "Deployment options",
+          "nav": "Read-only, VPC, on-premises, and hybrid",
+          "lede": "Select a deployment pattern around data sensitivity, connectivity, performance, isolation, operations, and support requirements.",
+          "decision": "Which deployment pattern meets the use case without expanding the trust boundary unnecessarily?",
+          "users": "CISO, enterprise architects, infrastructure, network, platform engineering, and product owners",
+          "output": "Qualified deployment architecture, network and identity design, operating model, and rollout stages"
+        },
+        {
+          "slug": "data-and-access-controls",
+          "title": "Data & access controls",
+          "nav": "Identity, role, purpose, and retention",
+          "lede": "Enforce evidence access using tenant, company, role, purpose, time, sensitivity, and approval boundaries before relevance ranking or model use.",
+          "decision": "Which bounded evidence may this person and workflow use for this decision now?",
+          "users": "Data owners, identity teams, security, legal, risk, application owners, and product teams",
+          "output": "Authorized evidence projection, redaction, access decision, provenance, and audit event"
+        },
+        {
+          "slug": "human-approval-and-controlled-writeback",
+          "title": "Human approval & controlled writeback",
+          "nav": "Named authority and controlled action",
+          "lede": "Separate recommendation, approval, publication, execution, and outcome so the system never implies authority it does not have.",
+          "decision": "Who may approve this decision, and which exact action may the system take afterward?",
+          "users": "Decision owners, operations, application owners, risk, internal audit, and executive sponsors",
+          "output": "Named approval, immutable receipt, bounded action request, writeback result, and monitored outcome"
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "slug": "optimization-methods",
+      "title": "A semiconductor capital equipment company",
+      "description": "Planning production under supply constraints",
+      "lede": "Planning semiconductor equipment production when component supply is limited.",
+      "facts": [
+        {
+          "value": "2 factories",
+          "label": "A connected production network"
+        },
+        {
+          "value": "2 equipment families",
+          "label": "Deposition and epitaxy tools"
+        },
+        {
+          "value": "12 months",
+          "label": "The modeled planning period"
+        }
+      ],
+      "challenge": [
+        "An equipment maker must decide what to build, where to build it, and which orders it can support. A shortage of one component can restrict output even when factory capacity is available.",
+        "This project connected purchasing, production, shipments, and inventory across two factories. It asked how the plan should change when suppliers cannot provide their expected capacity."
+      ],
+      "approachIntro": "The model linked demand to the components and factory capacity needed to serve it.",
+      "example": {
+        "kind": "scenarios",
+        "title": "Reported model scenarios",
+        "rows": [
+          {
+            "capacity": 100,
+            "served": 97.5
+          },
+          {
+            "capacity": 90,
+            "served": 88.1
+          },
+          {
+            "capacity": 70,
+            "served": 68.1
+          }
+        ],
+        "note": "Three of seven scenarios in the final project report, Table 6 (page 9). Mixed secondary-source and synthetic inputs; not measured customer outcomes. Results were not independently rerun for this website."
+      },
+      "kind": "Illustrative model",
+      "status": "Illustrative model using secondary-source and synthetic data. Not a live customer deployment."
+    },
+    {
+      "slug": "glasswing-hackathon",
+      "title": "A manufacturing company",
+      "description": "FORGE: evidence-led manufacturing decisions",
+      "lede": "FORGE brings conflicting sales, inventory, and production records into one decision workspace.",
+      "facts": [
+        {
+          "value": "Data across",
+          "label": "ERP, CRM, MES systems"
+        },
+        {
+          "value": "5 planning views",
+          "label": "Orders through bills of materials"
+        },
+        {
+          "value": "5 personas",
+          "label": "Supply planner, Demand planner, Manufacturing manager, Quality manager, Finance controller"
+        }
+      ],
+      "challenge": [
+        "Can we make and ship what was promised? The answer is hard to establish when sales requests, order schedules, material allocations, and production records disagree.",
+        "An AI answer alone is not enough. A planner needs the underlying records, the source of each claim, and a clear view of what is still unresolved."
+      ],
+      "approachIntro": "Prepared for Glasswing Test Flight, FORGE explored this problem through a synthetic, single-plant manufacturing scenario.",
+      "example": {
+        "kind": "conflict",
+        "title": "One commitment. Three different records.",
+        "rows": [
+          {
+            "label": "Sales request",
+            "value": 26,
+            "meaning": "Units requested"
+          },
+          {
+            "label": "Order schedule",
+            "value": 20,
+            "meaning": "Units recorded on the order"
+          },
+          {
+            "label": "Supply allocation",
+            "value": 5,
+            "meaning": "Units allocated"
+          }
+        ],
+        "note": "Synthetic demo example—not a real order. These records represent different planning states; the discrepancy is a prompt for investigation, not an automatically resolved answer."
+      },
+      "limits": "There are no live enterprise integrations, implemented approval workflow, optimization solver, or operational writeback. Scenario comparison is not active. Customer validation, production security, and reliable live-data operation remain separate next steps.",
+      "kind": "Synthetic prototype",
+      "status": "Synthetic prototype using illustrative ERP, CRM and MES records. Advisory and read-only; not a customer deployment.",
+      "details": [
+        {
+          "title": "Implemented prototype",
+          "text": "A typed web interface, CSV parsing, cross-source reconciliation, conflict detection, source references, planning tables, and advisory chat. The 16-table fixture is loaded read-only; the prototype’s data API rejects write requests."
+        },
+        {
+          "title": "Evidence and lifecycle views",
+          "text": "The interface shows Promise, Material, Build, Test, Release, and Ship stages. Displaying those states does not mean an approval workflow is implemented. Evidence IDs help inspect an answer but do not guarantee that every AI statement is correct."
+        }
+      ]
+    }
+  ]
+}
