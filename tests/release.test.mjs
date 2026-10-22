@@ -17,8 +17,8 @@ const pageHTML = () => [...production.files].filter(([name]) => name.endsWith('.
 
 test('explicit public routes and packaged assets are complete and isolated', () => {
   assert.equal(routeConfig.pages.length, 28);
-  assert.equal(Object.keys(routeConfig.redirects).length, 22);
-  assert.deepEqual(Object.keys(valueChains).sort(), ['glasswing-hackathon', 'optimization-methods']);
+  assert.equal(Object.keys(routeConfig.redirects).length, 23);
+  assert.deepEqual(Object.keys(valueChains).sort(), ['manufacturing-decisions', 'optimization-methods']);
   const expected = new Set([...routeConfig.pages.map(routeFile), '404.html', 'sitemap.xml', 'robots.txt', '_headers', '_redirects']);
   for (const [name] of production.files) {
     if (name.startsWith('_marketing/')) assert.match(name, /^_marketing\/(?:styles\.[a-f0-9]{12}\.css|app\.[a-f0-9]{12}\.js|icon\.[a-f0-9]{12}\.svg)$/);
@@ -95,7 +95,7 @@ test('strict CSP is path-scoped and compatible with self-hosted markup', () => {
 
 test('only exact legacy redirects exist and application ownership is protected', () => {
   const entries = get(production, '_redirects').trim().split('\n').map(line => line.split(' '));
-  assert.equal(entries.length, 44);
+  assert.equal(entries.length, 46);
   assert.equal(new Set(entries.map(([source]) => source)).size, entries.length);
   for (const [source, target, status] of entries) {
     assert.equal(status, '301');
@@ -158,24 +158,36 @@ test('case chains keep correct paired controls, defaults, and reported scenario 
       assert.ok(panels.some(panel => attr(panel, 'data-vc-panel') === id && attr(panel, 'id') === attr(button, 'aria-controls')));
     }
     assert.ok(source.includes('id="challenge"') && source.includes('id="approach"') && source.includes('id="findings"'));
-    assert.equal(source.includes('id="details"'), chain.kind === 'manufacturing');
+    assert.equal(source.includes('id="details"'), false);
+    assert.equal(source.includes('href="#details"'), false);
     assert.doesNotMatch(source, /Academic case study/);
-    assert.ok(html('/resources/').includes(chain.kind === 'equipment' ? 'Illustrative model' : 'Synthetic prototype'));
+    assert.ok(html('/resources/').includes(chain.kind === 'equipment' ? 'Illustrative model' : 'Illustrative example'));
   }
   const equipment = valueChains['optimization-methods'];
   assert.deepEqual(equipment.scenarios.map(item => [item.capacity, item.served]), [[100, 97.5], [90, 88.1], [70, 68.1]]);
   const equipmentHTML = html('/resources/optimization-methods/');
   assert.ok(equipmentHTML.includes('not a live optimization run'));
-  assert.ok(equipmentHTML.includes('Not a live customer deployment'));
+  assert.ok(equipmentHTML.includes('not measured company performance'));
   assert.equal(tags(equipmentHTML, 'button').filter(tag => attr(tag, 'data-vc-scenario')).length, 3);
   for (const scenario of equipment.scenarios) {
     assert.ok(scenario.served >= 0 && scenario.served <= scenario.capacity);
     assert.ok(equipmentHTML.includes(`class="vc-percent-${String(scenario.served).replace('.', '-')}"`));
   }
-  const manufacturing = valueChains['glasswing-hackathon'];
+  const manufacturing = valueChains['manufacturing-decisions'];
   assert.deepEqual(manufacturing.records.map(item => item.value), ['26', '20', '5']);
   for (const id of ['test', 'release', 'ship']) assert.equal(manufacturing.stages.find(stage => stage.id === id).evidence.label, 'Not verified');
-  assert.ok(html('/resources/glasswing-hackathon/').includes('not a customer deployment'));
+  assert.ok(html('/resources/manufacturing-decisions/').includes('not a customer deployment'));
+});
+
+test('minimal public copy excludes retired labels and routes while preserving example context', () => {
+  for (const [name, bytes] of pageHTML()) {
+    assert.doesNotMatch(bytes.toString(), /synthetic|prototypes?|glasswing|glassing|scope\s*&(?:amp;)?\s*limits|Project notes/i, name);
+  }
+  assert.doesNotMatch(get(production, 'sitemap.xml'), /glasswing|glassing/i);
+  assert.equal(routeConfig.redirects['/resources/glasswing-hackathon/'], '/resources/manufacturing-decisions/');
+  assert.equal(production.files.has('resources/glasswing-hackathon/index.html'), false);
+  assert.match(html('/resources/manufacturing-decisions/'), /Illustrative ERP, CRM and MES records/);
+  assert.match(html('/resources/optimization-methods/'), /Modeled example/);
 });
 
 test('product and security boundaries are adjacent to claims', () => {

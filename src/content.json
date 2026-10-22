@@ -217,16 +217,16 @@
             "served": 68.1
           }
         ],
-        "note": "Three of seven scenarios in the final project report, Table 6 (page 9). Mixed secondary-source and synthetic inputs; not measured customer outcomes. Results were not independently rerun for this website."
+        "note": "Reported model results, not measured company performance."
       },
       "kind": "Illustrative model",
-      "status": "Illustrative model using secondary-source and synthetic data. Not a live customer deployment."
+      "status": "Modeled example—not measured company performance."
     },
     {
-      "slug": "glasswing-hackathon",
+      "slug": "manufacturing-decisions",
       "title": "A manufacturing company",
-      "description": "FORGE: evidence-led manufacturing decisions",
-      "lede": "FORGE brings conflicting sales, inventory, and production records into one decision workspace.",
+      "description": "Evidence-led manufacturing decisions",
+      "lede": "Compare conflicting sales, inventory, and production records in one decision workspace.",
       "facts": [
         {
           "value": "Data across",
@@ -245,7 +245,6 @@
         "Can we make and ship what was promised? The answer is hard to establish when sales requests, order schedules, material allocations, and production records disagree.",
         "An AI answer alone is not enough. A planner needs the underlying records, the source of each claim, and a clear view of what is still unresolved."
       ],
-      "approachIntro": "Prepared for Glasswing Test Flight, FORGE explored this problem through a synthetic, single-plant manufacturing scenario.",
       "example": {
         "kind": "conflict",
         "title": "One commitment. Three different records.",
@@ -266,21 +265,10 @@
             "meaning": "Units allocated"
           }
         ],
-        "note": "Synthetic demo example—not a real order. These records represent different planning states; the discrepancy is a prompt for investigation, not an automatically resolved answer."
+        "note": "Illustrative records for review, not a real customer order."
       },
-      "limits": "There are no live enterprise integrations, implemented approval workflow, optimization solver, or operational writeback. Scenario comparison is not active. Customer validation, production security, and reliable live-data operation remain separate next steps.",
-      "kind": "Synthetic prototype",
-      "status": "Synthetic prototype using illustrative ERP, CRM and MES records. Advisory and read-only; not a customer deployment.",
-      "details": [
-        {
-          "title": "Implemented prototype",
-          "text": "A typed web interface, CSV parsing, cross-source reconciliation, conflict detection, source references, planning tables, and advisory chat. The 16-table fixture is loaded read-only; the prototype’s data API rejects write requests."
-        },
-        {
-          "title": "Evidence and lifecycle views",
-          "text": "The interface shows Promise, Material, Build, Test, Release, and Ship stages. Displaying those states does not mean an approval workflow is implemented. Evidence IDs help inspect an answer but do not guarantee that every AI statement is correct."
-        }
-      ]
+      "kind": "Illustrative example",
+      "status": "Illustrative ERP, CRM and MES records—not a customer deployment."
     }
   ]
 }
