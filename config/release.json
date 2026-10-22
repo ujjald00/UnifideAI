@@ -1,0 +1,7 @@
+{
+  "siteUrl": "https://unifideai.com",
+  "siteName": "UNIFIDE",
+  "contactUrl": "mailto:ujjald@mit.edu?subject=Request%20a%20UNIFIDE%20diagnostic",
+  "contactLabel": "Email us",
+  "searchDisallowPaths": ["/dashboard", "/login", "/demo", "/jobs/"]
+}

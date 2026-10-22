@@ -1,0 +1,41 @@
+name: Verify website release
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: website-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up the pinned Node runtime
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24.19.0
+      - name: Inspect public source
+        run: node scripts/verify-public-source.mjs
+      - name: Run marketing checks
+        run: npm run check
+      - name: Build approved marketing pages
+        run: npm run build:production
+      - name: Compose preserved application and marketing
+        run: node scripts/compose-release.mjs
+      - name: Verify the combined artifact
+        run: node scripts/verify-composition.mjs
+
+# This workflow has no deployment credentials and cannot publish to Cloudflare.
+# Production release remains a separately approved operation.

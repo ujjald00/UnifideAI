@@ -1,0 +1,8 @@
+{
+  "marketingOutput": "marketing-dist",
+  "marketingAssetPrefix": "/_marketing/",
+  "reservedAppPrefixes": ["/dashboard", "/login", "/demo", "/jobs", "/api", "/assets", "/__app"],
+  "appCompositionRequired": true,
+  "appBundleVerified": false,
+  "note": "Marketing does not create, redirect, or replace these application paths. The release owner must compose and test the verified application separately before production deployment."
+}

@@ -1,0 +1,11 @@
+marketing-dist/
+marketing-build-state.json
+dist/
+artifacts/
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+.wrangler/
