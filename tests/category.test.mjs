@@ -33,7 +33,7 @@ test('category pages are concise, distinct, and fully available before scripting
     const source = html(route);
     const main = source.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)[1];
     const count = [...main.matchAll(/<section class="category-section"/g)].length;
-    assert.equal(count, route === '/resources/' ? 2 : 3, route);
+    assert.equal(count, 3, route);
     assert.ok(textOnly(main).split(/\s+/).length <= 250, route);
     assert.doesNotMatch(main, /\shidden|<details|<iframe|<video/, route);
     for (const [, id] of main.matchAll(/<section class="category-section" id="([^"]+)" tabindex="-1"/g)) {

@@ -93,7 +93,7 @@ export async function testHTTP(value = 'http://127.0.0.1:4175') {
   const excluded = [
     '/src/content.json', '/src/render.mjs', '/config/release.json', '/config/routes.json', '/config/route-migration.json', '/package.json',
     '/.git/config', '/.env', '/marketing-build-state.json', '/artifacts/composition-state.json',
-    '/docs/case-study-sources.md', '/resources/wbg-policy-research/', '/value-chains/wbg.mjs',
+    '/docs/case-study-sources.md', '/value-chains/wbg.mjs',
     '/unknown-marketing-page', '/jobs', '/jobs/', '/jobs/http-probe/unsupported-child', '/dashboard/not-a-route',
   ];
   await concurrent(excluded, async route => {

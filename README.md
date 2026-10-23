@@ -1,6 +1,6 @@
 # UNIFIDE marketing release
 
-Curated, dependency-free static marketing source. This directory is separate from the preserved local prototype. It contains only the two approved illustrative/synthetic case examples and public marketing copy. No research reports, private source notes, customer datasets, or prior hosting identity are imported.
+Curated, dependency-free static marketing source. This directory is separate from the preserved local prototype. It contains two approved case examples, the cleared short WBG research summary, and public marketing copy. No research reports, private source notes, customer datasets, or prior hosting identity are imported.
 
 ## Build and check
 
@@ -21,9 +21,9 @@ The default build is non-indexable preview output. Production builds require an 
 
 ## Public scope and routes
 
-`config/routes.json` is the complete marketing route allowlist, plus exact legacy redirects. The site has 12 canonical marketing pages: six scrollable categories, two detailed cases, the homepage, Security & Trust, the diagnostic page, and Privacy. Navigation links open categories directly; small on-page links jump to sections. The mobile menu uses a native disclosure and works without JavaScript.
+`config/routes.json` is the complete marketing route allowlist, plus exact legacy redirects. The site has 13 canonical marketing pages: six scrollable categories, three cases, the homepage, Security & Trust, the diagnostic page, and Privacy. Navigation links open categories directly; small on-page links jump to sections. The mobile menu uses a native disclosure and works without JavaScript.
 
-Category copy lives in `src/category-content.mjs`; `src/content.json` contains only the two case records. Shared markup lives in `src/render.mjs`, with the two interactive value-chain modules kept separate. `config/route-migration.json` records all 16 retired pages and the 23 previous redirects. Every one points directly to a retained page or a validated section ID; no broad SPA fallback is generated. See [Scrollable-page contract](docs/scrollable-pages.md).
+Category copy lives in `src/category-content.mjs`; `src/content.json` contains the three case records. Shared markup lives in `src/render.mjs`. The equipment case retains its interactive value chain; manufacturing and WBG use short static summaries. The full WBG report and detailed research module remain excluded. `config/route-migration.json` records all 16 retired pages and the 23 previous redirects. Every one points directly to a retained page or a validated section ID; no broad SPA fallback is generated. See [Scrollable-page contract](docs/scrollable-pages.md).
 
 Unverified affiliations are not presented. Product and security pages state their proposed-design boundary; they do not imply certifications or deployed controls.
 
