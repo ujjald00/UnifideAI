@@ -11,8 +11,34 @@ export const releaseConfig = readJSON('release.json');
 export const routeConfig = readJSON('routes.json');
 export const compositionConfig = readJSON('composition.json');
 const routePattern = /^\/(?:[a-z0-9]+(?:-[a-z0-9]+)*\/)*$/;
+const fragmentPattern = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/;
+const isCanonicalRoute = route => typeof route === 'string' && routePattern.exec(route)?.[0] === route;
 export const routeFile = route => route === '/' ? 'index.html' : `${route.slice(1)}index.html`;
 export const isReserved = route => compositionConfig.reservedAppPrefixes.some(prefix => route === prefix || route.startsWith(`${prefix}/`));
+
+export function parseRedirectDestination(destination, routes) {
+  if (typeof destination !== 'string') throw new Error('Invalid redirect destination');
+  const [pathname, fragment, extra] = destination.split('#');
+  if (!isCanonicalRoute(pathname) || isReserved(pathname) || !routes.pages.includes(pathname) || extra !== undefined || (fragment !== undefined && fragmentPattern.exec(fragment)?.[0] !== fragment)) {
+    throw new Error(`Invalid redirect destination: ${destination}`);
+  }
+  return { pathname, fragment };
+}
+
+export function validateRenderedRedirectTargets(routes, pages) {
+  const pageIds = new Map();
+  for (const route of routes.pages) {
+    const source = pages.get(route);
+    if (typeof source !== 'string') throw new Error(`Missing rendered redirect page: ${route}`);
+    const ids = [...source.matchAll(/\sid\s*=\s*(["'])([^"']*)\1/g)].map(match => match[2]);
+    if (new Set(ids).size !== ids.length) throw new Error(`Duplicate rendered ID: ${route}`);
+    pageIds.set(route, new Set(ids));
+  }
+  for (const destination of Object.values(routes.redirects)) {
+    const { pathname, fragment } = parseRedirectDestination(destination, routes);
+    if (fragment !== undefined && !pageIds.get(pathname).has(fragment)) throw new Error(`Missing redirect fragment: ${destination}`);
+  }
+}
 
 export function validateConfig(config, routes, production) {
   const site = new URL(config.siteUrl);
@@ -26,9 +52,11 @@ export function validateConfig(config, routes, production) {
     } else if (contact.protocol !== 'https:' || contact.username || contact.password) throw new Error('Contact must use mailto or HTTPS');
   } else if (production) throw new Error('Production requires an approved contact destination');
   if (!Array.isArray(routes.pages) || !routes.pages.length || new Set(routes.pages).size !== routes.pages.length) throw new Error('Invalid page allowlist');
-  for (const route of routes.pages) if (!routePattern.test(route) || isReserved(route)) throw new Error(`Invalid or reserved marketing route: ${route}`);
+  for (const route of routes.pages) if (!isCanonicalRoute(route) || isReserved(route)) throw new Error(`Invalid or reserved marketing route: ${route}`);
+  if (!routes.redirects || typeof routes.redirects !== 'object' || Array.isArray(routes.redirects)) throw new Error('Invalid redirect map');
   for (const [source, destination] of Object.entries(routes.redirects)) {
-    if (!routePattern.test(source) || source === '/' || isReserved(source) || routes.pages.includes(source) || !routes.pages.includes(destination)) throw new Error(`Invalid legacy redirect: ${source}`);
+    if (!isCanonicalRoute(source) || source === '/' || isReserved(source) || routes.pages.includes(source)) throw new Error(`Invalid legacy redirect: ${source}`);
+    parseRedirectDestination(destination, routes);
   }
   for (const route of config.searchDisallowPaths || []) if (!/^\/[a-z0-9/-]+$/.test(route)) throw new Error('Invalid search path');
 }
@@ -57,6 +85,7 @@ export function createArtifact({ production = false, config = releaseConfig, rou
   }
   const { pages, notFound } = renderSite(config, assets, { production });
   if (JSON.stringify([...pages.keys()].sort()) !== JSON.stringify([...routes.pages].sort())) throw new Error('Rendered routes do not match the explicit page allowlist');
+  validateRenderedRedirectTargets(routes, pages);
   for (const route of [...routes.pages].sort()) files.set(routeFile(route), pages.get(route));
   files.set('404.html', notFound);
   files.set('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[...routes.pages].sort().map(route => `  <url><loc>${escapeHTML(`${config.siteUrl}${route}`)}</loc></url>`).join('\n')}\n</urlset>\n`);

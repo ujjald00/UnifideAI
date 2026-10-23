@@ -21,7 +21,11 @@ The default build is non-indexable preview output. Production builds require an 
 
 ## Public scope and routes
 
-`config/routes.json` is the complete marketing route allowlist, plus exact legacy redirects. No broad SPA fallback is generated. Shared navigation and all pages derive from `src/content.json`, `src/render.mjs`, and the two interactive value-chain modules. Unverified affiliations are not presented. Product and security pages state their proposed-design boundary; they do not imply certifications or deployed controls.
+`config/routes.json` is the complete marketing route allowlist, plus exact legacy redirects. The site has 12 canonical marketing pages: six scrollable categories, two detailed cases, the homepage, Security & Trust, the diagnostic page, and Privacy. Navigation links open categories directly; small on-page links jump to sections. The mobile menu uses a native disclosure and works without JavaScript.
+
+Category copy lives in `src/category-content.mjs`; `src/content.json` contains only the two case records. Shared markup lives in `src/render.mjs`, with the two interactive value-chain modules kept separate. `config/route-migration.json` records all 16 retired pages and the 23 previous redirects. Every one points directly to a retained page or a validated section ID; no broad SPA fallback is generated. See [Scrollable-page contract](docs/scrollable-pages.md).
+
+Unverified affiliations are not presented. Product and security pages state their proposed-design boundary; they do not imply certifications or deployed controls.
 
 Static assets use content-hashed filenames under `/_marketing/`. This avoids the application's asset namespace. `_headers` is scoped to marketing paths and assets rather than to the entire domain. A strict self-hosted CSP is supported without inline scripts or style attributes. Hostname aliases, TLS and existing application policies remain separate deployment concerns.
 

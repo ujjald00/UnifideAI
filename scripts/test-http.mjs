@@ -50,6 +50,7 @@ export async function testHTTP(value = 'http://127.0.0.1:4175') {
     }));
   };
   const passed = label => console.log(`PASS ${label}`);
+  const marketingHTML = new Map();
 
   await concurrent(routes.pages, async route => {
     const response = await request(route);
@@ -65,22 +66,32 @@ export async function testHTTP(value = 'http://127.0.0.1:4175') {
     check(response.headers.get('referrer-policy') === 'strict-origin-when-cross-origin', `Marketing referrer policy: ${route}`);
     check(response.headers.get('permissions-policy')?.includes('camera=()'), `Marketing permissions policy: ${route}`);
     check(response.headers.get('cache-control')?.includes('must-revalidate'), `Marketing cache policy: ${route}`);
+    marketingHTML.set(route, source);
   });
   passed(`${routes.pages.length} marketing pages: status, H1, canonical, MIME, security headers`);
 
   const legacy = Object.entries(routes.redirects).flatMap(([source, target]) => [[source, target], [source.slice(0, -1), target]]);
-  const testRedirect = async ([source, destination]) => {
+  const testRedirect = async ([source, destination], marketing = false) => {
     const response = await request(source, 'HEAD');
     check(response.status === 301, `Redirect status ${response.status}: ${source}`);
     const location = response.headers.get('location');
     check(Boolean(location), `Missing redirect destination: ${source}`);
-    check(new URL(location, origin).href === `${origin}${destination}`, `Unexpected redirect destination: ${source}`);
+    const target = new URL(location, origin);
+    check(target.href === `${origin}${destination}`, `Unexpected redirect destination: ${source}`);
+    if (marketing) {
+      check(marketingHTML.has(target.pathname), `Redirect does not reach a final marketing page: ${source}`);
+      check(!Object.hasOwn(routes.redirects, target.pathname), `Redirect chain or loop: ${source}`);
+      if (target.hash) {
+        const ids = [...marketingHTML.get(target.pathname).matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
+        check(ids.filter(id => id === target.hash.slice(1)).length === 1, `Redirect fragment is missing or duplicated in served HTML: ${source}`);
+      }
+    }
   };
-  await concurrent(legacy, testRedirect);
-  passed(`${legacy.length} exact legacy redirects; no redirect was followed`);
+  await concurrent(legacy, entry => testRedirect(entry, true));
+  passed(`${legacy.length} exact legacy redirects: Location, final 200 pages, and unique served fragment targets; no redirect was followed`);
 
   const excluded = [
-    '/src/content.json', '/src/render.mjs', '/config/release.json', '/package.json',
+    '/src/content.json', '/src/render.mjs', '/config/release.json', '/config/routes.json', '/config/route-migration.json', '/package.json',
     '/.git/config', '/.env', '/marketing-build-state.json', '/artifacts/composition-state.json',
     '/docs/case-study-sources.md', '/resources/wbg-policy-research/', '/value-chains/wbg.mjs',
     '/unknown-marketing-page', '/jobs', '/jobs/', '/jobs/http-probe/unsupported-child', '/dashboard/not-a-route',
