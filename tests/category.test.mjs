@@ -34,7 +34,8 @@ test('category pages are concise, distinct, and fully available before scripting
     const main = source.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)[1];
     const count = [...main.matchAll(/<section class="category-section"/g)].length;
     assert.equal(count, 3, route);
-    assert.ok(textOnly(main).split(/\s+/).length <= 250, route);
+    const conciseContent = route === '/resources/' ? main.split('id="latest-insights"')[0] : main;
+    assert.ok(textOnly(conciseContent).split(/\s+/).length <= 250, route);
     assert.doesNotMatch(main, /\shidden|<details|<iframe|<video/, route);
     assert.doesNotMatch(main, /class="wrap on-page"|aria-label="On this page"/, route);
     for (const [, id] of main.matchAll(/<section class="category-section" id="([^"]+)" tabindex="-1"/g)) {

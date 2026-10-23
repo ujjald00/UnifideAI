@@ -3,6 +3,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { routeConfig } from './build.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const readJSON = filename => JSON.parse(fs.readFileSync(path.join(root, filename), 'utf8'));
@@ -17,7 +18,7 @@ export function localOrigin(value) {
 
 export async function testHTTP(value = 'http://127.0.0.1:4175') {
   const origin = localOrigin(value);
-  const routes = readJSON('config/routes.json');
+  const routes = routeConfig;
   const release = readJSON('config/release.json');
   const app = readJSON('config/legacy-app.json');
   const state = readJSON('artifacts/composition-state.json');
@@ -36,7 +37,7 @@ export async function testHTTP(value = 'http://127.0.0.1:4175') {
   const bytes = async (response, pathname) => {
     check(!isAPI(new URL(pathname, origin).pathname), 'API response bodies must not be read');
     const result = Buffer.from(await response.arrayBuffer());
-    check(result.length < 2 * 1024 * 1024, `Unexpected response size: ${pathname}`);
+    check(result.length <= (pathname.startsWith('/_marketing/media/') ? 10 : 2) * 1024 * 1024, `Unexpected response size: ${pathname}`);
     return result;
   };
   const type = response => response.headers.get('content-type')?.split(';')[0].trim().toLowerCase();
@@ -58,6 +59,7 @@ export async function testHTTP(value = 'http://127.0.0.1:4175') {
     check(type(response) === 'text/html', `Marketing MIME: ${route}`);
     const source = (await bytes(response, route)).toString('utf8');
     const expected = fs.readFileSync(path.join(dist, routeFile(route)), 'utf8');
+    check(source === expected, `Marketing content differs from local artifact: ${route}`);
     const h1 = heading(source);
     check(h1.length === 1 && h1[0] === heading(expected)[0], `Marketing H1: ${route}`);
     check(canonical(source) === `${release.siteUrl}${route}`, `Marketing canonical: ${route}`);
@@ -91,7 +93,7 @@ export async function testHTTP(value = 'http://127.0.0.1:4175') {
   passed(`${legacy.length} exact legacy redirects: Location, final 200 pages, and unique served fragment targets; no redirect was followed`);
 
   const excluded = [
-    '/src/content.json', '/src/render.mjs', '/config/release.json', '/config/routes.json', '/config/route-migration.json', '/package.json',
+    '/src/content.json', '/src/render.mjs', '/src/insights/posts.json', '/src/insights/model.mjs', '/config/release.json', '/config/routes.json', '/config/route-migration.json', '/package.json',
     '/.git/config', '/.env', '/marketing-build-state.json', '/artifacts/composition-state.json',
     '/docs/case-study-sources.md', '/value-chains/wbg.mjs',
     '/unknown-marketing-page', '/jobs', '/jobs/', '/jobs/http-probe/unsupported-child', '/dashboard/not-a-route',
@@ -113,7 +115,8 @@ export async function testHTTP(value = 'http://127.0.0.1:4175') {
     const response = await request(route);
     check(response.status === 200, `Asset status ${response.status}: ${route}`);
     const mime = type(response);
-    check(file.endsWith('.js') ? ['application/javascript', 'text/javascript'].includes(mime) : file.endsWith('.css') ? mime === 'text/css' : mime === 'image/svg+xml', `Asset MIME: ${route}`);
+    const expectedMime = { '.css': 'text/css', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp' };
+    check(file.endsWith('.js') ? ['application/javascript', 'text/javascript'].includes(mime) : mime === expectedMime[path.extname(file)], `Asset MIME: ${route}`);
     check(hash(await bytes(response, route)) === state.files[file], `Asset hash mismatch: ${route}`);
     if (file.startsWith('_marketing/')) check(response.headers.get('cache-control')?.includes('immutable'), `Marketing asset cache: ${route}`);
   });
