@@ -168,7 +168,11 @@ test('article citation allowlists require declared rich links or complete unanno
   assert.equal(allowed.has(founderProfiles[0][1]), false);
   assert.equal(allowed.has('https://unreviewed.example/'), false);
   const css = fs.readFileSync(path.join(root, 'src/assets/styles.css'), 'utf8');
-  assert.match(css, /\.insight-media img\s*\{[^}]*\bwidth:\s*auto;[^}]*max-width:\s*100%;/);
+  const mediaRule = css.match(/\.insight-media img\s*\{([^}]+)\}/)?.[1];
+  assert.ok(mediaRule, 'Insights images must have responsive sizing');
+  assert.match(mediaRule, /max-width:\s*100%;/);
+  // Preserve each image's HTML width for a stable lazy-load reservation.
+  assert.doesNotMatch(mediaRule, /(?:^|;)\s*width:/, 'Do not override the native image width');
 });
 
 test('strict CSP is path-scoped and compatible with self-hosted markup', () => {
