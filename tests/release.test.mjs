@@ -343,10 +343,16 @@ test('minimal public copy excludes retired labels and routes while preserving ex
   assert.match(html('/resources/optimization-methods/'), /Modeled example/);
 });
 
-test('product and security boundaries are adjacent to claims', () => {
-  for (const route of routeConfig.pages.filter(route => /^\/(product|solutions|capabilities|industries|security)\//.test(route))) {
-    assert.match(html(route), /Proposed approach|Proposed design principles/, route);
+test('repeated approach notice is removed everywhere without changing specific status copy', () => {
+  for (const [name, bytes] of pageHTML()) {
+    assert.doesNotMatch(bytes.toString(), /Proposed approach\. Scope, performance, and controls must be agreed and tested for each project\./, name);
   }
+  for (const route of ['/product/', '/solutions/', '/capabilities/', '/industries/']) {
+    assert.doesNotMatch(html(route), /class="release-boundary category-boundary"/, route);
+  }
+  assert.match(html('/product/'), /A proposed workspace/);
+  assert.match(html('/industries/'), /exploratory areas/);
+  assert.match(html('/security/'), /Proposed design principles/);
   assert.match(html('/security/'), /not a certification or a claim that these controls are deployed/);
   assert.match(html('/'), /In development/);
 });
