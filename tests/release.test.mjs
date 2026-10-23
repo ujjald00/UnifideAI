@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { createArtifact, buildSite, scanFiles, root, releaseConfig, routeConfig, compositionConfig, validateConfig, routeFile, isReserved } from '../scripts/build.mjs';
+import { createArtifact, buildSite, scanFiles, root, releaseConfig, routeConfig, compositionConfig, validateConfig, parseRedirectDestination, validateRenderedRedirectTargets, routeFile, isReserved } from '../scripts/build.mjs';
 import { valueChains } from '../src/value-chains/render.mjs';
 
 const production = createArtifact({ production: true });
@@ -14,10 +14,37 @@ const tags = (source, name) => [...source.matchAll(new RegExp(`<${name}\\b[^>]*>
 const attr = (tag, key) => tag.match(new RegExp(`(?:^|\\s)${key}="([^"]*)"`))?.[1];
 const decode = value => value.replaceAll('&amp;', '&').replaceAll('&quot;', '"').replaceAll('&lt;', '<').replaceAll('&gt;', '>');
 const pageHTML = () => [...production.files].filter(([name]) => name.endsWith('.html'));
+const migration = JSON.parse(fs.readFileSync(path.join(root, 'config/route-migration.json'), 'utf8'));
+const expectedRedirects = {
+  ...migration.retiredPages,
+  ...Object.fromEntries(Object.entries(migration.previousRedirects).map(([source, previous]) => [source, migration.legacyDestinationOverrides[source] || migration.retiredPages[previous] || previous])),
+};
+
+test('reviewed migration retains twelve pages and flattens every retired or prior route', () => {
+  assert.equal(migration.schemaVersion, 1);
+  assert.deepEqual(migration.canonicalPages, [
+    '/', '/solutions/', '/product/', '/capabilities/', '/industries/',
+    '/resources/', '/resources/optimization-methods/', '/resources/manufacturing-decisions/',
+    '/security/', '/company/', '/diagnostic/', '/privacy/',
+  ]);
+  assert.equal(Object.keys(migration.retiredPages).length, 16);
+  assert.equal(Object.keys(migration.previousRedirects).length, 23);
+  for (const source of Object.keys(migration.legacyDestinationOverrides)) assert.ok(Object.hasOwn(migration.previousRedirects, source), `Unexpected override: ${source}`);
+  const sources = [...Object.keys(migration.retiredPages), ...Object.keys(migration.previousRedirects)];
+  assert.equal(new Set(sources).size, sources.length, 'Migration sources must not overlap');
+  assert.deepEqual(routeConfig.pages, migration.canonicalPages);
+  assert.deepEqual(routeConfig.redirects, expectedRedirects);
+  for (const source of sources) {
+    assert.equal(production.files.has(routeFile(source)), false, `Retired page is still published: ${source}`);
+    assert.equal(get(production, 'sitemap.xml').includes(`${releaseConfig.siteUrl}${source}`), false, `Retired URL is in the sitemap: ${source}`);
+    const { pathname } = parseRedirectDestination(routeConfig.redirects[source], routeConfig);
+    assert.equal(Object.hasOwn(routeConfig.redirects, pathname), false, `Redirect chain or loop: ${source}`);
+  }
+});
 
 test('explicit public routes and packaged assets are complete and isolated', () => {
-  assert.equal(routeConfig.pages.length, 28);
-  assert.equal(Object.keys(routeConfig.redirects).length, 23);
+  assert.equal(routeConfig.pages.length, migration.canonicalPages.length);
+  assert.equal(Object.keys(routeConfig.redirects).length, Object.keys(expectedRedirects).length);
   assert.deepEqual(Object.keys(valueChains).sort(), ['manufacturing-decisions', 'optimization-methods']);
   const expected = new Set([...routeConfig.pages.map(routeFile), '404.html', 'sitemap.xml', 'robots.txt', '_headers', '_redirects']);
   for (const [name] of production.files) {
@@ -26,7 +53,7 @@ test('explicit public routes and packaged assets are complete and isolated', () 
     assert.equal(isReserved(`/${name}`), false, `Application collision: ${name}`);
   }
   assert.equal(expected.size, 0);
-  assert.equal(production.files.size, 36);
+  assert.equal(production.files.size, migration.canonicalPages.length + 8);
   assert.ok(compositionConfig.reservedAppPrefixes.includes('/__app'));
 });
 
@@ -46,9 +73,14 @@ test('page metadata, unique IDs, internal links, anchors, and control references
       for (const id of reference.split(' ')) assert.ok(ids.includes(id), `Broken ARIA reference ${name}: ${id}`);
     }
     for (const [, encoded] of source.matchAll(/\s(?:href|src)="([^"]+)"/g)) {
-      const ref = decode(encoded);
+      let ref = decode(encoded);
       if (ref.startsWith('mailto:')) { assert.equal(ref, releaseConfig.contactUrl); continue; }
-      if (ref.startsWith(releaseConfig.siteUrl)) { assert.ok(routeConfig.pages.includes(ref.slice(releaseConfig.siteUrl.length))); continue; }
+      if (ref.startsWith(releaseConfig.siteUrl)) {
+        const url = new URL(ref);
+        assert.equal(url.origin, releaseConfig.siteUrl);
+        assert.equal(url.search, '');
+        ref = `${url.pathname}${url.hash}`;
+      }
       assert.ok(ref.startsWith('/') || ref.startsWith('#'), `Unexpected external or relative URL ${name}: ${ref}`);
       const [pathname, fragment] = ref.split('#');
       let targetHTML = source;
@@ -95,23 +127,72 @@ test('strict CSP is path-scoped and compatible with self-hosted markup', () => {
 
 test('only exact legacy redirects exist and application ownership is protected', () => {
   const entries = get(production, '_redirects').trim().split('\n').map(line => line.split(' '));
-  assert.equal(entries.length, 46);
+  assert.equal(entries.length, Object.keys(expectedRedirects).length * 2);
   assert.equal(new Set(entries.map(([source]) => source)).size, entries.length);
   for (const [source, target, status] of entries) {
     assert.equal(status, '301');
     assert.equal(isReserved(source), false);
-    assert.equal(isReserved(target), false);
+    const { pathname, fragment } = parseRedirectDestination(target, routeConfig);
+    assert.equal(isReserved(pathname), false);
     assert.equal(source.includes('*'), false);
     assert.equal(target.includes('*'), false);
-    assert.ok(routeConfig.pages.includes(target));
+    assert.ok(routeConfig.pages.includes(pathname));
+    if (fragment) assert.ok(html(pathname).includes(`id="${fragment}"`), `Missing redirect target: ${target}`);
     const canonicalSource = source.endsWith('/') ? source : `${source}/`;
     assert.equal(routeConfig.redirects[canonicalSource], target);
   }
-  assert.equal(routeConfig.redirects['/company/programs-and-affiliations/'], '/company/');
+  assert.equal(routeConfig.redirects['/company/programs-and-affiliations/'], '/company/#purpose');
   for (const prefix of compositionConfig.reservedAppPrefixes) {
     assert.equal(isReserved(prefix), true);
     assert.equal(isReserved(`${prefix}/nested/path`), true);
     assert.throws(() => validateConfig(releaseConfig, { ...routeConfig, pages: [...routeConfig.pages, `${prefix}/`] }, true), /reserved/);
+  }
+});
+
+test('redirect destinations reject external, query, encoded, malformed, reserved, and chained targets', () => {
+  for (const destination of [
+    'https://outside.example/product/#workflow', `${releaseConfig.siteUrl}/product/#workflow`, '//outside.example/product/',
+    '/product/?view=all', '/product/?view=all#workflow', '/product/#workflow?view=all',
+    '/product/#%77orkflow', '/product/#workflow%20', '/product/#workflow%0a', '/product/#work_flow',
+    '/product/#Workflow', '/product/#workflow/child', '/product/#workflow#other', '/product/#',
+    '/product/#workflow ', '/product/#workflow\n', '/product/#workflow\t', '/product/#workflow--other',
+    '/product/\n', '/product', '/product//', '/product/../company/', '/product/%2e%2e/company/',
+    '/dashboard/#workflow', '/api/#workflow', '/assets/#workflow', '/__app/#workflow',
+    '/company/contact/', '/missing/', '', null, 123,
+  ]) {
+    assert.throws(() => validateConfig(releaseConfig, { ...routeConfig, redirects: { '/retired/': destination } }, true), /Invalid redirect destination/, String(destination));
+  }
+  for (const source of ['/', '/product/', '/api/', '/retired/#part', '/retired/?query', '/retired/\n', '/retired', '/old*/']) {
+    assert.throws(() => validateConfig(releaseConfig, { ...routeConfig, redirects: { [source]: '/product/#workflow' } }, true), /Invalid legacy redirect/, source);
+  }
+  for (const redirects of [null, [], 'invalid']) assert.throws(() => validateConfig(releaseConfig, { ...routeConfig, redirects }, true), /Invalid redirect map/);
+  assert.deepEqual(parseRedirectDestination('/product/#workflow', routeConfig), { pathname: '/product/', fragment: 'workflow' });
+  assert.deepEqual(parseRedirectDestination('/resources/', routeConfig), { pathname: '/resources/', fragment: undefined });
+});
+
+test('rendered redirect targets must exist exactly once before an artifact can be produced', () => {
+  const routes = { pages: ['/product/'], redirects: { '/retired/': '/product/#workflow' } };
+  const page = source => new Map([['/product/', source]]);
+  assert.doesNotThrow(() => validateRenderedRedirectTargets(routes, page('<section id="workflow"></section>')));
+  assert.throws(() => validateRenderedRedirectTargets(routes, new Map()), /Missing rendered redirect page/);
+  assert.throws(() => validateRenderedRedirectTargets(routes, page('<section id="other"></section>')), /Missing redirect fragment/);
+  assert.throws(() => validateRenderedRedirectTargets(routes, page('<a href="#workflow">Jump</a>')), /Missing redirect fragment/);
+  assert.throws(() => validateRenderedRedirectTargets(routes, page('<section id="workflow"></section><div id="workflow"></div>')), /Duplicate rendered ID/);
+  assert.throws(() => validateRenderedRedirectTargets(routes, page('<section id="workflow"></section><div id="other"></div><div id="other"></div>')), /Duplicate rendered ID/);
+  assert.throws(() => createArtifact({ routes: { ...routeConfig, redirects: { ...routeConfig.redirects, '/retired/': '/product/#missing-target' } } }), /Missing redirect fragment/);
+});
+
+test('retired child summary fragments have an explicit final section destination', () => {
+  const entries = get(production, '_redirects').trim().split('\n').map(line => line.split(' '));
+  for (const [source, destination] of Object.entries(migration.retiredPages)) {
+    const formerURL = new URL(`${source}#summary-title`, releaseConfig.siteUrl);
+    const rule = entries.find(([from]) => from === formerURL.pathname);
+    assert.ok(rule, `Missing retired-page redirect: ${source}`);
+    const resolved = new URL(rule[1], formerURL);
+    assert.equal(resolved.href, `${releaseConfig.siteUrl}${destination}`);
+    assert.notEqual(resolved.hash, '');
+    assert.notEqual(resolved.hash, '#summary-title');
+    assert.ok(html(resolved.pathname).includes(`id="${resolved.hash.slice(1)}"`));
   }
 });
 
@@ -127,7 +208,7 @@ test('search output covers canonical marketing pages only; preview is not indexa
 
 test('approved email opens the mail application and never claims a submitted form', () => {
   assert.equal(releaseConfig.contactUrl, 'mailto:ujjald@mit.edu?subject=Request%20a%20UNIFIDE%20diagnostic');
-  for (const route of ['/company/contact/', '/diagnostic/']) {
+  for (const route of ['/company/', '/diagnostic/']) {
     const source = html(route);
     const contact = tags(source, 'a').filter(tag => tag.includes('data-contact-link'));
     assert.equal(contact.length, 1);
@@ -137,7 +218,7 @@ test('approved email opens the mail application and never claims a submitted for
   }
   assert.throws(() => createArtifact({ production: true, config: { ...releaseConfig, contactUrl: '' } }), /requires an approved/);
   const noContact = createArtifact({ config: { ...releaseConfig, contactUrl: '' } });
-  assert.match(html('/company/contact/', noContact), /disabled>Contact unavailable/);
+  assert.match(html('/company/', noContact), /disabled>Contact unavailable/);
   for (const contactUrl of ['javascript:alert(1)', 'http://example.com', 'https://user:pass@example.com', 'mailto:bad', 'mailto:a@example.com?bcc=someone@example.com', 'mailto:a@example.com?subject=hello%0aInjected']) {
     assert.throws(() => createArtifact({ config: { ...releaseConfig, contactUrl } }));
   }

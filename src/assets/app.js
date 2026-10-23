@@ -1,83 +1,31 @@
-const menuButton = document.querySelector('.menu-button');
-const mobileMenu = document.querySelector('#mobile-menu');
-
-menuButton?.addEventListener('click', () => {
-  const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-  menuButton.setAttribute('aria-expanded', String(!isOpen));
-  menuButton.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
-  mobileMenu.hidden = isOpen;
+// Native disclosure keeps the six category links usable without JavaScript.
+const mobileMenu = document.querySelector('details.mobile-menu');
+const menuButton = mobileMenu?.querySelector('summary');
+mobileMenu?.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => { mobileMenu.open = false; });
 });
-
-mobileMenu?.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    menuButton.setAttribute('aria-expanded', 'false');
-    mobileMenu.hidden = true;
-  });
-});
-
-document.querySelectorAll('.mobile-group > button').forEach((button) => {
-  button.addEventListener('click', () => {
-    const willOpen = button.getAttribute('aria-expanded') !== 'true';
-    button.setAttribute('aria-expanded', String(willOpen));
-    document.getElementById(button.getAttribute('aria-controls')).hidden = !willOpen;
-  });
-});
-
-document.querySelectorAll('[data-dropdown]').forEach((item) => {
-  const trigger = item.querySelector('.nav-trigger');
-  const links = [...item.querySelectorAll('.dropdown a')];
-  const canHover = window.matchMedia('(hover: hover)').matches;
-  let closeTimer;
-  let openedByHover = false;
-
-  const setOpen = (open) => {
-    clearTimeout(closeTimer);
-    if (open) {
-      document.querySelectorAll('[data-dropdown].is-open').forEach((other) => {
-        if (other === item) return;
-        other.classList.remove('is-open');
-        other.querySelector('.nav-trigger')?.setAttribute('aria-expanded', 'false');
-      });
-    }
-    if (!open) openedByHover = false;
-    item.classList.toggle('is-open', open);
-    trigger.setAttribute('aria-expanded', String(open));
-  };
-
-  trigger.addEventListener('click', () => {
-    const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-    setOpen(!isOpen || openedByHover);
-    openedByHover = false;
-  });
-  trigger.addEventListener('keydown', (event) => {
-    if (event.key !== 'ArrowDown') return;
+mobileMenu?.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && mobileMenu.open) {
     event.preventDefault();
-    event.stopPropagation();
-    setOpen(true);
-    links[0].focus();
-  });
-  item.addEventListener('keydown', (event) => {
-    const index = links.indexOf(document.activeElement);
-    if (event.key === 'Escape') {
-      setOpen(false);
-      trigger.focus();
-    } else if (index > -1 && (event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
-      event.preventDefault();
-      links[(index + (event.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length].focus();
-    }
-  });
-  item.addEventListener('focusout', (event) => {
-    if (!item.contains(event.relatedTarget)) setOpen(false);
-  });
-  if (canHover) {
-    item.addEventListener('mouseenter', () => {
-      if (trigger.getAttribute('aria-expanded') !== 'true') openedByHover = true;
-      setOpen(true);
-    });
-    item.addEventListener('mouseleave', () => { closeTimer = setTimeout(() => setOpen(false), 150); });
+    mobileMenu.open = false;
+    menuButton.focus();
   }
-  document.addEventListener('click', (event) => {
-    if (!item.contains(event.target)) setOpen(false);
+});
+mobileMenu?.addEventListener('focusout', event => {
+  if (event.relatedTarget && !mobileMenu.contains(event.relatedTarget)) mobileMenu.open = false;
+});
+document.addEventListener('click', event => {
+  if (mobileMenu && !mobileMenu.contains(event.target)) mobileMenu.open = false;
+});
+window.matchMedia('(min-width: 1121px)').addEventListener('change', event => {
+  if (event.matches && mobileMenu) mobileMenu.open = false;
+});
+
+// Keep native fragment navigation/history, while placing keyboard focus at the section.
+document.querySelectorAll('.on-page a, .skip-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const target = document.getElementById(link.hash.slice(1));
+    target?.focus({ preventScroll: true });
   });
 });
 

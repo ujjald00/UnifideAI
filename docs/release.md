@@ -29,7 +29,7 @@ Use Node 24.19.0. The website has no package dependencies. For local Cloudflare 
 
 Use the established Direct Upload process for the existing Pages project only after approval. Record the returned deployment ID and verify its status before retrying any uncertain result. Check actual production HTML, navigation, redirects, 404s, static asset hashes, contact links, and permitted non-mutating app checks. Do not claim success solely because upload completed.
 
-The verified baseline deployment is `11c6d416-bdae-4ae2-b092-5f9ba94c1d69`. Reconfirm it is still a successful production deployment and available for rollback. The private recovery snapshot contains all eight baseline assets plus their checksums; this public repository intentionally does not include old portrait files.
+Record the currently successful production deployment immediately before upload and confirm it is available for rollback. Do not use an older deployment ID from a historical note without checking it. The private recovery snapshot preserves the previous combined artifact and its checksums; this public repository intentionally does not include old portrait files.
 
 If this release causes missing app assets, broken entry routes, widespread marketing failures, or unintended disclosure, stop changes and request/execute the authorized rollback to the recorded successful production deployment. Verify the homepage, app bootstrap/bundle hashes, known routes and headers afterward. A deployment rollback does not undo DNS, credentials, permissions, or external services; those are deliberately outside this release.
 
