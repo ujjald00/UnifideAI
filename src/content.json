@@ -43,7 +43,7 @@
         ],
         "note": "Reported model results, not measured company performance."
       },
-      "kind": "Illustrative model",
+      "kind": "Model",
       "status": "Modeled example—not measured company performance."
     },
     {
@@ -108,7 +108,7 @@
         ],
         "note": "Illustrative records for review, not a real customer order."
       },
-      "kind": "Illustrative example",
+      "kind": "Example",
       "status": "Illustrative example—not a customer deployment."
     },
     {

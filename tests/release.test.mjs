@@ -270,7 +270,7 @@ test('equipment case keeps paired controls, defaults, and reported scenario boun
     assert.equal(source.includes('id="details"'), false);
     assert.equal(source.includes('href="#details"'), false);
     assert.doesNotMatch(source, /Academic case study/);
-    assert.ok(html('/resources/').includes(chain.kind === 'equipment' ? 'Illustrative model' : 'Illustrative example'));
+    assert.ok(html('/resources/').includes(`<p class="resource-kind">${chain.kind === 'equipment' ? 'Model' : 'Example'}</p>`));
   }
   const equipment = valueChains['optimization-methods'];
   assert.deepEqual(equipment.scenarios.map(item => [item.capacity, item.served]), [[100, 97.5], [90, 88.1], [70, 68.1]]);
@@ -339,7 +339,11 @@ test('minimal public copy excludes retired labels and routes while preserving ex
   assert.doesNotMatch(get(production, 'sitemap.xml'), /glasswing|glassing/i);
   assert.equal(routeConfig.redirects['/resources/glasswing-hackathon/'], '/resources/manufacturing-decisions/');
   assert.equal(production.files.has('resources/glasswing-hackathon/index.html'), false);
-  assert.match(html('/resources/'), /Illustrative example/);
+  assert.match(html('/resources/'), /<p class="resource-kind">Example<\/p>/);
+  assert.match(html('/resources/optimization-methods/'), /<p class="eyebrow">Model<\/p>/);
+  for (const route of ['/resources/', '/resources/optimization-methods/', '/resources/manufacturing-decisions/']) {
+    assert.doesNotMatch(html(route), /Illustrative model|Illustrative example/, route);
+  }
   assert.match(html('/resources/optimization-methods/'), /Modeled example/);
 });
 
