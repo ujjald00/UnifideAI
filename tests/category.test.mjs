@@ -36,8 +36,8 @@ test('category pages are concise, distinct, and fully available before scripting
     assert.equal(count, 3, route);
     assert.ok(textOnly(main).split(/\s+/).length <= 250, route);
     assert.doesNotMatch(main, /\shidden|<details|<iframe|<video/, route);
+    assert.doesNotMatch(main, /class="wrap on-page"|aria-label="On this page"/, route);
     for (const [, id] of main.matchAll(/<section class="category-section" id="([^"]+)" tabindex="-1"/g)) {
-      assert.ok(main.includes(`href="#${id}"`), `${route}: missing section jump`);
       assert.ok(main.includes(`id="${id}-title"`), `${route}: missing accessible heading`);
     }
   }
@@ -50,13 +50,29 @@ test('category pages are concise, distinct, and fully available before scripting
   assert.doesNotMatch(html('/resources/'), /data-value-chain/);
 });
 
+test('section bookmarks survive without shortcut rows and the long case keeps its navigation', () => {
+  const expected = {
+    '/solutions/': ['industry-ai-models', 'efficient-ai-deployment', 'enterprise-decision-optimization'],
+    '/product/': ['workflow', 'inputs-and-outputs', 'human-control'],
+    '/capabilities/': ['model-post-training-and-evaluation', 'model-compression-and-efficient-inference', 'decision-optimization'],
+    '/industries/': ['semiconductor-and-advanced-manufacturing', 'data-centres', 'energy-and-grid-infrastructure'],
+    '/resources/': ['optimization-methods', 'manufacturing-decisions', 'wbg-policy-research'],
+    '/company/': ['purpose', 'co-founders', 'contact'],
+    '/security/': ['data-and-access-controls', 'deployment-options', 'human-approval-and-controlled-writeback'],
+  };
+  for (const [route, ids] of Object.entries(expected)) {
+    assert.deepEqual([...html(route).matchAll(/<section class="category-section" id="([^"]+)" tabindex="-1"/g)].map(match => match[1]), ids, route);
+  }
+  assert.match(html('/resources/optimization-methods/'), /<nav class="case-jump" aria-label="On this page">/);
+});
+
 function menuHarness() {
   const handlers = new Map();
   const listen = name => (type, fn) => handlers.set(`${name}:${type}`, fn);
   const summary = { focusCount: 0, focus() { this.focusCount++; } };
   const link = { addEventListener: listen('link') };
   const target = { focusOptions: null, focus(options) { this.focusOptions = options; } };
-  const jump = { hash: '#workflow', addEventListener: listen('jump') };
+  const jump = { hash: '#main', addEventListener: listen('jump') };
   const menu = {
     open: false,
     querySelector: () => summary,
@@ -67,7 +83,7 @@ function menuHarness() {
   const document = {
     querySelector: selector => selector === 'details.mobile-menu' ? menu : null,
     querySelectorAll: selector => selector === '.on-page a, .skip-link' ? [jump] : [],
-    getElementById: id => id === 'workflow' ? target : null,
+    getElementById: id => id === 'main' ? target : null,
     addEventListener: listen('document'),
   };
   const window = { matchMedia: () => ({ addEventListener: listen('media') }) };
@@ -96,7 +112,7 @@ test('mobile menu closes on escape, selection, outside focus/click, and desktop 
   assert.equal(summary.focusCount, 1, 'Only Escape should move focus to the toggle');
 });
 
-test('section links focus their target without replacing native URL or history navigation', () => {
+test('skip links focus main content without replacing native URL or history navigation', () => {
   const { handlers, target } = menuHarness();
   handlers.get('jump:click')({ preventDefault() { throw new Error('Native navigation must not be cancelled'); } });
   assert.equal(target.focusOptions.preventScroll, true);
