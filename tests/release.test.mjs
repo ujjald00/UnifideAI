@@ -251,12 +251,12 @@ test('approved email opens the mail application and never claims a submitted for
   }
 });
 
-test('case chains keep correct paired controls, defaults, and reported scenario bounds', () => {
-  for (const [slug, chain] of Object.entries(valueChains)) {
+test('equipment case keeps paired controls, defaults, and reported scenario bounds', () => {
+  for (const [slug, chain] of Object.entries(valueChains).filter(([, chain]) => chain.kind === 'equipment')) {
     const source = html(`/resources/${slug}/`);
     const buttons = tags(source, 'button').filter(tag => attr(tag, 'data-vc-stage'));
     const panels = tags(source, 'section').filter(tag => attr(tag, 'data-vc-panel'));
-    assert.equal(buttons.length, chain.kind === 'equipment' ? 5 : 7);
+    assert.equal(buttons.length, 5);
     assert.equal(panels.length, buttons.length);
     assert.equal(buttons.filter(tag => attr(tag, 'aria-pressed') === 'true').length, 1);
     assert.equal(panels.filter(tag => !/\shidden(?:\s|>)/.test(tag)).length, 1);
@@ -287,6 +287,23 @@ test('case chains keep correct paired controls, defaults, and reported scenario 
   assert.ok(html('/resources/manufacturing-decisions/').includes('not a customer deployment'));
 });
 
+test('manufacturing case has only three short summary sections and preserves old anchors', () => {
+  const source = html('/resources/manufacturing-decisions/');
+  const summary = source.match(/<article class="wrap category-content" aria-label="Case study summary">([\s\S]*?)<\/article>/)?.[1];
+  assert.ok(summary);
+  assert.deepEqual([...summary.matchAll(/<h2\b[^>]*>([^<]+)<\/h2>/g)].map(match => match[1]), ['The problem', 'The overall approach', 'The value']);
+  assert.equal(tags(source, 'h2').length, 3);
+  assert.deepEqual(tags(summary, 'section').map(tag => attr(tag, 'id')), ['challenge', 'approach', 'findings']);
+  assert.equal(tags(summary, 'p').length, 3);
+  const words = summary.replace(/<[^>]+>/g, ' ').trim().split(/\s+/);
+  assert.ok(words.length <= 90, `Summary grew to ${words.length} words`);
+  assert.match(summary, /ERP, CRM, and MES/);
+  assert.match(summary, /for people to review/);
+  assert.match(source, /Illustrative example—not a customer deployment/);
+  assert.doesNotMatch(source, /case-facts|case-jump|case-related|data-value-chain|data-vc-|Worked example|5 personas|<button|<details(?! class="mobile-menu")/);
+  assert.doesNotMatch(html('/resources/'), /Follow a customer commitment/);
+});
+
 test('minimal public copy excludes retired labels and routes while preserving example context', () => {
   for (const [name, bytes] of pageHTML()) {
     assert.doesNotMatch(bytes.toString(), /synthetic|prototypes?|glasswing|glassing|scope\s*&(?:amp;)?\s*limits|Project notes/i, name);
@@ -294,7 +311,7 @@ test('minimal public copy excludes retired labels and routes while preserving ex
   assert.doesNotMatch(get(production, 'sitemap.xml'), /glasswing|glassing/i);
   assert.equal(routeConfig.redirects['/resources/glasswing-hackathon/'], '/resources/manufacturing-decisions/');
   assert.equal(production.files.has('resources/glasswing-hackathon/index.html'), false);
-  assert.match(html('/resources/manufacturing-decisions/'), /Illustrative ERP, CRM and MES records/);
+  assert.match(html('/resources/manufacturing-decisions/'), /Illustrative example—not a customer deployment/);
   assert.match(html('/resources/optimization-methods/'), /Modeled example/);
 });
 

@@ -51,6 +51,23 @@
       "title": "A manufacturing company",
       "description": "Evidence-led manufacturing decisions",
       "lede": "Compare conflicting sales, inventory, and production records in one decision workspace.",
+      "summary": [
+        {
+          "id": "challenge",
+          "title": "The problem",
+          "text": "Sales, inventory, and production records can disagree. Teams need to know what they can make and ship before confirming a customer promise."
+        },
+        {
+          "id": "approach",
+          "title": "The overall approach",
+          "text": "Bring ERP, CRM, and MES records into one view. Flag conflicting or missing information for people to review."
+        },
+        {
+          "id": "findings",
+          "title": "The value",
+          "text": "A clearer view of what is known, what needs checking, and who needs to act before a commitment is approved."
+        }
+      ],
       "facts": [
         {
           "value": "Data across",
@@ -92,7 +109,7 @@
         "note": "Illustrative records for review, not a real customer order."
       },
       "kind": "Illustrative example",
-      "status": "Illustrative ERP, CRM and MES records—not a customer deployment."
+      "status": "Illustrative example—not a customer deployment."
     }
   ]
 }
