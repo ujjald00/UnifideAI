@@ -50,7 +50,7 @@ test('category pages are concise, distinct, and fully available before scripting
   assert.doesNotMatch(html('/resources/'), /data-value-chain/);
 });
 
-test('section bookmarks survive without shortcut rows and the long case keeps its navigation', () => {
+test('section bookmarks survive without shortcut rows on categories and short cases', () => {
   const expected = {
     '/solutions/': ['industry-ai-models', 'efficient-ai-deployment', 'enterprise-decision-optimization'],
     '/product/': ['workflow', 'inputs-and-outputs', 'human-control'],
@@ -63,7 +63,11 @@ test('section bookmarks survive without shortcut rows and the long case keeps it
   for (const [route, ids] of Object.entries(expected)) {
     assert.deepEqual([...html(route).matchAll(/<section class="category-section" id="([^"]+)" tabindex="-1"/g)].map(match => match[1]), ids, route);
   }
-  assert.match(html('/resources/optimization-methods/'), /<nav class="case-jump" aria-label="On this page">/);
+  for (const slug of ['optimization-methods', 'manufacturing-decisions', 'wbg-policy-research']) {
+    const source = html(`/resources/${slug}/`);
+    assert.deepEqual([...source.matchAll(/<section class="category-section" id="([^"]+)" tabindex="-1"/g)].map(match => match[1]), ['challenge', 'approach', 'findings']);
+    assert.doesNotMatch(source, /case-jump|aria-label="On this page"/);
+  }
 });
 
 function menuHarness() {

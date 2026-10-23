@@ -5,6 +5,23 @@
       "title": "A semiconductor capital equipment company",
       "description": "Planning production under supply constraints",
       "lede": "Planning semiconductor equipment production when component supply is limited.",
+      "summary": [
+        {
+          "id": "challenge",
+          "title": "The problem",
+          "text": "A missing component can delay equipment production, even when factory capacity is available."
+        },
+        {
+          "id": "approach",
+          "title": "The overall approach",
+          "text": "An optimization model links purchasing, production, inventory, and shipments. It compares plans when component supply falls."
+        },
+        {
+          "id": "findings",
+          "title": "The value",
+          "text": "See how supply limits change output and how much customer demand each plan can support."
+        }
+      ],
       "facts": [
         {
           "value": "2 factories",

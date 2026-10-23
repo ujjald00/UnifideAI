@@ -23,7 +23,7 @@ The default build is non-indexable preview output. Production builds require an 
 
 `config/routes.json` is the complete marketing route allowlist, plus exact legacy redirects. The site has 13 canonical marketing pages: six scrollable categories, three cases, the homepage, Security & Trust, the diagnostic page, and Privacy. Navigation links open categories directly. Short pages omit duplicate section-shortcut rows; section bookmarks still work. The mobile menu uses a native disclosure and works without JavaScript.
 
-Category copy lives in `src/category-content.mjs`; `src/content.json` contains the three case records. Shared markup lives in `src/render.mjs`. The equipment case retains its interactive value chain; manufacturing and WBG use short static summaries. The full WBG report and detailed research module remain excluded. `config/route-migration.json` records all 16 retired pages and the 23 previous redirects. Every one points directly to a retained page or a validated section ID; no broad SPA fallback is generated. See [Scrollable-page contract](docs/scrollable-pages.md).
+Category copy lives in `src/category-content.mjs`; `src/content.json` contains the three case records. Shared markup lives in `src/render.mjs`. All three cases use short static summaries. Equipment and manufacturing each cover problem, approach, and value; WBG covers its research problem, value chain, and outcomes. Earlier model data remains in source, but detailed controls and metrics are not rendered. The full WBG report and detailed research module remain excluded. `config/route-migration.json` records all 16 retired pages and the 23 previous redirects. Every one points directly to a retained page or a validated section ID; no broad SPA fallback is generated. See [Scrollable-page contract](docs/scrollable-pages.md).
 
 Unverified affiliations are not presented. Platform copy describes a proposed workspace; Security & Trust retains its specific design-principles notice. Neither claims certifications or deployed controls.
 
@@ -39,6 +39,6 @@ The application `/dashboard`, `/login`, `/demo`, `/jobs`, `/api`, and `/assets` 
 
 ## Verification and release handoff
 
-Tests cover clean-output reproducibility, route ownership, package allowlisting, internal links and anchors, metadata, case controls and reported scenario bounds, approved mailto behavior, strict CSP compatibility, and preservation of the source tree. Browser testing and the application integration check are additional release gates, not substitutes for these tests.
+Tests cover clean-output reproducibility, route ownership, package allowlisting, internal links and anchors, metadata, concise case summaries and retained source-data bounds, approved mailto behavior, strict CSP compatibility, and preservation of the source tree. Browser testing and the application integration check are additional release gates, not substitutes for these tests.
 
 No Git repository, remote, credential, deployment target, or production release is created by these scripts. The included GitHub workflow runs checks with read-only permissions and has no deployment credentials. See [Release procedure](docs/release.md). Keep the last known-good full-site artifact and routing configuration for rollback.
