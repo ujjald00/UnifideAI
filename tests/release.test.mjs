@@ -416,9 +416,8 @@ test('repeated approach notice is removed everywhere without changing specific s
   }
   assert.match(html('/product/'), /A proposed workspace/);
   assert.match(html('/industries/'), /exploratory areas/);
-  assert.match(html('/security/'), /Proposed design principles/);
-  assert.match(html('/security/'), /not a certification or a claim that these controls are deployed/);
-  assert.match(html('/'), /In development/);
+  assert.match(html('/security/'), /Proposed principles for keeping data access and business actions under human control/);
+  assert.match(html('/'), /UNIFIDE is developing tools/);
 });
 
 test('privacy notice is brief, marketing-scoped, and reachable from every footer', () => {

@@ -25,7 +25,7 @@ The default build is non-indexable preview output. Production builds require an 
 
 Category copy lives in `src/category-content.mjs`; `src/content.json` contains the three case records. Shared markup lives in `src/render.mjs`. All three cases use short static summaries. Equipment and manufacturing each cover problem, approach, and value; WBG covers its research problem, value chain, and outcomes. Earlier model data remains in source, but detailed controls and metrics are not rendered. The full WBG report and detailed research module remain excluded. `config/route-migration.json` records all 16 retired pages and the 23 previous redirects. Every one points directly to a retained page or a validated section ID; no broad SPA fallback is generated. See [Scrollable-page contract](docs/scrollable-pages.md).
 
-Unverified affiliations are not presented. Platform copy describes a proposed workspace; Security & Trust retains its specific design-principles notice. Neither claims certifications or deployed controls.
+Unverified affiliations are not presented. Platform copy describes a proposed workspace; Security & Trust describes proposed principles. Neither claims certifications or deployed controls.
 
 Static assets use content-hashed filenames under `/_marketing/`. This avoids the application's asset namespace. `_headers` is scoped to marketing paths and assets rather than to the entire domain. A strict self-hosted CSP is supported without inline scripts or style attributes. Hostname aliases, TLS and existing application policies remain separate deployment concerns.
 
