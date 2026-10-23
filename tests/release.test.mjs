@@ -5,6 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { createArtifact, buildSite, scanFiles, root, releaseConfig, routeConfig, compositionConfig, validateConfig, parseRedirectDestination, validateRenderedRedirectTargets, routeFile, isReserved } from '../scripts/build.mjs';
 import { valueChains } from '../src/value-chains/render.mjs';
+import { readInsights, insightRoutes, isSafeArticleHref } from '../src/insights/model.mjs';
 
 const production = createArtifact({ production: true });
 const preview = createArtifact();
@@ -12,7 +13,7 @@ const get = (artifact, filename) => artifact.files.get(filename)?.toString();
 const html = (route, artifact = production) => get(artifact, routeFile(route));
 const tags = (source, name) => [...source.matchAll(new RegExp(`<${name}\\b[^>]*>`, 'g'))].map(match => match[0]);
 const attr = (tag, key) => tag.match(new RegExp(`(?:^|\\s)${key}="([^"]*)"`))?.[1];
-const decode = value => value.replaceAll('&amp;', '&').replaceAll('&quot;', '"').replaceAll('&lt;', '<').replaceAll('&gt;', '>');
+const decode = value => value.replaceAll('&amp;', '&').replaceAll('&quot;', '"').replaceAll('&#39;', "'").replaceAll('&lt;', '<').replaceAll('&gt;', '>');
 const pageHTML = () => [...production.files].filter(([name]) => name.endsWith('.html'));
 const founderProfiles = [
   ['Ujjal Dutta', 'https://www.linkedin.com/in/ujjaldutta/'],
@@ -20,6 +21,32 @@ const founderProfiles = [
   ['Mathieu Dahan', 'https://www.linkedin.com/in/mathieudahan/'],
 ];
 const migration = JSON.parse(fs.readFileSync(path.join(root, 'config/route-migration.json'), 'utf8'));
+const insights = readInsights();
+function approvedInsightHrefs(post) {
+  const allowed = new Set([post.sourceUrl]);
+  const addPlainURLs = text => {
+    for (const match of text.matchAll(/https?:\/\/[^\s<>"'\u201C\u201D\u2018\u2019]+/g)) {
+      let candidate = match[0].replace(/[.,;:!?]+$/, '');
+      for (const [open, close] of [['(', ')'], ['[', ']'], ['{', '}']]) while (candidate.endsWith(close) && candidate.split(close).length > candidate.split(open).length) candidate = candidate.slice(0, -1);
+      if (isSafeArticleHref(candidate)) allowed.add(candidate);
+    }
+  };
+  const addText = item => {
+    if (typeof item === 'string') { addPlainURLs(item); return; }
+    let cursor = 0;
+    for (const link of item.links || []) {
+      addPlainURLs(item.text.slice(cursor, link.start));
+      allowed.add(link.href);
+      cursor = link.end;
+    }
+    addPlainURLs(item.text.slice(cursor));
+  };
+  for (const block of post.blocks) {
+    if (block.type === 'list') block.items.forEach(addText);
+    else if (block.type !== 'image') addText(block);
+  }
+  return allowed;
+}
 const expectedRedirects = {
   ...migration.retiredPages,
   ...Object.fromEntries(Object.entries(migration.previousRedirects).map(([source, previous]) => [source, migration.legacyDestinationOverrides[source] || migration.retiredPages[previous] || previous])),
@@ -38,7 +65,7 @@ test('reviewed migration retains thirteen pages and flattens every retired or pr
   for (const source of Object.keys(migration.legacyDestinationOverrides)) assert.ok(Object.hasOwn(migration.previousRedirects, source), `Unexpected override: ${source}`);
   const sources = [...Object.keys(migration.retiredPages), ...Object.keys(migration.previousRedirects)];
   assert.equal(new Set(sources).size, sources.length, 'Migration sources must not overlap');
-  assert.deepEqual(routeConfig.pages, migration.canonicalPages);
+  assert.deepEqual(routeConfig.pages, [...migration.canonicalPages, ...insightRoutes(insights)]);
   assert.deepEqual(routeConfig.redirects, expectedRedirects);
   for (const source of sources) {
     assert.equal(production.files.has(routeFile(source)), false, `Retired page is still published: ${source}`);
@@ -49,17 +76,18 @@ test('reviewed migration retains thirteen pages and flattens every retired or pr
 });
 
 test('explicit public routes and packaged assets are complete and isolated', () => {
-  assert.equal(routeConfig.pages.length, migration.canonicalPages.length);
+  assert.equal(routeConfig.pages.length, migration.canonicalPages.length + insightRoutes(insights).length);
   assert.equal(Object.keys(routeConfig.redirects).length, Object.keys(expectedRedirects).length);
   assert.deepEqual(Object.keys(valueChains).sort(), ['manufacturing-decisions', 'optimization-methods']);
   const expected = new Set([...routeConfig.pages.map(routeFile), '404.html', 'sitemap.xml', 'robots.txt', '_headers', '_redirects']);
   for (const [name] of production.files) {
-    if (name.startsWith('_marketing/')) assert.match(name, /^_marketing\/(?:styles\.[a-f0-9]{12}\.css|app\.[a-f0-9]{12}\.js|icon\.[a-f0-9]{12}\.svg)$/);
+    if (name.startsWith('_marketing/')) assert.match(name, /^_marketing\/(?:(?:styles\.[a-f0-9]{12}\.css|(?:app|insights)\.[a-f0-9]{12}\.js|icon\.[a-f0-9]{12}\.svg)|media\/[a-f0-9]{64}\.(?:png|jpg|jpeg|webp))$/);
     else assert.ok(expected.delete(name), `Unexpected artifact file: ${name}`);
     assert.equal(isReserved(`/${name}`), false, `Application collision: ${name}`);
   }
   assert.equal(expected.size, 0);
-  assert.equal(production.files.size, migration.canonicalPages.length + 8);
+  const mediaCount = new Set(insights.flatMap(post => post.media.map(item => item.src))).size;
+  assert.equal(production.files.size, routeConfig.pages.length + 9 + mediaCount);
   assert.ok(compositionConfig.reservedAppPrefixes.includes('/__app'));
 });
 
@@ -78,12 +106,21 @@ test('page metadata, unique IDs, internal links, anchors, and control references
     for (const [, reference] of source.matchAll(/\saria-(?:controls|labelledby)="([^"]+)"/g)) {
       for (const id of reference.split(' ')) assert.ok(ids.includes(id), `Broken ARIA reference ${name}: ${id}`);
     }
-    for (const [, encoded] of source.matchAll(/\s(?:href|src)="([^"]+)"/g)) {
+    for (const [, attribute, encoded] of source.matchAll(/\s(href|src)="([^"]+)"/g)) {
       let ref = decode(encoded);
       if (ref.startsWith('mailto:')) { assert.equal(ref, releaseConfig.contactUrl); continue; }
-      if (founderProfiles.some(([, url]) => ref === url)) {
-        assert.equal(name, 'company/index.html', 'Founder profiles belong only on Company');
-        assert.ok(source.includes(`<a href="${ref}"`), 'Profiles must be links, not embedded resources');
+      if (name === 'company/index.html' && founderProfiles.some(([, url]) => ref === url)) {
+        assert.equal(attribute, 'href', 'Profiles must be links, not embedded resources');
+        assert.ok(tags(source, 'a').some(tag => attr(tag, 'href') === encoded), 'Profiles must be anchor links');
+        continue;
+      }
+      if (/^https?:\/\//.test(ref) && !ref.startsWith(releaseConfig.siteUrl)) {
+        const post = insights.find(item => name === `resources/insights/${item.slug}/index.html`);
+        assert.ok(post, `External content links belong only to insight details: ${name}`);
+        assert.ok(isSafeArticleHref(ref), `Unsafe insight link: ${ref}`);
+        assert.ok(approvedInsightHrefs(post).has(ref), `Unreviewed insight link: ${ref}`);
+        assert.equal(attribute, 'href', 'External references must not be embedded');
+        assert.ok(tags(source, 'a').some(tag => attr(tag, 'href') === encoded), 'External references must be anchor links');
         continue;
       }
       if (ref.startsWith(releaseConfig.siteUrl)) {
@@ -114,11 +151,31 @@ test('page metadata, unique IDs, internal links, anchors, and control references
   }
 });
 
+test('article citation allowlists require declared rich links or complete unannotated URL text', () => {
+  const profile = founderProfiles[1][1];
+  const post = { sourceUrl: 'https://www.linkedin.com/posts/test/', blocks: [
+    { type: 'paragraph', text: 'Saurabh', links: [{ start: 0, end: 7, href: profile }] },
+    { type: 'list', items: [{ text: 'Paper', links: [{ start: 0, end: 5, href: 'https://example.com/paper' }] }, 'Read https://example.com/plain.'] },
+    { type: 'paragraph', text: 'https://example.com/label', links: [{ start: 0, end: 25, href: 'https://example.com/target' }] },
+  ] };
+  const allowed = approvedInsightHrefs(post);
+  assert.ok(allowed.has(profile));
+  assert.ok(allowed.has('https://example.com/paper'));
+  assert.ok(allowed.has('https://example.com/plain'));
+  assert.ok(allowed.has('https://example.com/target'));
+  assert.equal(allowed.has('https://example.com/label'), false);
+  assert.equal(allowed.has('https://example.com/pla'), false);
+  assert.equal(allowed.has(founderProfiles[0][1]), false);
+  assert.equal(allowed.has('https://unreviewed.example/'), false);
+  const css = fs.readFileSync(path.join(root, 'src/assets/styles.css'), 'utf8');
+  assert.match(css, /\.insight-media img\s*\{[^}]*\bwidth:\s*auto;[^}]*max-width:\s*100%;/);
+});
+
 test('strict CSP is path-scoped and compatible with self-hosted markup', () => {
   const headers = get(production, '_headers');
   const scopes = headers.split('\n').filter(line => line.startsWith('/'));
   assert.equal(scopes.includes('/*'), false);
-  assert.equal(scopes.filter(scope => scope.includes('*')).join(), '/_marketing/*');
+  assert.deepEqual(scopes.filter(scope => scope.includes('*')).sort(), ['/_marketing/*', '/resources/insights/*'].sort());
   for (const scope of scopes) assert.equal(isReserved(scope), false, scope);
   assert.match(headers, /default-src 'none'/);
   assert.match(headers, /form-action 'none'; connect-src 'none'/);
@@ -130,8 +187,10 @@ test('strict CSP is path-scoped and compatible with self-hosted markup', () => {
     assert.equal(tags(source, 'style').length, 0, name);
     assert.equal(tags(source, 'form').length, 0, name);
   }
-  const app = fs.readFileSync(path.join(root, 'src/assets/app.js'), 'utf8');
-  assert.doesNotMatch(app, /\bfetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon|localStorage|sessionStorage|\.submit\s*\(/);
+  for (const filename of ['app.js', 'insights.js']) {
+    const script = fs.readFileSync(path.join(root, 'src/assets', filename), 'utf8');
+    assert.doesNotMatch(script, /\bfetch\s*\(|XMLHttpRequest|WebSocket|sendBeacon|localStorage|sessionStorage|\.submit\s*\(/, filename);
+  }
   const styles = fs.readFileSync(path.join(root, 'src/assets/styles.css'), 'utf8');
   assert.doesNotMatch(styles, /@import|url\(/);
 });

@@ -3,12 +3,15 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { renderSite, escapeHTML } from '../src/render.mjs';
+import { readInsights, insightRoutes, validateInsights, MEDIA_PATH } from '../src/insights/model.mjs';
 
 export const root = fileURLToPath(new URL('../', import.meta.url));
 export const sha256 = data => crypto.createHash('sha256').update(data).digest('hex');
 const readJSON = name => JSON.parse(fs.readFileSync(path.join(root, 'config', name), 'utf8'));
 export const releaseConfig = readJSON('release.json');
-export const routeConfig = readJSON('routes.json');
+export const baseRouteConfig = readJSON('routes.json');
+export const insightPosts = readInsights();
+export const routeConfig = { ...baseRouteConfig, pages: [...new Set([...baseRouteConfig.pages, ...insightRoutes(insightPosts)])] };
 export const compositionConfig = readJSON('composition.json');
 const routePattern = /^\/(?:[a-z0-9]+(?:-[a-z0-9]+)*\/)*$/;
 const fragmentPattern = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/;
@@ -61,28 +64,98 @@ export function validateConfig(config, routes, production) {
   for (const route of config.searchDisallowPaths || []) if (!/^\/[a-z0-9/-]+$/.test(route)) throw new Error('Invalid search path');
 }
 
-function headersFor(routes, production) {
+export function headersFor(routes, production) {
   const policy = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'none'; connect-src 'none'";
   const htmlPaths = new Set(['/404.html']);
   for (const route of routes) {
+    if (route.startsWith('/resources/insights/')) continue;
     htmlPaths.add(route);
     htmlPaths.add(`/${routeFile(route)}`);
     if (route !== '/') htmlPaths.add(route.slice(0, -1));
   }
+  if (routes.some(route => route.startsWith('/resources/insights/'))) {
+    htmlPaths.add('/resources/insights');
+    htmlPaths.add('/resources/insights/*');
+  }
   return [...htmlPaths].sort().map(route => `${route}\n  Content-Security-Policy: ${policy}\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n  Cache-Control: public, max-age=0, must-revalidate${!production || route === '/404.html' ? '\n  X-Robots-Tag: noindex, nofollow' : ''}\n`).join('\n') + '\n/_marketing/*\n  Cache-Control: public, max-age=31536000, immutable\n  X-Content-Type-Options: nosniff\n';
+}
+
+export function imageDimensions(bytes, extension) {
+  if (extension === 'png') {
+    if (bytes.length < 33 || !bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])) || bytes.toString('ascii', 12, 16) !== 'IHDR' || bytes.readUInt32BE(8) !== 13) throw new Error('Invalid PNG image');
+    return { width: bytes.readUInt32BE(16), height: bytes.readUInt32BE(20) };
+  }
+  if (extension === 'jpg' || extension === 'jpeg') {
+    if (bytes.length < 4 || bytes[0] !== 0xff || bytes[1] !== 0xd8) throw new Error('Invalid JPEG image');
+    let cursor = 2;
+    const frames = new Set([0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7, 0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf]);
+    while (cursor + 3 < bytes.length) {
+      if (bytes[cursor++] !== 0xff) throw new Error('Invalid JPEG marker');
+      while (bytes[cursor] === 0xff) cursor++;
+      const marker = bytes[cursor++];
+      if (marker === 0xda || marker === 0xd9) break;
+      if (marker === 0x01 || (marker >= 0xd0 && marker <= 0xd7)) continue;
+      if (cursor + 2 > bytes.length) break;
+      const length = bytes.readUInt16BE(cursor);
+      if (length < 2 || cursor + length > bytes.length) throw new Error('Invalid JPEG segment');
+      if (frames.has(marker)) {
+        if (length < 8) throw new Error('Invalid JPEG frame');
+        return { width: bytes.readUInt16BE(cursor + 5), height: bytes.readUInt16BE(cursor + 3) };
+      }
+      cursor += length;
+    }
+    throw new Error('JPEG dimensions were not found');
+  }
+  if (extension === 'webp') {
+    if (bytes.length < 25 || bytes.toString('ascii', 0, 4) !== 'RIFF' || bytes.toString('ascii', 8, 12) !== 'WEBP' || bytes.readUInt32LE(4) + 8 !== bytes.length) throw new Error('Invalid WebP image');
+    const kind = bytes.toString('ascii', 12, 16);
+    if (kind === 'VP8X' && bytes.length >= 30) return { width: bytes.readUIntLE(24, 3) + 1, height: bytes.readUIntLE(27, 3) + 1 };
+    if (kind === 'VP8 ' && bytes.length >= 30 && bytes.subarray(23, 26).equals(Buffer.from([157, 1, 42]))) return { width: bytes.readUInt16LE(26) & 0x3fff, height: bytes.readUInt16LE(28) & 0x3fff };
+    if (kind === 'VP8L' && bytes[20] === 0x2f) { const bits = bytes.readUInt32LE(21); return { width: (bits & 0x3fff) + 1, height: ((bits >>> 14) & 0x3fff) + 1 }; }
+    throw new Error('Unsupported WebP image header');
+  }
+  throw new Error('Unsupported public image type');
+}
+
+export function packageInsightMedia(records, { mediaDirectory = path.join(root, 'src/insights/media') } = {}) {
+  const media = new Map();
+  for (const post of validateInsights(records)) for (const item of post.media) {
+    const previous = media.get(item.src);
+    if (previous && (previous.width !== item.width || previous.height !== item.height)) throw new Error('Conflicting metadata for shared Insights image');
+    media.set(item.src, item);
+  }
+  const expected = new Set([...media.keys()].map(src => path.basename(src)));
+  if (fs.existsSync(mediaDirectory)) {
+    if (!fs.lstatSync(mediaDirectory).isDirectory() || fs.lstatSync(mediaDirectory).isSymbolicLink()) throw new Error('Public media directory must not be a symlink');
+    for (const entry of fs.readdirSync(mediaDirectory, { withFileTypes: true })) if (!entry.isFile() || entry.isSymbolicLink() || !expected.has(entry.name)) throw new Error('Unreferenced, nested, or symlinked public media file');
+  } else if (expected.size) throw new Error('Declared public media directory is missing');
+  const files = new Map();
+  for (const [src, item] of [...media].sort(([a], [b]) => a.localeCompare(b))) {
+    const [, expectedHash, extension] = src.match(MEDIA_PATH);
+    const filename = path.join(mediaDirectory, path.basename(src));
+    const stat = fs.lstatSync(filename);
+    if (!stat.isFile() || stat.isSymbolicLink() || stat.size > 10 * 1024 * 1024) throw new Error('Public image must be a regular file of at most 10 MiB');
+    const bytes = fs.readFileSync(filename);
+    if (sha256(bytes) !== expectedHash) throw new Error('Public image hash does not match its declared filename');
+    const dimensions = imageDimensions(bytes, extension);
+    if (dimensions.width !== item.width || dimensions.height !== item.height) throw new Error('Public image dimensions do not match the declared metadata');
+    files.set(src.slice(1), bytes);
+  }
+  return files;
 }
 
 export function createArtifact({ production = false, config = releaseConfig, routes = routeConfig } = {}) {
   validateConfig(config, routes, production);
   const files = new Map();
   const assets = {};
-  for (const [key, filename] of Object.entries({ styles: 'styles.css', app: 'app.js', icon: 'icon.svg' })) {
+  for (const [key, filename] of Object.entries({ styles: 'styles.css', app: 'app.js', insights: 'insights.js', icon: 'icon.svg' })) {
     const source = fs.readFileSync(path.join(root, 'src/assets', filename));
     const parsed = path.parse(filename);
     const output = `_marketing/${parsed.name}.${sha256(source).slice(0, 12)}${parsed.ext}`;
     files.set(output, source);
     assets[key] = `/${output}`;
   }
+  for (const [filename, bytes] of packageInsightMedia(insightPosts)) files.set(filename, bytes);
   const { pages, notFound } = renderSite(config, assets, { production });
   if (JSON.stringify([...pages.keys()].sort()) !== JSON.stringify([...routes.pages].sort())) throw new Error('Rendered routes do not match the explicit page allowlist');
   validateRenderedRedirectTargets(routes, pages);

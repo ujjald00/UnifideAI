@@ -1,0 +1,3055 @@
+[
+  {
+    "id": "7494920787334770689",
+    "slug": "ai-accelerator-demand-from-disruption-to-decision",
+    "title": "AI accelerator demand: from disruption to decision",
+    "excerpt": "How UNIFIDE connects supply, capacity, finance, and human approval when AI accelerator demand changes.",
+    "publishedAt": "2026-08-17",
+    "datePrecision": "month",
+    "author": "Ujjal Dutta",
+    "sourceUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7494920787334770689/",
+    "topics": [
+      "Enterprise AI",
+      "Semiconductors"
+    ],
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "A 25% spike in AI accelerator demand hits."
+      },
+      {
+        "type": "paragraph",
+        "text": "Your primary OSAT is already at maximum advanced-packaging capacity.\nThe real question isn’t just, “What changed?”"
+      },
+      {
+        "type": "paragraph",
+        "text": "It’s:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Which customer commitments are still safe?",
+          "Where should volume move?",
+          "What will it cost in margin and cycle time?",
+          "Which qualifications and approvals stand in the way?"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "This is the decision gap UNIFIDE is built to close."
+      },
+      {
+        "type": "paragraph",
+        "text": "UNIFIDE’s agentic platform brings demand, supply, capacity, procurement, finance, risk, and compliance into one human-governed decision system.\nTeams can ask operational questions in plain language, test feasible alternatives using optimization under uncertainty, understand the tradeoffs, and move from alerts to prioritized, approval-ready action."
+      },
+      {
+        "type": "paragraph",
+        "text": "In this demo, UNIFIDE:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Surfaces disruptions and planning risks",
+          "Prioritizes actions by urgency",
+          "Evaluates scenarios based on each role’s functional needs",
+          "Quantifies shortage, margin, cycle-time, and qualification impacts",
+          "Keeps decision-makers and cross-functional teams in control through execution"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "UNIFIDE works with existing ERP, MES, planning, and supplier systems. It doesn’t replace them or make commitments autonomously."
+      },
+      {
+        "type": "paragraph",
+        "text": "AI interprets change.\nMath tests feasibility.\nAgents coordinate decision workflows across teams.\nPeople govern decisions."
+      },
+      {
+        "type": "paragraph",
+        "text": "See sales, supply, capacity, and finance as one decision system."
+      },
+      {
+        "type": "paragraph",
+        "text": "If you lead semiconductor operations, procurement, manufacturing, or FP&A, where does your team lose the most time: detecting risks, reconciling evidence, or approving responses?"
+      },
+      {
+        "type": "paragraph",
+        "text": "#UNIFIDE #Semiconductors #DecisionIntelligence #Operations #AI"
+      },
+      {
+        "type": "paragraph",
+        "text": "Watch the video on LinkedIn.",
+        "links": [
+          {
+            "start": 0,
+            "end": 27,
+            "href": "https://www.linkedin.com/feed/update/urn:li:activity:7494920787334770689/"
+          }
+        ]
+      }
+    ],
+    "media": []
+  },
+  {
+    "id": "7492689298178064385",
+    "slug": "five-execution-rails-for-ai-infrastructure",
+    "title": "Five execution rails for AI infrastructure",
+    "excerpt": "Why production AI capacity depends on coordinated programs, semiconductor supply, racks, software, and site operations.",
+    "publishedAt": "2026-08-10",
+    "datePrecision": "month",
+    "author": "Ujjal Dutta",
+    "sourceUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7492689298178064385/",
+    "topics": [
+      "AI infrastructure",
+      "Semiconductors"
+    ],
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "The next AI infrastructure competition will be decided across five execution rails far beyond a benchmark chart. "
+      },
+      {
+        "type": "paragraph",
+        "text": "AMD’s strategic opportunity is often framed as a chip-performance contest with NVIDIA. That framing misses the more immediate question: \nCan AMD make one defined production workload reliable, economical, and repeatable enough to change the next capacity award? "
+      },
+      {
+        "type": "paragraph",
+        "text": "Selected MLPerf results can place AMD in the evaluation set. They are the screen. Production credibility begins after that point. "
+      },
+      {
+        "type": "paragraph",
+        "text": "Every large deployment requires five systems to move together: \nProgram definition + acceptance: Workload, site, milestones, and success criteria. \nSemiconductor supply: Wafer starts, HBM, packaging, substrates, yield, and delivery. \nRack industrialization: Configuration, integration, burn-in, spares, and service. \nSoftware + workload: ROCm, frameworks, kernels, tuning, orchestration, and observability. \nSite + operations: Power, cooling, networking, commissioning, and operator readiness. \nThe slowest rail sets the deployment clock. "
+      },
+      {
+        "type": "paragraph",
+        "text": "GPU availability is only one part of usable AI capacity. A cluster creates value when silicon, racks, software, facilities, and acceptance converge into stable production. "
+      },
+      {
+        "type": "paragraph",
+        "text": "The deeper challenge comes next. Customer-specific co-engineering can accelerate an anchor deployment. Buyer leverage emerges when that learning becomes reusable: a repeatable rack configuration, broader software coverage, proven operating tools, and a deployment playbook that travels across workloads, sites, and customers. "
+      },
+      {
+        "type": "paragraph",
+        "text": "That is how market structure can change before market leadership changes. \nYet platform choice and industrial resilience remain separate. AMD Helios and NVIDIA Vera Rubin may widen procurement options while both ecosystems still face concentrated capacity across leading-edge fabrication, HBM, advanced packaging, power, cooling, optics, and site readiness. "
+      },
+      {
+        "type": "paragraph",
+        "text": "The key question for buyers is therefore larger than, “Which accelerator benchmarks higher?”\nWhich execution rail is most likely to set the clock for the next generation of AI infrastructure deployments? 👇"
+      },
+      {
+        "type": "paragraph",
+        "text": "#AIInfrastructure #Semiconductors #AMD #NVIDIA #TechnologyStrategy"
+      }
+    ],
+    "media": [
+      {
+        "src": "/_marketing/media/e8359350cdb3b8ef12c78cae7ae52d18150995f0f7c4672778211c5c6b4c5e04.png",
+        "alt": "An AI-platform competition slide argues that a qualified second platform can change buyer leverage before market leadership changes.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/75bebfde749fe54c135f07eb3c5d3b5cb6632850daa548365f7a7b1e44f7934c.png",
+        "alt": "Selected MI355X-versus-B300 results lead into three production-evidence stages: screen, qualify, and repeat.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/fa41b3b9d06f826059aa31d21680a8f72fb9904436e9e93192df2f06c8c721ac.png",
+        "alt": "Five execution rails—program conversion, semiconductor supply, rack industrialization, software and workload, and site operations—converge on accepted production capacity.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/11202b606fd57dac082e20f8bcbaae4c64ff053c247ccc326291e3e051a97313.png",
+        "alt": "AMD Helios and NVIDIA Vera Rubin share upstream bottlenecks in fabrication, HBM, packaging, and substrates, plus deployment constraints.",
+        "width": 480,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "7489693860441350144",
+    "slug": "how-ai-infrastructure-costs-reach-consumers",
+    "title": "How AI infrastructure costs reach consumers",
+    "excerpt": "How shared capacity can transmit AI infrastructure demand into component costs and consumer prices.",
+    "publishedAt": "2026-08-02",
+    "datePrecision": "month",
+    "author": "Ujjal Dutta",
+    "sourceUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7489693860441350144/",
+    "topics": [
+      "AI infrastructure",
+      "Industrial strategy"
+    ],
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "A $200 increase in the price of the same MacBook Air generation is more than a product-pricing story. It is a useful window into how the AI infrastructure boom can reach consumers. In March 2026, Apple launched the base M5 MacBook Air at $1,099. By late June, the same generation and base configuration was priced at $1,299. Apple cited rising memory and storage costs amid surging demand from AI data centers."
+      },
+      {
+        "type": "paragraph",
+        "text": "The important point is the value-chain mechanism."
+      },
+      {
+        "type": "paragraph",
+        "text": "AI servers and consumer devices use different memory products. But they depend on overlapping upstream resources: wafer capacity, cleanrooms, process engineering, production equipment, supplier capital, and allocation decisions across product lines.When AI demand absorbs a larger share of those constrained resources, the pressure can move downstream:"
+      },
+      {
+        "type": "paragraph",
+        "text": "AI infrastructure demand → shared capacity → higher component costs → manufacturer response → consumer price"
+      },
+      {
+        "type": "paragraph",
+        "text": "Manufacturers still have choices. They can absorb the cost in margins, redesign products, reallocate supply, delay launches, or pass some of the increase to customers.The effect will vary significantly across industries.The pathway is relatively short for laptops and connected electronics. It is more selective for EVs, HVAC, batteries, and home-energy systems, where power semiconductors, transformers, grid equipment, and metals matter. For traditional appliances, the transmission is more indirect through energy, logistics, factory investment, and financing."
+      },
+      {
+        "type": "paragraph",
+        "text": "Electricity may be the clearest economy-wide channel. Data-center growth can raise generation and grid requirements, and the eventual consumer impact depends heavily on how those costs are allocated."
+      },
+      {
+        "type": "paragraph",
+        "text": "The bigger question is therefore broader than whether AI is inflationary or deflationary:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Where do AI and consumer value chains share constrained capacity?"
+      },
+      {
+        "type": "paragraph",
+        "text": "How quickly can supply expand?"
+      },
+      {
+        "type": "paragraph",
+        "text": "And who ultimately bears the marginal cost—AI users, ratepayers, taxpayers, manufacturers, or consumers?\n#AIInfrastructure #Semiconductors #EnergyPolicy #IndustrialStrategy"
+      }
+    ],
+    "media": [
+      {
+        "src": "/_marketing/media/5860f98a019f624b99efd90a2ca30ed5ffd59769fb8653f508bb414be4aa4cb5.png",
+        "alt": "A same-configuration MacBook Air price comparison shows $1,099 to $1,299, alongside broader Apple price changes and a memory-cost transmission question.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/b83d1830606725f29d1de84e18e9af889709ca57c71929c05e6835f4ea3b4395.png",
+        "alt": "A five-stage pathway links data-center demand, HBM capacity intensity, supply response, DRAM prices, and retail pass-through through shared upstream resources.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/3ad8c12de9da8b45434e73b78451e0fea315c96306c542c9a45eed0718864de4.png",
+        "alt": "An evidence map distinguishes observed electronics prices, modeled electricity effects, conditional energy-system effects, and indirect appliance exposure.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/f97ce5136a5a972ebb9114edae5e078c88995dc57dedbbccafd3c5ff87e12e08.png",
+        "alt": "Two separate models compare data-center electricity demand and its possible contribution to annual PCE inflation; assumptions and pass-through determine the range.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/175a2828c62924000e14c636bbb8020959a8f9eec44d43652e7de4dd40b51c71.png",
+        "alt": "A two-by-two framework compares slow or fast capacity buildout with broadly shared or targeted costs, followed by policy and funding levers.",
+        "width": 480,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "7484721276079644672",
+    "slug": "ai-capacity-is-a-system-level-challenge",
+    "title": "AI capacity is a system-level challenge",
+    "excerpt": "Why faster chips alone do not guarantee useful capacity across memory, packaging, power, cooling, and deployment.",
+    "publishedAt": "2026-07-19",
+    "datePrecision": "month",
+    "author": "Ujjal Dutta",
+    "sourceUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7484721276079644672/",
+    "topics": [
+      "AI infrastructure",
+      "Semiconductors"
+    ],
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "A faster AI chip does not automatically create more useful AI capacity."
+      },
+      {
+        "type": "paragraph",
+        "text": "The binding constraint is increasingly system-level, and it can migrate or co-bind.Device scaling raises performance potential. But translating that potential into sustained, deployable workload output requires co-optimization across heterogeneous integration, HBM, advanced packaging, fabric, power delivery, cooling, test, qualification, and site readiness."
+      },
+      {
+        "type": "paragraph",
+        "text": "HBM illustrates the point. It can materially improve accelerator utilization when memory bandwidth is the bottleneck. Yet HBM also draws on at least two specialized capacity pools: DRAM wafer area and HBM stack integration, including TSV formation, thinning, stacking, bonding, screening, and test. HBM planning is therefore more than a conventional memory-volume question."
+      },
+      {
+        "type": "paragraph",
+        "text": "At the system level, the GPU count is only one signal. Workload mix shapes rack design; rack design shapes component demand; and that demand propagates with varying magnitudes and timelines across compute, memory, networking, optics, power semiconductors, cooling, packaging, and deployment infrastructure."
+      },
+      {
+        "type": "paragraph",
+        "text": "My takeaway: manage AI capacity as a joint architecture-and-industrialization problem, not simply as a chip-output problem."
+      },
+      {
+        "type": "paragraph",
+        "text": "The question is no longer only, “How many GPUs?”\nIt is: what will bind next HBM, package yield, fabric, power, cooling, or site readiness?"
+      },
+      {
+        "type": "paragraph",
+        "text": "#Semiconductors #AIInfrastructure #HBM #AdvancedPackaging #HeterogeneousIntegration #ValueChain"
+      }
+    ],
+    "media": [
+      {
+        "src": "/_marketing/media/5baa364158e890f0ab238d1ea9ac454f2bec65785f5d2b0329994c262efda226.png",
+        "alt": "A device-to-deployment diagram expands from a logic die through HBM integration to a complete system, showing that active constraints can move or bind together.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/fb5a6785f582b0c198ea9f0a3af3d990a6527ed769a25bc64667eb6f8c0d58a5.png",
+        "alt": "A package cross-section combines accelerator logic, HBM, interposer, substrate, and board, with thermal, mechanical, data, power, assembly, and test requirements.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/92abdb1da4eace453f30dbdfee994bc6cba8ce55ff7ae0cf42e64ccdfb20d459.png",
+        "alt": "HBM bandwidth and manufacturing-intensity examples distinguish DRAM wafer capacity from specialized HBM stacking and test capacity.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/4976a601f5d60ce70933ed22ef821f442b398af72e5429889531361abec197f1.png",
+        "alt": "A vendor-published Vera Rubin system example maps workload and rack mix to compute, memory, network, power, packaging, and deployment demand.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/cd214770532ed51951d3fc2c1fd7b5fc77ac1e3dbf1b1f44b3bc40bdd27de041.png",
+        "alt": "Two panels pair architecture performance potential with industrialization readiness; the conceptual model requires both to create useful AI capacity.",
+        "width": 480,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "7482369159281102848",
+    "slug": "scaling-semiconductor-materials-from-lab-to-fab",
+    "title": "Scaling semiconductor materials from lab to fab",
+    "excerpt": "Questions for the Strategic Materials Conference on scaling innovation across the semiconductor value chain.",
+    "publishedAt": "2026-07-13",
+    "datePrecision": "month",
+    "author": "Ujjal Dutta",
+    "sourceUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7482369159281102848/",
+    "topics": [
+      "Semiconductors",
+      "Industrial strategy"
+    ],
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Looking forward to joining the Strategic Materials Conference (SMC) this week in San Jose."
+      },
+      {
+        "type": "paragraph",
+        "text": "The semiconductor conversation is increasingly shifting from whether AI demand will continue, to how the materials ecosystem can actually scale with it. As AI infrastructure grows, many of the hardest challenges are no longer isolated technical problems. They sit at the intersection of materials, manufacturing, qualification, supply chains, commercial commitments, and execution."
+      },
+      {
+        "type": "paragraph",
+        "text": "Moving from promising innovation to industrial scale requires coordinated decisions across the entire ecosystem. I'm particularly looking forward to the discussions on advanced packaging, lab-to-fab industrialization, manufacturing readiness, and resilient value chains. SEMI Americas SMC brings together an exceptional mix of materials suppliers, equipment companies, semiconductor manufacturers, researchers, and commercial leaders to tackle these questions from multiple perspectives.\nWhat do you see as the biggest hurdle in scaling new materials for AI workloads?"
+      },
+      {
+        "type": "paragraph",
+        "text": "If you're attending, I'd enjoy connecting and hearing how your organization thinks about it and navigating these challenges."
+      },
+      {
+        "type": "paragraph",
+        "text": "#SEMISMC #Semiconductors #Materials #AdvancedPackaging #Manufacturing #ValueChain #AI #Innovation #Industrialization #SemiconductorIndustry"
+      }
+    ],
+    "media": []
+  },
+  {
+    "id": "7481082218325508096",
+    "slug": "the-cost-of-coordination-latency",
+    "title": "The cost of coordination latency",
+    "excerpt": "How delays between enterprise teams accumulate, and where governed agents can help resolve them.",
+    "publishedAt": "2026-07-09",
+    "datePrecision": "month",
+    "author": "Ujjal Dutta",
+    "sourceUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7481082218325508096/",
+    "topics": [
+      "Enterprise AI",
+      "Enterprise decisions"
+    ],
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Coordination latency is a significant yet often overlooked cost in large enterprises. Although it rarely appears as a distinct line item on the P&L, its impact is felt daily through missed supplier SLAs, lengthy approval queues, BOM mismatches, owner ambiguity, SG&A overhead, working capital buffers, and delayed revenue recognition."
+      },
+      {
+        "type": "paragraph",
+        "text": "A single missed supplier response can have far-reaching consequences, including reduced planning confidence, stalled manufacturing, slowed finance or legal approvals, reactive customer escalations, and potential margin risks. This accumulation of coordination debt compounds at the edges of enterprise systems."
+      },
+      {
+        "type": "paragraph",
+        "text": "For years, companies have attempted to manage this debt using dashboards, control towers, spreadsheets, meetings, and human follow-ups. While these tools enhance visibility, they often fall short of providing resolution. They reveal what has occurred, but teams still find themselves chasing what needs to happen next."
+      },
+      {
+        "type": "paragraph",
+        "text": "Agentic AI offers a transformative approach to this challenge. Governed agents can identify exceptions earlier, preserve context, route the accountable owner, escalate issues with human-in-the-loop controls, and maintain an audit-ready trail. The outcome is not merely another dashboard; it translates to reduced coordination latency, diminished operating drag, and increased leadership capacity for critical decision-making. This represents a fundamental shift from passive visibility to governed resolution across the value chain at enterprise scale."
+      }
+    ],
+    "media": [
+      {
+        "src": "/_marketing/media/54e0e75fa8bc9a5b80dc0acfa161f94b2c21a5a8198917a7e8a14a5a3d01efbd.png",
+        "alt": "An iceberg-style coordination-debt diagram links supplier misses, approval queues, owner ambiguity, and other visible friction to operating and financial drag.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/4f216b5a8e1f2c93d7d12020e40b6055addca2034919b963c524e603741a94d2.png",
+        "alt": "A supplier exception cascades through planning, manufacturing, finance, and customer teams; an agentic exception layer preserves context and routes ownership.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/49bf6b52706ad5deba504a5bc76dc3ed7149ff27cfc2a33b7e9f6b04534d28f3.png",
+        "alt": "A conceptual chart contrasts growing human coordination effort with an agent-orchestrated exception path after a system of action is introduced.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/fd40b0f438db196b1b49a2014b5fbecb52cad1f15c1b2e05af271f6b5e481993.png",
+        "alt": "A comparison moves from dashboard alerts and human status chasing to earlier detection, context packets, explicit owners, governed actions, and audit trails.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/bcca580a10dfd60b29be869d21afce8f6521ce699a40290005543b3b4f29340c.png",
+        "alt": "Illustrative bars contrast status-chasing overhead with reduced exception drag and more strategic capacity; they are not benchmark data.",
+        "width": 480,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "7477466198473924608",
+    "slug": "enterprise-trust-for-operational-ai-agents",
+    "title": "Enterprise trust for operational AI agents",
+    "excerpt": "Why operational AI needs clear permissions, execution gates, human accountability, and traceable decisions.",
+    "publishedAt": "2026-06-29",
+    "datePrecision": "month",
+    "author": "Ujjal Dutta",
+    "sourceUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7477466198473924608/",
+    "topics": [
+      "Enterprise AI",
+      "Enterprise decisions"
+    ],
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "AI agents are moving enterprise AI from assistive software to operational infrastructure."
+      },
+      {
+        "type": "paragraph",
+        "text": "Chatbots can answer questions, and copilots can help users complete tasks, but operational agents can interact with live systems, trigger workflows, update records, and influence decisions. That shift creates enormous value, but it creates a risk profile that enterprise controls were not designed to handle."
+      },
+      {
+        "type": "paragraph",
+        "text": "The issue is not whether a model is accurate in a single step. The issue is whether the workflow remains reliable after dozens or hundreds of reasoning steps, tool calls, approvals, and writebacks. A small error can compound when an agent is connected to systems of record."
+      },
+      {
+        "type": "paragraph",
+        "text": "This is why enterprise trust needs to be an operating model, not a dashboard or an after-the-fact audit. AI should reason through ambiguity, generate options, and recommend actions. Systems should verify permissions, constraints, feasibility, and policy rules before execution. Humans should govern exceptions, high-impact decisions, and accountability."
+      },
+      {
+        "type": "paragraph",
+        "text": "This is especially important in industrial planning and operational workflows, where agents touch BOMs, demand signals, constraints, supply risk, and production decisions. Enterprise AI will scale when organizations can define what agents may change, what must stay gated, and how every decision can be traced."
+      }
+    ],
+    "media": [
+      {
+        "src": "/_marketing/media/b332fc86699ed5d77ac4c215723be92e14c8009b68dff6fc322f016a48ebd5b1.png",
+        "alt": "A chatbot, copilot, and AI agent comparison shows increasing authority over knowledge, working data, and live workflow records.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/995e83499150fee702108be470f5d119a4c4b0cd89bcd918f4d03421db14390d.png",
+        "alt": "A compounding-reliability illustration shows that 99 percent step accuracy yields about 37 percent all-step success across a 100-step workflow.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/b91ca8e7e2080a177233e52168bcd1ef713e161b465dabe5f3444ea2b4ed8c1a.png",
+        "alt": "Three layers of enterprise trust cover governance, technical controls, and operational assurance, with named decision, control, and runtime owners.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/1a30ab03e2fbd6c2ddb60b7b0e7fc66be07e95e07e0d4b3d2ee69eba16e67efb.png",
+        "alt": "An execution-control sequence separates AI reasoning, deterministic checks, and human approval, including permission, feasibility, confidence, and audit gates.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/62b94e4ce8fe004ec023e18f28eea3126f495bec2f938ea5864de38201713665.png",
+        "alt": "A risk operating model connects data foundations, decision assurance, governed execution, and a cross-cutting expert-feedback and learning loop.",
+        "width": 480,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "7472137432809779200",
+    "slug": "the-missing-loss-in-ai-business-cases",
+    "title": "The missing loss in AI business cases",
+    "excerpt": "The financial cost of constrained allocation can fall between operations, finance, and compliance.",
+    "publishedAt": "2026-06-15",
+    "datePrecision": "month",
+    "author": "Ujjal Dutta",
+    "sourceUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7472137432809779200/",
+    "topics": [
+      "Enterprise decisions",
+      "Enterprise AI"
+    ],
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "In AI business cases, we typically focus on three key areas: operating costs saved, revenue gained, and technology spend. Each of these has a clear owner who signs off on the numbers and is consistently presented in every deck. However, there is a fourth line item that often goes unnoticed: the expected loss incurred when resources become constrained, forcing difficult decisions about allocation."
+      },
+      {
+        "type": "paragraph",
+        "text": "In a high-mix, supply-constrained business, this expected loss can be the most significant of the four, yet it lacks a designated owner. This isn't due to oversight; rather, it's a structural issue. Accurately pricing this loss requires input from operations to define the probability of a miss, finance to assess the severity, and compliance to determine the permissions for service. This involves three distinct functions, leading to multiple meetings, and no single role is positioned where these inputs converge. Consequently, the critical number that influences decision-making remains unaddressed."
+      },
+      {
+        "type": "paragraph",
+        "text": "The complexity increases at the book level, where we aren't just allocating a single order but rather managing a portfolio of commitments that compete for limited supply, each with correlated risks and shared capacity. A greedy approach to solving individual orders can inadvertently harm others. The potential recovery from optimizing at the book level under uncertainity represents real financial gains every cycle, yet this crucial figure often slips through the cracks between owners."
+      },
+      {
+        "type": "paragraph",
+        "text": "So, the pressing question is: who in your organization would be willing to sign off on that loss number if it were presented tomorrow?"
+      }
+    ],
+    "media": [
+      {
+        "src": "/_marketing/media/cc0939ab0e8d42533f895623aec4c7bedee04cdd98763476381bdf588e6b93c0.png",
+        "alt": "A business-case table gives owners to savings, revenue, and infrastructure spend while identifying expected allocation loss as an unowned risk line.",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/_marketing/media/81f5ab2af4af72f8286426346312382420a7fefd1e05c123cf931e4e136ee3bc.png",
+        "alt": "Semiconductor rack value, data-center electricity demand, and grid-queue indicators illustrate how macro constraints can become operating commitment risk.",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/_marketing/media/a0cb057a6a39e9cc295af2d1ad6ba1796b920a2cf92e89edff42ac4b0da0419b.png",
+        "alt": "An illustrative table compares five interdependent commitments across operations probability, financial severity, and compliance; the figures are not benchmark data.",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/_marketing/media/85f2079b43df4657ed8dac2d4e807971cfea55b4ad81dfff16cb892e405122a0.png",
+        "alt": "An illustrative expected-loss waterfall compares $4.24 million greedy book loss with $2.13 million optimized loss, showing $2.11 million recovered; it is not benchmark data.",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/_marketing/media/0e13985cf04085db036cba0e83786ef0497a9175dd8bef54dfa270a521fa68fb.png",
+        "alt": "A proposed agent combines operations, finance, compliance, and control-cost inputs into a sign-ready recommendation while a human retains the commitment decision.",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/_marketing/media/da3108d0925f2a168ef957c2a2c388b3f85e5edd274f29fde0647cc224b75434.png",
+        "alt": "A responsibility table distinguishes delivery, business-case, and permission questions from consolidated avoided loss, which still requires a named human signer.",
+        "width": 480,
+        "height": 480
+      }
+    ]
+  },
+  {
+    "id": "7468144411969880064",
+    "slug": "protecting-margin-before-commitments-harden",
+    "title": "Protecting margin before commitments harden",
+    "excerpt": "How shared decision packets can clarify risk, recovery paths, and ownership in long-cycle capital projects.",
+    "publishedAt": "2026-06-04",
+    "datePrecision": "month",
+    "author": "Ujjal Dutta",
+    "sourceUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7468144411969880064/",
+    "topics": [
+      "Enterprise decisions",
+      "Enterprise AI"
+    ],
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Margin in large capital-project industries rarely disappears in one big failure. It leaks through small commitments made too early: supplier quotes, test requirements, customer-directed changes, currency exposure, tooling decisions, acceptance delays."
+      },
+      {
+        "type": "paragraph",
+        "text": "The hard part is not expertise. Sales, engineering, finance, supply chain, manufacturing, quality, and program teams all see part of the risk. The problem is that each function sees it at a different time, with a different definition of ownership."
+      },
+      {
+        "type": "paragraph",
+        "text": "Agentic workflows can help by creating a shared decision packet: evidence, conflicts, recovery rights, feasible options, model assumptions, and the human owner of the trade-off. The AI is not the decision-maker. It is the coordination layer."
+      },
+      {
+        "type": "paragraph",
+        "text": "For long-cycle, high-mix, low-volume industries, resilience is not about forecasting perfectly. It is about making commitments that stay feasible when the future moves. That means classifying the burden early, proving the recovery path, assigning the owner, and testing options before the next lock point hardens."
+      }
+    ],
+    "media": [
+      {
+        "src": "/_marketing/media/6b7cd999bb0d3584e5ee5ee60dec0d35bc95fb328547d3d6e50812479f0020f5.png",
+        "alt": "An illustrative margin-buffer chart follows project lock points from final offer to factory acceptance, contrasting preserved buffer with unowned exposure and loss risk.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/3b6ef52d7b71ad374b85ea2e21bc3fb17efc17120a899b80ecb1a270b3892974.png",
+        "alt": "Five burden categories—customer changes, internal corrections, supplier commitments, regulation, and platform investment—are matched to owners and recovery actions.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/ae4bcdbabc99d418782a2a385735a6344e53e4ecc43304021cbf8447771db310.png",
+        "alt": "Commercial, supply-risk, and engineering agents retrieve evidence and prepare feasible options through detect, classify, reconcile, test, route, and log stages for human approval.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/85c5e8fe1c9b80d0b33622fbef9ecd5bb6aad6d54a7b2e42c829a88d597a36e0.png",
+        "alt": "A scenario table compares single and flexible commitments under currency, supplier, engineering, and acceptance shocks before the next project lock point.",
+        "width": 480,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "7465984115323076608",
+    "slug": "procurement-from-cost-savings-to-continuity",
+    "title": "Procurement: from cost savings to continuity",
+    "excerpt": "Why semiconductor supply constraints are shifting procurement decisions from savings toward continuity.",
+    "publishedAt": "2026-05-29",
+    "datePrecision": "month",
+    "author": "Ujjal Dutta",
+    "sourceUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7465984115323076608/",
+    "topics": [
+      "Semiconductors",
+      "Enterprise decisions"
+    ],
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Four months into 2026 and procurement is already making roadmap decisions it doesn't have the authority to make, on a cadence the function was never designed for."
+      },
+      {
+        "type": "paragraph",
+        "text": "TSMC at ~71% of foundry. ASML the only EUV game in town. NVIDIA Blackwell sold out through mid-2026. DRAM up 90% QoQ. Ford eating a ~$1B DRAM hit. Big Tech capex at ~$725B, up 77% YoY."
+      },
+      {
+        "type": "paragraph",
+        "text": "If you run sourcing, category, or supply for anything that touches silicon, you already know what this feels like. The commits you signed last year are the constraint everyone is living inside this year. Allocation conversations that used to happen quarterly are happening weekly. And the savings number you're measured on has quietly become the least important thing on your desk. "
+      },
+      {
+        "type": "paragraph",
+        "text": "The real question is whether the parts land at all, and whether you can defend the trade-off you made when finance asks.\nThat's the shift. Cost was the scorecard every CPO was hired against. Continuity is the scorecard now, and the operating model hasn't caught up."
+      }
+    ],
+    "media": [
+      {
+        "src": "/_marketing/media/ddf7c3486fd120aee37055b9c7172bdc9d11b0e75d3991a5d241c0a6f829cb6f.png",
+        "alt": "An industrial-stack slide identifies concentration risk, late signals, roadmap exposure, and cadence gaps as procurement and engineering pressure points.",
+        "width": 480,
+        "height": 600
+      },
+      {
+        "src": "/_marketing/media/774066f95adc52e412abaf0aa3fbf14d4f1a16a018b177d40f8d694e8482b3f0.png",
+        "alt": "A proposed procurement operating model connects continuous signal capture, scenario stress, dynamic replanning, and finance links to engineering and sourcing decisions.",
+        "width": 480,
+        "height": 600
+      }
+    ]
+  },
+  {
+    "id": "7464031388774682624",
+    "slug": "synchronizing-ai-infrastructure-investment",
+    "title": "Synchronizing AI infrastructure investment",
+    "excerpt": "AI demand and infrastructure investment operate on different clocks, creating a coordination challenge.",
+    "publishedAt": "2026-05-23",
+    "datePrecision": "month",
+    "author": "Ujjal Dutta",
+    "sourceUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7464031388774682624/",
+    "topics": [
+      "AI infrastructure",
+      "Enterprise decisions"
+    ],
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Big Tech's AI capital expenditure challenge extends beyond the sheer volume of investment. It hinges on the ability to synchronize decision-making across an AI infrastructure stack that operates on vastly different planning cycles."
+      },
+      {
+        "type": "paragraph",
+        "text": "This year, approximately $450 billion is being invested in AI infrastructure by major tech companies. This capital traverses a complex supply chain that encompasses chips, foundries, advanced packaging, wafer fabrication equipment, servers, data centers, power procurement, and the grid."
+      },
+      {
+        "type": "paragraph",
+        "text": "The core issue lies in the timing discrepancies among these layers. AI demand can fluctuate every six months, while energy and grid commitments may require five to seven years of planning. Other components, such as packaging capacity, GPU supply, equipment slots, and data center construction, fall somewhere in between these timelines."
+      },
+      {
+        "type": "paragraph",
+        "text": "This misalignment presents a significant operational challenge. Companies must not only forecast demand but also make compatible investment decisions across layers that face varying constraints, lead times, and risks."
+      },
+      {
+        "type": "paragraph",
+        "text": "A clear pattern is emerging across the value chain. Leaders must plan for multiple scenarios rather than relying on a single forecast. Decisions should be made from the binding bottleneck rather than solely from demand signals. Continuous replanning is essential as conditions evolve, moving away from traditional annual planning cycles."
+      },
+      {
+        "type": "paragraph",
+        "text": "Thus, the AI infrastructure buildout is evolving into a coordination challenge as much as a capital challenge. Hyperscalers feel this pressure as capacity demand, semiconductor companies as allocation pressure, packaging suppliers as throughput pressure, utilities as interconnect pressure, and data center operators as execution pressure."
+      },
+      {
+        "type": "paragraph",
+        "text": "Each layer perceives the problem differently, yet they all respond to the same fundamental constraint. The next competitive edge in AI infrastructure may not stem from the highest spending but rather from the ability to navigate uncertainty effectively."
+      },
+      {
+        "type": "paragraph",
+        "text": "Which layer of the AI capital expenditure stack do you believe will encounter the most significant bottleneck first"
+      }
+    ],
+    "media": [
+      {
+        "src": "/_marketing/media/cbe50ac9a9fe95ffcc8dc32395b08f3d3a504b2a122cc0568f66e5a5e34ca87f.png",
+        "alt": "A capital-expenditure slide contrasts AI demand reshaping every six months with energy commitments five to seven years ahead across a nine-layer supply chain.",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/_marketing/media/4f32da9f8ec4cbf4ed0de244dd924435fd921329faea6637ebe1f9729650bf11.png",
+        "alt": "A grid presents eight attributed executive statements about constraints across hyperscalers, AI compute, servers, packaging, equipment, industry, data centers, and energy.",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/_marketing/media/35447599b33eb44fc7993ed8072f8afcdfbc9e041eb6ab12b64c0dc69f83ec17.png",
+        "alt": "Three planning principles are presented: plan in ranges rather than points, prioritize the active bottleneck, and replan continuously as conditions change.",
+        "width": 480,
+        "height": 480
+      }
+    ]
+  },
+  {
+    "id": "7511892648019005440",
+    "slug": "why-more-hbm-does-not-guarantee-more-ai-capacity",
+    "title": "Why More HBM Does Not Guarantee More AI Capacity",
+    "excerpt": "How HBM supply becomes workload-ready AI capacity—and who carries the cost when supply and deployment run on different clocks.",
+    "publishedAt": "2026-10-02",
+    "author": "Ujjal Dutta",
+    "sourceUrl": "https://www.linkedin.com/pulse/why-more-hbm-does-guarantee-ai-capacity-ujjal-dutta-voave/",
+    "topics": [
+      "AI infrastructure",
+      "Semiconductors"
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "/_marketing/media/302e9f28011cfc1e0ee7a54ee70ed06e0d660bd9a0bf8b70ad46732c46e03029.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "From modeled HBM demand to workload-accepted capacity and the economics of asynchronous supply"
+      },
+      {
+        "type": "paragraph",
+        "text": "ARTICLE 2 OF 2 "
+      },
+      {
+        "type": "paragraph",
+        "text": "Link to article 1: https://www.linkedin.com/pulse/what-turns-ai-growth-hbm-demand-ujjal-dutta-x7k4c/ ",
+        "links": [
+          {
+            "start": 19,
+            "end": 100,
+            "href": "https://www.linkedin.com/pulse/what-turns-ai-growth-hbm-demand-ujjal-dutta-x7k4c/"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "1 From demand to accepted capacity",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "More HBM does not automatically create more AI capacity."
+      },
+      {
+        "type": "paragraph",
+        "text": "Orders, revenue and backlog measure commercial activity. Workload-accepted capacity requires the exact configuration to clear memory, accelerator logic, advanced packaging, package test, platform qualification, and site plus workload acceptance by the required date."
+      },
+      {
+        "type": "paragraph",
+        "text": "Until that happens, the commitment remains exposure."
+      },
+      {
+        "type": "paragraph",
+        "text": "Demand creates a requirement. Alignment creates capacity. Acceptance creates a productive asset."
+      },
+      {
+        "type": "paragraph",
+        "text": "Dell's fiscal Q2 2027 reported $60.9 billion in AI-server orders, $16.4 billion in AI-server revenue and a $95 billion ending backlog.[1] Those figures belong to the commercial ledger. HBM is counted in bits, accelerators in packages, AI infrastructure in dollars, and customer value in accepted workloads. Each unit measures a different state.",
+        "links": [
+          {
+            "start": 134,
+            "end": 137,
+            "href": "https://delltechnologies.gcs-web.com/news-releases/news-release-details/dell-technologies-delivers-second-quarter-fiscal-2027-financial"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Article 1 ended by asking which gate binds next.[2] The answer depends on the workload and configuration.",
+        "links": [
+          {
+            "start": 48,
+            "end": 51,
+            "href": "https://www.linkedin.com/pulse/what-turns-ai-growth-hbm-demand-ujjal-dutta-x7k4c/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Article 1 translated qualified goodput into a modeled gross package requirement after deducting eligible survivors once. Article 2 starts at that requirement and follows it through the six gates to accepted capacity, commercial exposure and return."
+      },
+      {
+        "type": "heading",
+        "text": "2 The commercial and physical ledgers measure different states",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "The three Dell measures share a currency while describing different populations and dates. Orders and revenue are period flows; backlog is a balance at 31 July 2026. Revenue can contain earlier order cohorts, while system-level acceptance records supply the workload denominator. Dividing one dollar measure by another would create a false conversion rate."
+      },
+      {
+        "type": "paragraph",
+        "text": "Dell describes product backlog as unfulfilled manufacturing orders. Those orders enter remaining performance obligations only to the extent that they are non-cancelable.[3] The legal and accounting states are therefore relevant—but distinct from physical completion.",
+        "links": [
+          {
+            "start": 169,
+            "end": 172,
+            "href": "https://www.sec.gov/Archives/edgar/data/1571996/000157199626000008/dell-20260130.htm"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The Dell example shows why four physical states need their own labels:"
+      },
+      {
+        "type": "paragraph",
+        "text": "· QUALIFIED HBM STACK — a tested memory product."
+      },
+      {
+        "type": "paragraph",
+        "text": "· COMPATIBLE ACCELERATOR PACKAGE — the correct memory, accelerator logic and integration route."
+      },
+      {
+        "type": "paragraph",
+        "text": "· INSTALLED AND COMMISSIONED SYSTEM — physically integrated and energized, with workload acceptance still ahead."
+      },
+      {
+        "type": "paragraph",
+        "text": "· WORKLOAD-ACCEPTED SYSTEM — the complete platform has also passed its software, network, performance, quality and governance tests."
+      },
+      {
+        "type": "paragraph",
+        "text": "The final state creates workload-accepted capacity. To compare owned systems, cloud instances and allocated services consistently, normalize qualifying units into an accepted equivalent for one workload, exact configuration, site and cutoff."
+      },
+      {
+        "type": "paragraph",
+        "text": "The commercial ledger records forecasts, reservations, capacity agreements, purchase orders, shipments and payments. The physical ledger records wafers, known-good die, qualified stacks, compatible packages, tested nodes, commissioned racks and accepted services. Each ledger answers a different question."
+      },
+      {
+        "type": "paragraph",
+        "text": "The economic ledger moves on a third clock: contract pricing, utilization, depreciation, margin and return on capital can lag both commercial commitment and physical supply relief."
+      },
+      {
+        "type": "paragraph",
+        "text": "Reconcile them with one shared dimensional key:"
+      },
+      {
+        "type": "paragraph",
+        "text": "workload lane | exact configuration or SKU | quantity and unit | site | required date | commercial or contract state | regulatory eligibility where material | acceptance criterion"
+      },
+      {
+        "type": "paragraph",
+        "text": "That key reveals two frequent mismatches: procurement may cover the wrong configuration, while physical output may lack allocation, commercial access or workload eligibility."
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/c4549a6cf0922d8a6870832e9b3562b51bda6a33458b9778b22e06bc4409fc86.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Identify the missing join between reported commercial measures and workload-accepted capacity, then reconcile cohort, configuration and cutoff. "
+      },
+      {
+        "type": "heading",
+        "text": "3 The shared manufacturing, test and deployment spine",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Where does modeled demand first meet physical resistance? Across a shared chain from wafer preparation and stacking to test, package integration, platform qualification and site acceptance. The binding stage changes with the required configuration."
+      },
+      {
+        "type": "paragraph",
+        "text": "Wafer preparation and stacking: The shared route begins with electronic-grade polysilicon, single-crystal ingot growth, wafer slicing, polishing and inspection. SUMCO describes epitaxy as specification-dependent.[4]",
+        "links": [
+          {
+            "start": 212,
+            "end": 215,
+            "href": "https://www.sumcosi.com/english/products/process/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The HBM-specific route fabricates DRAM and base-die wafers, forms through-silicon vias and interconnects, identifies known-good die, then thins, aligns and bonds those dies into stacks. Micron describes tested dies moving through stack assembly and final testing; SK hynix highlights thin-die warpage control and protective materials.[5][6] Together, the disclosures explain the process while leaving customer-level yield and allocation unquantified.",
+        "links": [
+          {
+            "start": 334,
+            "end": 337,
+            "href": "https://www.micron.com/products/memory/hbm/hbm4"
+          },
+          {
+            "start": 337,
+            "end": 340,
+            "href": "https://news.skhynix.com/en/rulebreaker-revolutions-mr-muf-unlocks-hbm-heat-control/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Test insertions: Testing is a sequence: wafer sort; post-dice known-good-die screening; post-stack electrical and thermal test; final package and reliability screening; board, rack and fabric validation; and workload acceptance. Advantest explains that wafer test leaves post-singulation functionality to a separate insertion involving handling, alignment, cooling and contact.[7] A tester count measures installed tools; usable capacity requires qualified throughput for the exact insertion sequence. Advantest separately describes growing wafer- and package-level test intensity around HBM and AI logic.[8]",
+        "links": [
+          {
+            "start": 377,
+            "end": 380,
+            "href": "https://www3.advantest.com/zh/probo/no-62-september-2024/abstract"
+          },
+          {
+            "start": 605,
+            "end": 608,
+            "href": "https://www.advantest.com/document/en/investors/ir-library/briefing/E_IR_Tech_Briefing_231129_QA.pdf"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Package route: A qualified stack must still meet known-good accelerator logic, the eligible interposer or redistribution-layer route, substrate, assembly and final test. TSMC's portfolio divides CoWoS into distinct routes: CoWoS-S uses a large silicon interposer; CoWoS-R uses a polymer-and-copper redistribution-layer interposer with a 4-micrometre minimum routing pitch; and CoWoS-L embeds local silicon interconnects within an RDL-and-molding route.[9] Each route carries different design rules, tools, materials and qualification evidence.",
+        "links": [
+          {
+            "start": 452,
+            "end": 455,
+            "href": "https://www.tsmc.com/english/dedicatedFoundry/technology/cowos"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Mechanical qualification: Route substitution also changes the mechanical problem. One peer-reviewed 72.5 × 70 millimetre fan-out test vehicle with an ASIC and two HBM interfaces found that underfill glass-transition temperature and thermal-expansion behaviour materially affected HBM-corner bending stress from package warpage.[10]",
+        "links": [
+          {
+            "start": 327,
+            "end": 331,
+            "href": "https://ieeexplore.ieee.org/document/10564882/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The study measures mechanical behaviour; commercial yield lies beyond its dataset. Its planning relevance is direct: an alternate route may need renewed mechanical, electrical and thermal qualification before it contributes accepted equivalents. The compatible package must then clear integration, site, software and workload acceptance."
+      },
+      {
+        "type": "paragraph",
+        "text": "For capacity planning, treat announced wafer, HBM, packaging and test capacities as successive, configuration-matched stages. One compatible route that survives every required step by the cutoff contributes accepted equivalents."
+      },
+      {
+        "type": "paragraph",
+        "text": "The correct physical statement is consequently conservative:"
+      },
+      {
+        "type": "paragraph",
+        "text": "qualified stack ≠ compatible package ≠ installed and commissioned system ≠ workload-accepted system"
+      },
+      {
+        "type": "paragraph",
+        "text": "A layer-count yield exponent would omit known-good-die screening, bonding, rework, test coverage, binning and allocation. Public sources leave those steps unjoined for one customer and period."
+      },
+      {
+        "type": "paragraph",
+        "text": "Nameplate capacity is what a line can process. Effective capacity is the qualified output that survives the relevant yield, mix, test, allocation and timing losses for the required route."
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/9a784a987dc150b4b30509a8613cfa4f7f64d7365d3619d21beaf4681d0bba51.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Locate the physical and test stages where a qualified stack can lose eligibility before workload acceptance. "
+      },
+      {
+        "type": "paragraph",
+        "text": "The applications diverge when the workload selects the accelerator-memory configuration, qualification path, sourcing route, deployment environment and economic unit. A captive accelerator can consume HBM while serving a closed cloud pool; an edge product can create offboard HBM demand while using another endpoint memory; and an installed scientific system can still fail topology or validation."
+      },
+      {
+        "type": "paragraph",
+        "text": "native demand unit → eligible configuration → eligibility exposure → sourcing route → workload acceptance → economic denominator"
+      },
+      {
+        "type": "paragraph",
+        "text": "The shared spine creates potential supply. The workload decides which part of it is eligible."
+      },
+      {
+        "type": "heading",
+        "text": "4 The workload determines which supply counts",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Which completed configuration counts for each workload? Figure 3 organizes the answer into five workload cards. Read each row through three questions: What output counts? What must clear? Which eligible supply pool can deliver it by the cutoff?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Application capacity requires a workload-eligible configuration, a supply pool that can furnish it by the cutoff and acceptance by the deadline. Aggregate HBM alone misses those conditions."
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/4287792bbad0a7e2138747be0c59816eb2b869ea25cd88647b68427aa2885743.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Compare each workload's counted output, eligibility test and eligible supply pool—the hardware or service capacity that can furnish the eligible configuration by the cutoff—before adding capacity."
+      },
+      {
+        "type": "heading",
+        "text": "4.1 Assistants and agents",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "Eligibility test. Eligible supply fits the model and service state while training, prefill, decode, KV transfer, scheduling and fabric clear the required quality and latency targets."
+      },
+      {
+        "type": "paragraph",
+        "text": "Meta distinguishes compute-intensive prefill from memory-bandwidth-intensive decode. Model weights and the key-value cache occupy much of inference memory, while active cache grows with context length.[11] NVIDIA Dynamo can place prefill and decode in separate worker pools, but the pools must exchange KV state and remain balanced.[12]",
+        "links": [
+          {
+            "start": 201,
+            "end": 205,
+            "href": "https://engineering.fb.com/2025/10/17/ai-research/scaling-llm-inference-innovations-tensor-parallelism-context-parallelism-expert-parallelism/"
+          },
+          {
+            "start": 332,
+            "end": 336,
+            "href": "https://docs.nvidia.com/dynamo/dev/knowledge-base/concepts/system-architecture/disaggregated-serving"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Training eligibility joins model, optimizer state, collectives, checkpoints and software. Inference joins request distributions, concurrency, cache reuse and latency. Weight fit alone is insufficient."
+      },
+      {
+        "type": "paragraph",
+        "text": "Anthropic said it was using more than one million AWS Trainium2 chips, and AWS documents 96 GiB of HBM per accelerator.[13][14] This captive AWS operating route belongs to service capacity rather than the merchant accelerator pool.",
+        "links": [
+          {
+            "start": 119,
+            "end": 123,
+            "href": "https://www.anthropic.com/news/anthropic-amazon-compute"
+          },
+          {
+            "start": 123,
+            "end": 127,
+            "href": "https://awsdocs-neuron.readthedocs-hosted.com/en/v2.31.1/about-neuron/arch/neuron-hardware/trainium2.html"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "For planning, training closes on a qualified campaign; inference closes on an accepted token or task at the required latency, quality and tool-success target. Normalize service eligibility before combining merchant accelerators, captive cloud architectures and reserved capacity."
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/70559efd000c2ae2f61f70b347e0436971288f3e4fce440f920b47942967acd1.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Separate the finite training campaign from the recurring prefill, KV-transfer, decode and service-qualification pipeline, using time to first token, KV-transfer performance, time per output token and task success as distinct checks. "
+      },
+      {
+        "type": "heading",
+        "text": "4.2 Recommendation and retrieval",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "Eligibility test. Eligible supply spans the complete memory hierarchy and meets recall, freshness and p99 latency together."
+      },
+      {
+        "type": "paragraph",
+        "text": "Meta's SilverTorch places data across GPU HBM, host DRAM and remote DRAM. Retrieval, filtering and reranking must remain inside a sub-100-millisecond budget while updates stream incrementally.[15] The eligible configuration therefore depends on the hot-state working set, sharding, cache hit rate, collectives, recall, freshness and tail latency.",
+        "links": [
+          {
+            "start": 192,
+            "end": 196,
+            "href": "https://engineering.fb.com/2026/05/26/ml-applications/silvertorch-index-as-model-new-retrieval-paradigm-recommendation-systems/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "MLCommons' DLRMv3 makes the same systems problem visible in a benchmark: its reference implementation uses a one-terabyte embedding table and distributes dense execution across eight GPUs, while end-to-end p99 latency stays just above 80 milliseconds because batching, data movement and CPU-side overhead still matter.[16] The benchmark specifies workload and topology; merchant supply and fleet volume are unmeasured.",
+        "links": [
+          {
+            "start": 318,
+            "end": 322,
+            "href": "https://mlcommons.org/2026/02/dlrmv3-inference-meta/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "MTIA 300 adds 216 GB of HBM3E to a deliberately co-designed recommendation-training system: twelve integrated 800-gigabit-per-second RDMA interfaces provide 1.2 terabytes per second of total I/O, while a one-to-one CPU-to-accelerator ratio enables optimizer offload.[17] The disclosure covers an internal accelerator and leaves merchant availability undisclosed. The node and communication architecture form the eligible unit; an HBM stack supplies one component.",
+        "links": [
+          {
+            "start": 266,
+            "end": 270,
+            "href": "https://engineering.fb.com/2026/08/24/networking-traffic/mtia-300-meta-training-chip-built-in-nics/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Training and refresh create publication clocks; serving creates recurring requests. HBM carries the hot tier while host and remote memory hold other state; replication and collectives can multiply it. The practical unit is a qualified result at target recall, freshness and p99 latency. Combine captive, merchant and cloud pools after the workload qualifies them as substitutes."
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/08dd30cc5e9d260061e250e1a14178671bf2f12e44270ba0c8a2fc04fa406cf5.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Reconcile the online serving lane with the refresh-and-publication lane across HBM, host DRAM and remote memory. "
+      },
+      {
+        "type": "heading",
+        "text": "4.3 Generative media",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "Eligibility test. A route qualifies when it meets both the output-quality target and the completion deadline, including offload transfer and elapsed-time penalties."
+      },
+      {
+        "type": "paragraph",
+        "text": "Eligibility changes with model, resolution, frame count, batch, concurrency, precision and deadline. Wan2.2 documents a TI2V-5B route that can run on 24 GB of VRAM with offloading and a faster single-GPU route that recommends at least 80 GB.[18] The same model can therefore create two different, documented eligibility routes and hardware ledgers.",
+        "links": [
+          {
+            "start": 241,
+            "end": 245,
+            "href": "https://github.com/Wan-Video/Wan2.2"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Offload exchanges device-memory relief for host-memory, interconnect and elapsed-time costs. Hugging Face documents how CPU offload can reduce device-memory use yet become"
+      },
+      {
+        "type": "paragraph",
+        "text": "impractically slow, while group offload reduces transfer overhead but requires additional host-memory and interconnect planning.[19]",
+        "links": [
+          {
+            "start": 128,
+            "end": 132,
+            "href": "https://huggingface.co/docs/diffusers/optimization/memory"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Quality is also part of admission. MLPerf's SDXL benchmark requires performance and image-quality compliance using FID, CLIP and a human review check.[20] Its thresholds are benchmark rules rather than a production service-level agreement. They show why a lower-memory route must still clear quality and completion time to count as equivalent capacity.",
+        "links": [
+          {
+            "start": 150,
+            "end": 154,
+            "href": "https://mlcommons.org/2024/08/sdxl-mlperf-text-to-image-generation-benchmark/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "HBM is one of several eligible high-memory routes. NVIDIA's RTX PRO 6000 Blackwell Server Edition pairs 96 GB of ECC GDDR7 with ray-tracing and dedicated encode/decode engines.[21] For a media workflow that clears its quality and deadline tests on that platform, it is a potential alternative configuration, subject to availability and workload qualification. Classify it by the qualified route rather than as reduced HBM supply.",
+        "links": [
+          {
+            "start": 176,
+            "end": 180,
+            "href": "https://www.nvidia.com/en-us/data-center/rtx-pro-6000-blackwell-server-edition/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Training and adaptation create campaigns; production creates recurring assets. Device-resident state and concurrency select the accelerator. Owned, reserved and burst routes qualify when quality and elapsed time clear the deadline. Budget against an accepted asset or video minute, with memory fit treated as one condition."
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/d70b7fef145c82f3113e9c1319c55085dcf0c498ceb228120bc476dcb71feb96.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Compare the documented 24 GB offload route with the 80 GB faster route as separate eligibility choices, each subject to quality and completion-time acceptance. "
+      },
+      {
+        "type": "heading",
+        "text": "4.4 Physical AI",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "Eligibility test. The relevant offboard or onboard route qualifies after architecture, sensor, latency, power, safety and product requirements clear."
+      },
+      {
+        "type": "paragraph",
+        "text": "NVIDIA Isaac Sim 6.0 excludes A100 and H100 because they lack the required real-time ray-tracing cores.[22] Simulation eligibility therefore comes from the complete architecture, including the required graphics capability.",
+        "links": [
+          {
+            "start": 103,
+            "end": 107,
+            "href": "https://docs.isaacsim.omniverse.nvidia.com/6.0.0/installation/requirements.html"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Isaac Sim's published benchmark methodology varies sensor mix, render resolution, VRAM and CPU/GPU balance; observed simulation and sensor rates belong to that complete"
+      },
+      {
+        "type": "paragraph",
+        "text": "configuration.[23] The figures apply to the documented configurations rather than universal robotics requirements. They reinforce the eligibility test: memory, sensors, rendering and end-to-end timing work as one system.",
+        "links": [
+          {
+            "start": 14,
+            "end": 18,
+            "href": "https://docs.isaacsim.omniverse.nvidia.com/latest/reference_material/benchmarks.html"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Jetson Thor uses 64 GB or 128 GB of LPDDR5X instead of HBM, plus vision, video and camera interfaces inside a 40- to 130-watt module envelope.[24] Model robot shipments through the endpoint bill of materials; model offboard training and simulation through separate HBM ledgers.",
+        "links": [
+          {
+            "start": 142,
+            "end": 146,
+            "href": "https://developer.nvidia.com/blog/introducing-nvidia-jetson-thor-the-ultimate-platform-for-physical-ai/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Offboard training, graphics-qualified simulation and onboard execution use different compute, memory and qualification routes. The control loop must pass sensor, latency, software, safety and product tests. Measure cost per validated scenario, qualified update or learning cycle. Maintain separate supply pools for datacenter HBM and endpoint memory because they clear different qualification paths."
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/3e0c08760ab3ad513d2701bdb6d948be26f82418c85093340c945a48bbe8ce50.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Maintain separate ledgers for offboard HBM training, graphics-qualified simulation and the power-bounded endpoint using LPDDR5X. "
+      },
+      {
+        "type": "heading",
+        "text": "4.5 Scientific AI",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "Eligibility test. Capacity qualifies after precision, per-rank fit, topology, checkpoint path, access window, validation and rollback all clear."
+      },
+      {
+        "type": "paragraph",
+        "text": "Frontier pairs 512 GB of node HBM with 512 GB of CPU DDR4, while presenting GPU memory as eight 64 GB compute domains.[25] Per-domain placement and interconnect constrain usable node memory.",
+        "links": [
+          {
+            "start": 118,
+            "end": 122,
+            "href": "https://docs.olcf.ornl.gov/systems/frontier_user_guide.html"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Operational forecasting adds a deadline and a governance layer. ECMWF's AIFS history records verification, re-dissemination, re-archiving and rollback after a problematic release.[26]",
+        "links": [
+          {
+            "start": 179,
+            "end": 183,
+            "href": "https://confluence.ecmwf.int/spaces/FCST/pages/496875126/Implementation+of+AIFS+Single+v1"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Forecast capacity begins after the service can be validated and recovered inside the operating process."
+      },
+      {
+        "type": "paragraph",
+        "text": "Campaigns, forecast issuance and discovery loops have different clocks. HBM must work with CPU memory, storage, fabric, precision and checkpoint/restart behavior. Owned, allocated and cloud routes carry different access rules. Count validated outputs completed by deadline, with checkpoint, recovery and rollback readiness included."
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/f56ac247fe605203b48e2fbe1ba605c5b79c97de780947081a1bd3d4eef265d8.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Test whether the maximum per-rank resident set and workspace fit an eligible local HBM domain after decomposition, with fabric and checkpoint paths available by the deadline. "
+      },
+      {
+        "type": "paragraph",
+        "text": "Each lane selects the configuration to test. Memory, logic, packaging and package test define the compatible hardware route; platform qualification and site plus acceptance determine whether it becomes productive capacity. The binding gate moves with yield, allocation, schedule, software, access and acceptance."
+      },
+      {
+        "type": "paragraph",
+        "text": "The workload has selected the eligible route. The next question is arithmetic: how many complete routes can clear every gate by the cutoff?"
+      },
+      {
+        "type": "heading",
+        "text": "5 The accepted equivalent ceiling",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "How many eligible configurations can clear every gate by the cutoff? Express all six resource budgets in the same unit: accepted equivalents."
+      },
+      {
+        "type": "heading",
+        "text": "5.1 The six gates",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "For one eligible configuration and planning window, the resource budget covers six gates:"
+      },
+      {
+        "type": "paragraph",
+        "text": "· MEMORY — eligible, supplier-qualified HBM stacks."
+      },
+      {
+        "type": "paragraph",
+        "text": "· ACCELERATOR LOGIC — compatible, known-good accelerator devices."
+      },
+      {
+        "type": "paragraph",
+        "text": "· ADVANCED PACKAGING — the required interposer, substrate and assembly route."
+      },
+      {
+        "type": "paragraph",
+        "text": "· PACKAGE TEST — qualified throughput for the applicable test insertions."
+      },
+      {
+        "type": "paragraph",
+        "text": "· PLATFORM QUALIFICATION — boards, nodes, racks, fabric and software that pass configuration requirements."
+      },
+      {
+        "type": "paragraph",
+        "text": "· SITE AND ACCEPTANCE — systems that can be energized, cooled, commissioned and accepted."
+      },
+      {
+        "type": "paragraph",
+        "text": "Express every budget as accepted equivalents available by the cutoff."
+      },
+      {
+        "type": "heading",
+        "text": "5.2 The minimum-gate rule",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "Accepted equivalents by cutoff ≤ MIN(Memory, Accelerator logic, Advanced packaging, Package test, Platform qualification, Site + acceptance)"
+      },
+      {
+        "type": "paragraph",
+        "text": "The smallest aligned gate sets the ceiling. Raising another gate creates headroom while accepted output stays fixed."
+      },
+      {
+        "type": "paragraph",
+        "text": "At the cutoff meeting, the plan shows 130 memory equivalents, 118 logic, 90 packaging, 104 test, 96 platform and 100 site plus acceptance. The ceiling is 90. Everything above that wall is headroom until another gate moves."
+      },
+      {
+        "type": "paragraph",
+        "text": "Raising packaging from 90 to 110 reveals platform qualification at 96. Twenty additional packaging equivalents therefore raise the modeled ceiling by six."
+      },
+      {
+        "type": "paragraph",
+        "text": "The decision question is whether relieving a gate creates enough incremental workload-accepted capacity before the cutoff to justify its all-in cost. S&OP establishes configuration, schedule, gate and alternatives; FP&A values timing, premium, exposure and option value; procurement and legal confirm the contract."
+      },
+      {
+        "type": "paragraph",
+        "text": "Article 1 deducts eligible survivors before this count begins. The minimum-gate rule supplies a planning upper bound. A production forecast also needs inventory, yield, mix, allocation, lead time, compatibility and qualification evidence. The illustration is hypothetical and configuration-specific; delivery outcomes belong in a separate forecast."
+      },
+      {
+        "type": "heading",
+        "text": "5.3 What an acceptance contract looks like",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "The rule becomes operational when each gate has measurable pass conditions. AMD's MI355X customer-acceptance guide starts with eight accelerators carrying 288 GB of HBM each, then requires at least 3 TB of host memory, eight 400-gigabit backend network interfaces, aligned firmware and AMD's ROCm software stack, single- and multi-node stress tests, and at least 304 GB/s of RCCL all-reduce bandwidth—a cluster-wide collective-communications test—at an 8 GB message size.[27] The numbers apply to that guide and configuration; their strategic value is the pattern. Nominal HBM becomes go-live capacity after the whole platform passes an explicit acceptance contract.",
+        "links": [
+          {
+            "start": 471,
+            "end": 475,
+            "href": "https://instinct.docs.amd.com/projects/system-acceptance/en/latest/gpus/mi355x.html"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "NVIDIA's GB300 cloud-provider guidance likewise separates device presence from network and fabric tests, GPUDirect checks, NVLink and NVSwitch validation, hardware attestation and a 24-hour soak under representative inference load.[28] Many checklist items are strong recommendations with configuration-dependent force. Visible GPUs and HBM reach production capacity after the complete platform clears validation.",
+        "links": [
+          {
+            "start": 231,
+            "end": 235,
+            "href": "https://docs.nvidia.com/dsx/ncp/inference-provider-requirements/home"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "5.4 From one ceiling to a stress envelope",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "One ceiling describes one state. What happens when yield, qualification or the energization date moves? Build a stress envelope."
+      },
+      {
+        "type": "paragraph",
+        "text": "The rule stays fixed while the resource vector moves. Packaging rework can lower one budget, late characterization another, and an energization slip can make site readiness binding."
+      },
+      {
+        "type": "paragraph",
+        "text": "Public disclosures stop before a joined distribution for all six gates and their dependencies. Figure 9 therefore uses transparent stress cases. Its 82-to-96 span is an author-defined planning envelope with probability weights left unspecified; actual accepted output can fall below every bound."
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/3ea33ae90312663b8194dd46113c73e1f5d279c5c3d7472f8b9c298446e6b5a7.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Read the hypothetical acceptance wall at 90, the non-converting headroom above it and the six accepted equivalents gained when packaging rises from 90 to 110 and platform qualification binds at 96."
+      },
+      {
+        "type": "heading",
+        "text": "5.5 Replanning when the window moves",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "A stress envelope reveals the risk; a control loop assigns the response."
+      },
+      {
+        "type": "paragraph",
+        "text": "The governed control loop is event-driven: detect → verify → recompute → rank → approve → learn."
+      },
+      {
+        "type": "paragraph",
+        "text": "When a change breaches tolerance or threatens the date, reopen the workload × configuration × site × cutoff record. Triggers include test menu, yield or rework, qualification, allocation, energization, contract or acceptance changes."
+      },
+      {
+        "type": "paragraph",
+        "text": "A workable operating model assigns an integrated-capacity team and a named case owner to each record. Infrastructure and workload engineering verify eligibility. Procurement and site operations validate supply and readiness. S&OP recomputes the plan; FP&A prices exposure; named commercial and capital owners approve the change. Software agents can accelerate detection, evidence normalization and route ranking."
+      },
+      {
+        "type": "paragraph",
+        "text": "Planning software supports constrained multilevel plans and what-if comparison; GPU orchestrators allocate resources inside qualified pools.[29][30] These tool classes support bounded planning and qualified-resource orchestration; named owners retain commercial and capital authority.",
+        "links": [
+          {
+            "start": 140,
+            "end": 144,
+            "href": "https://www.sap.com/products/scm/integrated-business-planning/features/response-and-supply-planning.html"
+          },
+          {
+            "start": 144,
+            "end": 148,
+            "href": "https://www.nvidia.com/en-us/software/run-ai/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "1. DETECT — planning platform or agent. Flag a threshold breach from governed supplier, test, qualification, site, contract or workload data."
+      },
+      {
+        "type": "paragraph",
+        "text": "2. VERIFY — evidence owner. Confirm the evidence state, dimensional key, effective date and accountable owner."
+      },
+      {
+        "type": "paragraph",
+        "text": "3. RECOMPUTE — integrated-capacity team. Refresh all six gates and the accepted-equivalent stress envelope."
+      },
+      {
+        "type": "paragraph",
+        "text": "4. RANK — S&OP and FP&A. Compare technically eligible, timely and contractually available actions with exposure attached."
+      },
+      {
+        "type": "paragraph",
+        "text": "5. APPROVE — named commercial and capital authorities. Apply engineering, workload, finance, procurement and legal controls before changing a configuration, commitment or purchase order."
+      },
+      {
+        "type": "paragraph",
+        "text": "6. LEARN — case owner. Write the decision, result and revised tolerance back to the ledger."
+      },
+      {
+        "type": "paragraph",
+        "text": "Where contracts allow, rephase receipts. Accelerate the milestone that sets the ceiling. Qualify any alternate package, test, site or cloud route against its exact requirements before moving work. Re-run the destination lane's eligibility and acceptance checks before redirecting uncommitted systems. Set the response target from the physical or contractual window that still exists."
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/6c4638c234dd05fb40c6eec0d9ff41b2ba5f150ca5603b1d517ccc0f9a03d1b2.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Move a verified threshold breach through three governed bands—detect, evaluate, and authorize plus monitor—until an accountable owner approves or holds the action and system control records and monitors the authorized result. "
+      },
+      {
+        "type": "heading",
+        "text": "6 Why qualified supply responds unevenly",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Why does headline capacity arrive in uneven increments? Every layer matures on a different clock, while an announcement records one date."
+      },
+      {
+        "type": "paragraph",
+        "text": "Front-end wafer investment, equipment installation, process learning, stack assembly, package integration, test-program development, customer qualification and site commissioning mature on different schedules. A cleanroom opening precedes equipment and process qualification. Samples precede mass production. Shipment precedes accepted service."
+      },
+      {
+        "type": "paragraph",
+        "text": "Test illustrates the mismatch. Advantest's July 2026 Q&A described planning forecasts of approximately 18 months, compared with a historical horizon near six months. Yet final visibility into test time and insertion requirements may arrive only after tape-out and characterization, while accelerator final test can be more intensive than CPU test.[31]",
+        "links": [
+          {
+            "start": 347,
+            "end": 351,
+            "href": "https://www.advantest.com/document/en/investors/ir-library/result/JE_BIZ_260729_QA.pdf"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Equipment may therefore be committed while the test workload is still uncertain. More testers expand the tool base; program-specific qualification determines usable throughput."
+      },
+      {
+        "type": "paragraph",
+        "text": "Put construction, equipment delivery and committed capacity on the scheduled clock. Put yield learning, test-menu completion and customer qualification on evidence-dependent clocks. Use ranges and replan triggers for the second group, and treat each announced date as a milestone rather than a capacity guarantee."
+      },
+      {
+        "type": "paragraph",
+        "text": "The same lag appears in materials. IBIDEN's August update provides the complementary signal. Prospective glass-cloth suppliers improved its procurement outlook, while management still expected demand for large, multilayer substrates to exceed industry supply. Stable Cell 8 production and better use of existing capacity supported stronger-than-planned volume.[32][33]",
+        "links": [
+          {
+            "start": 360,
+            "end": 364,
+            "href": "https://www.ibiden.com/ir/items/en_QA_FY2026Q1.pdf"
+          },
+          {
+            "start": 364,
+            "end": 368,
+            "href": "https://www.ibiden.com/ir/items/en_kessannsetsumei2026Q1.pdf"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "IBIDEN's statement describes large, high-layer-count substrate conditions. Translating it into HBM-package supply also needs route, allocation and qualification evidence."
+      },
+      {
+        "type": "paragraph",
+        "text": "Relief is granular. One material input can ease while a substrate class stays constrained; one package route can expand while customer qualification or site power arrives later."
+      },
+      {
+        "type": "paragraph",
+        "text": "A second route to relief is architectural optionality. JEDEC's July 2026 SPHBM4 standard keeps the HBM4 DRAM dies but changes the interface base die, reducing the host interface from 2,048 to 512 data signals through 4:1 serialization so the memory can be mounted on standard organic substrates rather than a silicon interposer.[34] The standard establishes a consequential architectural alternative; shipment, package qualification and system acceptance come later.",
+        "links": [
+          {
+            "start": 328,
+            "end": 332,
+            "href": "https://www.businesswire.com/news/home/20260713869107/en/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "TSMC's July 2026 discussion reinforces the timing distinction: management described alternatives to CoWoS as useful for lowering cost and widening packaging flexibility, while indicating that the glass-substrate alternative discussed in that Q&A still required roughly another year of joint development before production maturity.[35] Alternate-route capacity therefore needs a qualification haircut until its base die, signal integrity, materials, thermals, test flow, customer configuration and cutoff all clear.",
+        "links": [
+          {
+            "start": 330,
+            "end": 334,
+            "href": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-08/3e494f0c14dd0890f897aa044415e21d93486cc4/TSMC%202Q26%20Transcript.pdf"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "This route-maturity constraint explains why the industry is pursuing substrate alternatives while holding them behind a qualification gate. Intel's development program points to flatter, more dimensionally stable glass substrates as a route to tighter overlay and larger, denser packages.[36] That evidence explains the engineering objective. TSMC production maturity, HBM qualification and realized commercial yield need their own evidence.",
+        "links": [
+          {
+            "start": 288,
+            "end": 292,
+            "href": "https://www.intel.com/content/www/us/en/newsroom/news/intel-unveils-industry-leading-glass-substrates.html"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Supplier ramps provide a third clock, and their state labels require normalization before comparison:"
+      },
+      {
+        "type": "paragraph",
+        "text": "· Micron: high-volume HBM4 shipments for one lead customer platform, qualification samples to multiple other end customers, and HBM4E volume production expected in 2027.[37]",
+        "links": [
+          {
+            "start": 169,
+            "end": 173,
+            "href": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000013/a2026q3ex991-pressrelease.htm"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "· SK hynix: HBM4 mass shipments reported from Q2, a second-half ramp planned, and HBM4E samples shipped in the first half.[38]",
+        "links": [
+          {
+            "start": 122,
+            "end": 126,
+            "href": "https://news.skhynix.com/en/q2-2026-business-results/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "· Samsung: HBM4 mass production and commercial shipment announced in February, followed by scaled HBM4 sales and HBM4E samples to major customers in Q2.[39]",
+        "links": [
+          {
+            "start": 152,
+            "end": 156,
+            "href": "https://news.samsung.com/global/samsung-electronics-announces-second-quarter-2026-results"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "These labels describe different production and commercial states. Public disclosures provide state labels rather than a common customer-qualified-volume denominator. Enter capacity in the plan after confirming product, route, allocation, delivery window and acceptance date."
+      },
+      {
+        "type": "paragraph",
+        "text": "Generational transitions can increase aggregate HBM output while reducing near-term fungibility. The required HBM generation, interface base die, accelerator, package route, test flow and customer qualification must still align."
+      },
+      {
+        "type": "paragraph",
+        "text": "Physical relief changes availability first. Contracts decide when that relief reaches price and return."
+      },
+      {
+        "type": "heading",
+        "text": "7 How supply relief reaches prices and returns",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Even after physical relief arrives, contracts determine when economics reset."
+      },
+      {
+        "type": "paragraph",
+        "text": "Physical supply relief reaches prices and margins through repricing exposure, contract structure, product mix, ramp cost, allocation and utilization."
+      },
+      {
+        "type": "paragraph",
+        "text": "TSMC's own economics show why bottleneck ownership and scarcity-value capture can diverge. Management described backend capacity as constrained while welcoming alternate packaging flexibility because it could enable more customer wafers to flow through TSMC's larger front-end business.[35] Configuration-specific analysis still determines the binding gate.",
+        "links": [
+          {
+            "start": 286,
+            "end": 290,
+            "href": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-08/3e494f0c14dd0890f897aa044415e21d93486cc4/TSMC%202Q26%20Transcript.pdf"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Micron's strategic customer agreements include binding multiyear take-or-pay volumes. Most use fixed or banded pricing; a minority use market-based pricing. Micron also identifies potential damages for supplier nonperformance, reduced allocation flexibility and possible enforcement disputes.[40]",
+        "links": [
+          {
+            "start": 292,
+            "end": 296,
+            "href": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Micron's June disclosure put signed agreements at approximately 20 percent of DRAM volume over their terms.[41] The agreements cover total DRAM volume. HBM coverage and repricing exposure are undisclosed. The timing gap shows why physical availability can improve before purchase prices reset.",
+        "links": [
+          {
+            "start": 107,
+            "end": 111,
+            "href": "https://s25.q4cdn.com/621799436/files/doc_financials/2026/q3/Q3-FY26-Prepared-Remarks.pdf"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Product transitions further complicate blended numbers. An older configuration can weaken while a higher-priced generation gains mix. Firm prices can coexist with lower margins if ramp cost rises. Consolidated company margins blend HBM with other products, while the return on the next facility requires a separate investment calculation."
+      },
+      {
+        "type": "paragraph",
+        "text": "Commitments can also accumulate upstream. NVIDIA reported $279 billion of supply and capacity commitments at 26 July 2026, alongside $36 billion of typically six-year AI-cloud service commitments under arrangements in which cloud partners purchase NVIDIA infrastructure.[42] Treat the amounts as separate production-side and consumption-sideobligations. Together they show how securing deployment capacity can create commitments on both sides.",
+        "links": [
+          {
+            "start": 270,
+            "end": 274,
+            "href": "https://investor.nvidia.com/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The financing can become gate-specific. In July 2026, Amkor and NVIDIA announced a $1.5 billion multiyear advanced-packaging and development agreement, with an NVIDIA prepayment supporting Arizona capacity that complements Amkor's Asian footprint and aligns the companies' technology roadmaps.[43] The disclosure establishes the financing commitment and intended geographic diversification. Package volume, yield, delivery guarantees and realized concentration-risk reduction are undisclosed. The funding party, gate operator and capacity beneficiary can be different companies; public terms leave the division of scarcity value unresolved.",
+        "links": [
+          {
+            "start": 293,
+            "end": 297,
+            "href": "https://ir.amkor.com/news-releases/news-release-details/amkor-technology-announces-strategic-partnership-nvidia-expand"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "For the buyer, separate three questions: Has availability improved? Has purchase price fallen? Has commitment flexibility increased?"
+      },
+      {
+        "type": "paragraph",
+        "text": "For the supplier, separate volume, pricing, cost and return on newly invested capital."
+      },
+      {
+        "type": "paragraph",
+        "text": "Structural HBM bit demand can stay strong while supplier economics normalize. Contracts can also delay price normalization after a physical gate begins to ease."
+      },
+      {
+        "type": "paragraph",
+        "text": "Those obligations acquire a cost when hardware, power and workload readiness arrive on different dates."
+      },
+      {
+        "type": "heading",
+        "text": "8 Who carries the cost before productive use",
+        "level": 2
+      },
+      {
+        "type": "heading",
+        "text": "8.1 Where physical and contractual exposure accumulates",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "What does a missed date cost? The answer depends on which obligations have already switched on. Hardware can arrive before the site or workload, leaving payments, inventory and reserved-power obligations active. Depreciation may begin once the asset is ready for its intended use."
+      },
+      {
+        "type": "paragraph",
+        "text": "The financial clock depends on asset state. Delivered or installed hardware can create cash, inventory, construction-in-progress, reservation or other carrying exposure before depreciation begins. Alphabet classifies data centers and servers under construction or assembly as assets awaiting service, with depreciation beginning when an asset is ready for its intended use.[44] Once in service, depreciation can continue while workload acceptance or utilization stays below plan.",
+        "links": [
+          {
+            "start": 373,
+            "end": 377,
+            "href": "https://abc.xyz/investor/faqs-and-general-information/default.aspx"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Berkeley Lab's August study examines 55 large-load tariffs and related frameworks, including proposed and approved provisions.[45] Among available standardized terms, minimum contract duration had a five-year median for tariffs proposed before 2025 and a twelve-year median for proposals since 2025. Separately, minimum billing demand had an 80-percent median of contracted demand.",
+        "links": [
+          {
+            "start": 126,
+            "end": 130,
+            "href": "https://eta-publications.lbl.gov/sites/default/files/2026-08/rate_designs_large_loads_2026.08.10.pdf"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Each statistic uses its own sample: the study reports a median duration and a separate median billing floor. Combining them into one universal twelve-year, 80-percent contract would overstate the evidence. Minimum billing demand sets the billing basis independently of actual electricity consumption."
+      },
+      {
+        "type": "paragraph",
+        "text": "The operator must reconcile hardware receipts with energization, permitted load ramp, minimum payments, collateral and exit terms. Flexible or staggered connections can sometimes accelerate access through import limits and controls, but the workload must tolerate curtailment and recovery.[46]",
+        "links": [
+          {
+            "start": 289,
+            "end": 293,
+            "href": "https://eta-publications.lbl.gov/sites/default/files/2026-06/lbnl_large_loads_speed_to_power_final_1.pdf"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "For a named site and required date, power is a hard physical gate whose severity varies by location and period. Capacity routing shifts eligible workloads to an already energized region or configuration. Google has described moving suitable media-processing tasks among data centers according to regional hourly carbon-free-energy availability, subject to constraints such as privacy law.[47] The example demonstrates bounded geographic mobility. The destination must also match hardware, data location, latency, reservation, software and acceptance.",
+        "links": [
+          {
+            "start": 388,
+            "end": 392,
+            "href": "https://blog.google/company-news/outreach-and-initiatives/sustainability/carbon-aware-computing-location/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Platform acceptance is equally specific. NVIDIA's DGX GB300 NVL72 release notes identify a rack-component firmware baseline for proper NVLink Recovery operation.[48] The evidence establishes a configuration condition; industry-wide qualification rates are undisclosed.",
+        "links": [
+          {
+            "start": 161,
+            "end": 165,
+            "href": "https://docs.nvidia.com/dgx/dgxgb300nvl72-release-notes/overview.html"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Cloud reservations transfer the asset decision while preserving the matching problem. Google's Ironwood documentation illustrates both architectural and operating-state specificity: each chip's 192 GB of HBM is exposed as two separate 96 GB chiplet domains. JAX and PyTorch are the documented frameworks; TensorFlow falls beyond that route.[49] In All Capacity mode, customers receive full reserved capacity and topology visibility while managing failures and planned maintenance in place of the standard Compute Engine SLA.[50] Ownership changes; acceptance and resilience work continues.",
+        "links": [
+          {
+            "start": 340,
+            "end": 344,
+            "href": "https://docs.cloud.google.com/tpu/docs/tpu7x"
+          },
+          {
+            "start": 524,
+            "end": 528,
+            "href": "https://docs.cloud.google.com/tpu/docs/all-capacity-overview"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Google Cloud otherwise requires exact reservation-property matching and generally charges while reserved resources exist, including when unused.[51] AWS likewise bills Capacity Reservations whether used or unused, while Capacity Blocks are time- and zone-specific and have separate cancellation rules.[52][53] Access protection and workload readiness occupy separate states.",
+        "links": [
+          {
+            "start": 144,
+            "end": 148,
+            "href": "https://docs.cloud.google.com/compute/docs/instances/reservations-overview"
+          },
+          {
+            "start": 301,
+            "end": 305,
+            "href": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-pricing-billing.html"
+          },
+          {
+            "start": 305,
+            "end": 309,
+            "href": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "8.2 Price the misalignment",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "The following expressions are planning aids; audited accounting follows company-specific policies."
+      },
+      {
+        "type": "paragraph",
+        "text": "Misalignment exposure = fixed site obligations + reserved-capacity charges + asset carrying costs + qualification or rework costs − recoverable redeployment value."
+      },
+      {
+        "type": "paragraph",
+        "text": "Model delayed workload value separately because it depends on the operator's revenue, contribution margin and service obligations."
+      },
+      {
+        "type": "paragraph",
+        "text": "Two delays of equal duration can create different exposure. In an author illustration, normalize committed site and minimum-power cost to five units per quarter, asset carrying exposure to four, and support or remediation to one. A two-quarter package-test delay before hardware receipt produces ten cost units. A two-quarter post-install software-qualification delay produces twenty. These author-defined units show which ledger lines activate as the delay moves downstream; industry estimates and margin forecasts require empirical calibration."
+      },
+      {
+        "type": "heading",
+        "text": "8.3 Haircut redeployment value",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "Redeployment value needs a liquidity haircut. Start with observable resale, sublease or internal-use value, then deduct for technical eligibility | software/runtime portability | fabric/topology fit | site and power | contractual assignability | requalification time and cost | time to cash. Standard Ethernet can widen technical options even when resale-market evidence is absent; a captive accelerator can retain internal value despite lacking an external exit. When evidence is absent, show a range that includes zero external recovery rather than asserting liquidity."
+      },
+      {
+        "type": "paragraph",
+        "text": "Recovery value depends on how quickly the configuration can reach another eligible workload, site or buyer after technical, contractual and timing frictions."
+      },
+      {
+        "type": "heading",
+        "text": "8.4 Price the resilience premium",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "Optionality is contractual and architectural. An operator can layer firm owned or merchant capacity for high-confidence demand, rephasing rights for forecast error, and cloud or on-demand access for the variable tail. Every route still must be eligible and timely. If a take-or-pay commitment and a cloud reservation both bill while unused, duplicated obligations can amplify exposure unless route and timing diversify the same underlying risk. Track each commitment by eligible configuration | firmness | exercise or cancellation right | overlap | billing start | acceptance dependency."
+      },
+      {
+        "type": "paragraph",
+        "text": "For illustration, a cloud reservation can begin billing to protect a launch date while purchased accelerators await site energization. Both obligations stay live while accepted capacity at that site equals zero."
+      },
+      {
+        "type": "paragraph",
+        "text": "Resilience premium = all-in cost of the flexible route − all-in cost of the cheapest feasible base route."
+      },
+      {
+        "type": "paragraph",
+        "text": "Joined probabilities are unavailable, so price the premium by named stress case rather than an expected value:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Scenario resilience value = avoided misalignment exposure + incremental redeployment value − resilience premium − switching and re-qualification cost − duplicated-obligation cost."
+      },
+      {
+        "type": "paragraph",
+        "text": "In an author illustration, suppose a flexible route costs eight units more, avoids twelve units of misalignment exposure, adds three units of redeployment value and incurs four units of switching, requalification and overlap cost. Scenario resilience value is three units. If the route produces zero accepted equivalents by the cutoff, those three units describe downside protection while current capacity stays unchanged."
+      },
+      {
+        "type": "paragraph",
+        "text": "Approve the premium only when the route raises accepted equivalents before the cutoff or reduces downside by more than its all-in cost in the stated case. Any protected workload contribution belongs in a separate operator-specific calculation."
+      },
+      {
+        "type": "paragraph",
+        "text": "The economic unit is therefore workload-accepted capacity and its useful output. An accepted equivalent is the normalized planning unit used to count that capacity consistently; shipments, installed racks and reserved instances occupy separate commercial or physical states."
+      },
+      {
+        "type": "paragraph",
+        "text": "The formulas price individual cases. The final scorecard decides whether a commitment belongs in the accepted-capacity plan."
+      },
+      {
+        "type": "heading",
+        "text": "9 The decision conditions and executive watchlist",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Four operating conditions can coexist across products, contracts and sites."
+      },
+      {
+        "type": "paragraph",
+        "text": "Scarcity persists. Eligible demand exceeds compatible, timely supply. A premium may be rational when the secured resource raises accepted equivalents before the deadline."
+      },
+      {
+        "type": "paragraph",
+        "text": "Supply improves under protected pricing. Delivery risk falls, but contract bands or take-or-pay terms delay price relief. Measure the availability gain separately from purchase-price savings."
+      },
+      {
+        "type": "paragraph",
+        "text": "The configuration gap closes. Exposed prices weaken and buyers should reassess inventory, receipts and uncommitted purchases. New-generation mix can still support blended pricing."
+      },
+      {
+        "type": "paragraph",
+        "text": "Hardware runs ahead of deployment. Site, platform or workload acceptance is late. Rephase receipts where contracts permit, accelerate the limiting deployment gate and quantify carrying cost. Installed inventory becomes capacity after acceptance."
+      },
+      {
+        "type": "paragraph",
+        "text": "Use the executive diagnostic card as a non-compensatory control: one red critical gate blocks acceptance, while an averaged score would mask that failure."
+      },
+      {
+        "type": "paragraph",
+        "text": "· GREEN — matched to the exact configuration and cutoff, supported by current evidence and an accountable owner."
+      },
+      {
+        "type": "paragraph",
+        "text": "· AMBER — conditional, inside an agreed tolerance or dependent on an open milestone or right."
+      },
+      {
+        "type": "paragraph",
+        "text": "· RED — missing, mismatched, late, commercially inaccessible or awaiting acceptance."
+      },
+      {
+        "type": "paragraph",
+        "text": "Ask seven questions. One red critical gate assigns zero accepted-equivalent capacity to that configuration."
+      },
+      {
+        "type": "paragraph",
+        "text": "1. REQUIREMENT TRACEABILITY — Can every commitment be traced to an Article 1 lane, native unit, exact configuration, site and required date?"
+      },
+      {
+        "type": "paragraph",
+        "text": "2. CONFIGURATION ELIGIBILITY — Has the exact SKU, topology, software route and acceptance test been named?"
+      },
+      {
+        "type": "paragraph",
+        "text": "3. ALIGNED PHYSICAL GATE — Which resource limits the current accepted-equivalent stress ceiling?"
+      },
+      {
+        "type": "paragraph",
+        "text": "4. COMMERCIAL FIRMNESS — Are volume, price, delivery, cancellation and rephasing rights explicit?"
+      },
+      {
+        "type": "paragraph",
+        "text": "5. SITE AND PLATFORM READINESS — Will energization, permitted load, cooling, fabric and qualification clear by the cutoff?"
+      },
+      {
+        "type": "paragraph",
+        "text": "6. DOWNSIDE EXPOSURE — What inventory, minimum billing, reservation, carrying and duplicated-obligation costs turn on if the date slips?"
+      },
+      {
+        "type": "paragraph",
+        "text": "7. REPLAN TRIGGER AND OWNER — What evidence event reopens the plan, within what tolerance, by whose response deadline and under whose approval?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Article 1 produced a modeled hardware requirement. Article 2 asks how many accepted equivalents can clear every gate in the same period—and who carries the cost when the clocks diverge."
+      },
+      {
+        "type": "paragraph",
+        "text": "Which commitment increases productive capacity by the required date—and who pays if that date slips?"
+      },
+      {
+        "type": "paragraph",
+        "text": "Which of the six gates is creating the most friction in your deployment schedule? Share the gate and the failure mode below."
+      }
+    ],
+    "media": [
+      {
+        "src": "/_marketing/media/302e9f28011cfc1e0ee7a54ee70ed06e0d660bd9a0bf8b70ad46732c46e03029.png",
+        "alt": "Article cover: Why More HBM Does Not Guarantee More AI Capacity. An HBM and logic package must clear package test, site readiness, and workload acceptance.",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "src": "/_marketing/media/c4549a6cf0922d8a6870832e9b3562b51bda6a33458b9778b22e06bc4409fc86.png",
+        "alt": "Dell commercial measures sit across a missing join from workload-accepted capacity; cohort, configuration, cutoff date, and acceptance status must be reconciled.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/9a784a987dc150b4b30509a8613cfa4f7f64d7365d3619d21beaf4681d0bba51.png",
+        "alt": "An exploded HBM package diagram connects wafer inputs and five pass states to platform validation, site commissioning, and workload acceptance.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/4287792bbad0a7e2138747be0c59816eb2b869ea25cd88647b68427aa2885743.png",
+        "alt": "A matrix compares assistants, recommendation, generative media, physical AI, and scientific AI by counted output, eligibility checks, and supply pool.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/70559efd000c2ae2f61f70b347e0436971288f3e4fce440f920b47942967acd1.png",
+        "alt": "Training produces a checkpoint; recurring prefill, KV transfer, decode, and service stages must jointly meet latency, quality, and task-success targets.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/08dd30cc5e9d260061e250e1a14178671bf2f12e44270ba0c8a2fc04fa406cf5.png",
+        "alt": "Recommendation serving links qualified HBM hot-state replicas with host and remote memory; refresh and publication operate on a separate clock.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/d70b7fef145c82f3113e9c1319c55085dcf0c498ceb228120bc476dcb71feb96.png",
+        "alt": "Two generative-media routes require at least 80 GB or 24 GB of VRAM; matched tests are still needed to quantify speed, cost, and transfer trade-offs.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/3e0c08760ab3ad513d2701bdb6d948be26f82418c85093340c945a48bbe8ce50.png",
+        "alt": "Physical AI separates offboard HBM learning, graphics-VRAM simulation, and onboard LPDDR5X runtime, each with its own unit and acceptance test.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/f56ac247fe605203b48e2fbe1ba605c5b79c97de780947081a1bd3d4eef265d8.png",
+        "alt": "Scientific capacity requires per-rank state and workspace to fit eligible local HBM domains, with fabric, checkpoint, allocation, and validation constraints.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/3ea33ae90312663b8194dd46113c73e1f5d279c5c3d7472f8b9c298446e6b5a7.png",
+        "alt": "A hypothetical six-gate chart shows packaging relief from 90 to 110 raising the modeled ceiling only to 96, where platform qualification becomes limiting.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/6c4638c234dd05fb40c6eec0d9ff41b2ba5f150ca5603b1d517ccc0f9a03d1b2.png",
+        "alt": "Three governed bands detect a threshold breach, evaluate routes and exposure, then require an accountable owner to approve or hold actions while controls log and monitor.",
+        "width": 800,
+        "height": 1000
+      }
+    ]
+  },
+  {
+    "id": "7500768776192204801",
+    "slug": "what-turns-ai-growth-into-hbm-demand",
+    "title": "What Turns AI Growth Into HBM Demand?",
+    "excerpt": "What connects AI workloads to memory demand, qualified hardware, and new capacity?",
+    "publishedAt": "2026-09-02",
+    "author": "Ujjal Dutta",
+    "sourceUrl": "https://www.linkedin.com/pulse/what-turns-ai-growth-hbm-demand-ujjal-dutta-x7k4c/",
+    "topics": [
+      "AI infrastructure",
+      "Semiconductors"
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "/_marketing/media/c9990d6b7af388f1f52af5d19d35eb0addce6a26624b6ab0eca800a8b13a4e76.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Separating durable application demand from today’s scarcity economics."
+      },
+      {
+        "type": "paragraph",
+        "text": "HBM demand is booming. The memory suppliers serving it are reporting results that would have looked extraordinary at the last trough."
+      },
+      {
+        "type": "paragraph",
+        "text": "Reported supplier profitability snapshot — Micron. "
+      },
+      {
+        "type": "paragraph",
+        "text": "Fiscal 2023 GAAP gross margin was −9.1%; fiscal Q3 2026 GAAP gross margin was 84.6%. \nIts Cloud Memory Business Unit—covering memory solutions for large hyperscale customers and HBM for all data-center customers—reported an 83% gross margin and 78% operating margin in the quarter."
+      },
+      {
+        "type": "paragraph",
+        "text": "Reported supplier profitability snapshot — SK hynix. "
+      },
+      {
+        "type": "paragraph",
+        "text": "Preliminary consolidated operating margin was 76% in Q2 2026, versus −67% in Q1 2023; \nSamsung’s Memory Business said quarterly revenue and operating profit reached all-time highs."
+      },
+      {
+        "type": "paragraph",
+        "text": "Sources — Micron FY2023; Micron FQ3 2026; Micron CMBU scope; SK hynix Q1 2023; SK hynix Q2 2026; Samsung Q2 2026.(The scopes, periods and metrics may differ; audited HBM-only ecosystem margins are undisclosed).",
+        "links": [
+          {
+            "start": 10,
+            "end": 23,
+            "href": "https://investors.micron.com/news/press-release/2023/Micron-Technology-Inc--Reports-Results-for-the-Fourth-Quarter-and-Full-Year-of-Fiscal-2023-09-27-2023/default.aspx"
+          },
+          {
+            "start": 25,
+            "end": 40,
+            "href": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Results-for-the-Third-Quarter-of-Fiscal-2026/default.aspx"
+          },
+          {
+            "start": 42,
+            "end": 59,
+            "href": "https://investors.micron.com/news/press-release/2025/Micron-Announces-Business-Unit-Reorganization-to-Capitalize-on-AI-Growth-Across-All-Market-Segments-04-17-2025/default.aspx"
+          },
+          {
+            "start": 61,
+            "end": 77,
+            "href": "https://news.skhynix.com/en/2023-first-quarter-financial-results/"
+          },
+          {
+            "start": 79,
+            "end": 95,
+            "href": "https://news.skhynix.com/en/q2-2026-business-results/"
+          },
+          {
+            "start": 97,
+            "end": 112,
+            "href": "https://news.samsung.com/global/samsung-electronics-announces-second-quarter-2026-results"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The commercial moment is exceptional, but price, product mix, utilization and cost adjust on different clocks. Scarcity can lift margins before investment, yields and qualified output expand."
+      },
+      {
+        "type": "paragraph",
+        "text": "Added supply then erodes scarcity, and operators feel the lag across workload, qualification, budget, procurement and acceptance."
+      },
+      {
+        "type": "paragraph",
+        "text": "AI may have steepened demand. Supply response still operates."
+      },
+      {
+        "type": "paragraph",
+        "text": "The question Will this last? breaks into three parts. "
+      },
+      {
+        "type": "paragraph",
+        "text": "Will applications keep requiring more HBM-bearing systems? \nWill qualified supply remain tight? \nWill supplier economics remain exceptional as capacity responds?"
+      },
+      {
+        "type": "paragraph",
+        "text": "This article takes the first question. Article 2 takes the next two. HBM bit demand can remain structurally strong after scarcity pricing and supplier margins normalize."
+      },
+      {
+        "type": "heading",
+        "text": "1 The bridge from AI activity to HBM demand",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Users, tokens, launches and gigawatt announcements signal activity."
+      },
+      {
+        "type": "paragraph",
+        "text": "A modelable requirement appears only when useful work is tied to its native denominator, memory signature, service target, qualified system, measured goodput, fleet policy and survivor pool."
+      },
+      {
+        "type": "paragraph",
+        "text": "Useful outcome → model work → native denominator + memory signature + service target → qualified system + measured goodput → fleet sizing → modeled required packages → modeled gross additions → modeled HBM attachment."
+      },
+      {
+        "type": "paragraph",
+        "text": "Gross additions equal required packages minus qualified survivors, floored at zero."
+      },
+      {
+        "type": "paragraph",
+        "text": "Qualification is the hinge: native denominator, service target and measured goodput establish what counts. The active-duty fraction stays separate; qualified survivors determine what remains to add."
+      },
+      {
+        "type": "paragraph",
+        "text": "FP&A — CAPITAL LENS  S&OP / IBP — EXECUTION LENS"
+      },
+      {
+        "type": "paragraph",
+        "text": "Tests timing, budget and capital alternatives. Reconciles exact configuration, inventory, supply, qualification, integration, site readiness and acceptance timing."
+      },
+      {
+        "type": "paragraph",
+        "text": "Together, the lenses synchronize capital timing with deployable capacity in the same planning window."
+      },
+      {
+        "type": "paragraph",
+        "text": "A requirement is not an order. Commitments, purchase orders, shipments, installed systems and accepted service remain separate ledgers."
+      },
+      {
+        "type": "paragraph",
+        "text": "Scope — This article follows AI-led demand. Argonne’s Aurora shows that simulation and data-intensive science create HBM demand.",
+        "links": [
+          {
+            "start": 54,
+            "end": 60,
+            "href": "https://docs.alcf.anl.gov/aurora/"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "2 Applications create different HBM-bearing work",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Every application ledger follows the same scan path: PLANNING UNIT(S) → SYSTEM CONVERSION → EVIDENCE BOUNDARY. Qualification selects the attached-memory class; qualified survivors determine whether modeled additions stay positive or floor at zero."
+      },
+      {
+        "type": "paragraph",
+        "text": "Figure 1 shows the rule: identify the native denominator and workload stage, qualify the complete system, then follow the resulting memory path."
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/cba8ce85eaca71307da5ded8adfa4902bdf9b1d138a501c24eac66d72c2f084b.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Figure 1. Each application starts with a native denominator; qualification selects its memory path. Offboard, recurring and endpoint ledgers remain separate; orders remain outside evidence."
+      },
+      {
+        "type": "paragraph",
+        "text": "2.1 Assistants and agents: live state sets the peak"
+      },
+      {
+        "type": "paragraph",
+        "text": "Assistants combine resident weights, prompt processing, autoregressive decoding and retained key–value state. Agents add planning, tools, retries, revisions and independently evolving contexts. Cumulative work measures the trail; simultaneous residence measures the peak."
+      },
+      {
+        "type": "paragraph",
+        "text": "OpenAI names a direct model-to-system path: GPT-5.5 was co-designed for, trained with and served on NVIDIA GB200 and GB300 NVL72. GB200 joins 72 GPUs with 13.4 TB of HBM3E; GB300 provides 288 GB per GPU, about 20 TB across 72. Allocation by stage, product, region and fleet is undisclosed. OpenAI GPT-5.5; NVIDIA GB200 NVL72; NVIDIA GB300 NVL72.",
+        "links": [
+          {
+            "start": 290,
+            "end": 304,
+            "href": "https://openai.com/index/introducing-gpt-5-5/"
+          },
+          {
+            "start": 306,
+            "end": 324,
+            "href": "https://www.nvidia.com/en-us/data-center/gb200-nvl72/"
+          },
+          {
+            "start": 326,
+            "end": 344,
+            "href": "https://www.nvidia.com/en-us/data-center/gb300-nvl72/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Anthropic offers operating-stock evidence. In April 2026 it said it was currently using more than one million Trainium2 chips to train and serve Claude. AWS specifies 96 GiB of HBM3 and 2.9 TB/s per chip. The disclosure establishes operating stock; its split across stages, products and regions—and the purchases required to expand it—remains undisclosed. Anthropic operating disclosure; AWS Trainium2.",
+        "links": [
+          {
+            "start": 356,
+            "end": 386,
+            "href": "https://www.anthropic.com/news/anthropic-amazon-compute"
+          },
+          {
+            "start": 388,
+            "end": 401,
+            "href": "https://aws.amazon.com/ec2/instance-types/trn2/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Anthropic reports about four times chat token use for agents and about fifteen times for multi-agent systems. These ratios measure cumulative work; concurrency and HBM attachment require separate measurement. Anthropic multi-agent system.",
+        "links": [
+          {
+            "start": 209,
+            "end": 237,
+            "href": "https://www.anthropic.com/engineering/multi-agent-research-system"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "KV means key–value cache: attention state retained for prior tokens. In an illustration using Meta’s Llama 3.1 70B geometry—80 layers, eight KV heads, dimension 128 and two bytes each for K and V—one token contributes 320 KiB of raw logical KV. An 8,192-token context contributes 2.5 GiB; four retained together contribute 10 GiB, versus 2.5 GiB sequentially when each prior cache is released. Meta model configurations; NVIDIA inference optimization."
+      },
+      {
+        "type": "paragraph",
+        "text": "These totals describe raw logical state; device-HBM allocation depends on representation, distribution, placement and runtime policy. Prefix sharing and precision change representation; offload relocates blocks; eviction may trigger recomputation. Tool waits occupy HBM while state remains local; retries raise the peak when old and new state overlap. vLLM prefix caching; NVIDIA Dynamo KV offloading.",
+        "links": [
+          {
+            "start": 352,
+            "end": 371,
+            "href": "https://docs.vllm.ai/en/latest/design/prefix_caching/"
+          },
+          {
+            "start": 373,
+            "end": 400,
+            "href": "https://docs.nvidia.com/dynamo/dev/cli/kv-cache-offloading/overview"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/65d40e97a0b1e0d65f60f114649b3680265cdd89e031fd127669b8572265309b.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Figure 2. Four retained contexts raise illustrated raw logical KV from 2.5 to 10 GiB; physical placement and disclosed production layouts remain separate."
+      },
+      {
+        "type": "paragraph",
+        "text": "2.2 Recommendation and retrieval: HBM holds the hot working set"
+      },
+      {
+        "type": "paragraph",
+        "text": "The catalogue is the warehouse. HBM is the workbench."
+      },
+      {
+        "type": "paragraph",
+        "text": "Recommendation combines sparse embeddings, dense parameters, jagged histories, candidate retrieval, ranking and continuously refreshed representations. Meta’s MTIA 300 carries 216 GB of HBM3E and targets training recommendation and ranking models whose embedding tables can contain more than 99% of parameters. Meta reports frequent AllReduce, AllToAll and AllGather traffic; on one 150-billion-parameter production model across 40 accelerators, its communication path was 3.9 times faster than an equivalent GPU cluster. This is direct HBM engineering evidence; installed-fleet scale remains undisclosed. Meta MTIA 300.",
+        "links": [
+          {
+            "start": 606,
+            "end": 619,
+            "href": "https://engineering.fb.com/2026/08/24/networking-traffic/mtia-300-meta-training-chip-built-in-nics/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Meta’s GEM ads model adds scale context: several thousand current-generation GPUs and HBM pressure from embeddings, parameters and activations. After a twofold improvement, Meta reports 20–25% model-FLOP utilization. Model-FLOP utilization is the share of peak arithmetic devoted to model operations."
+      },
+      {
+        "type": "paragraph",
+        "text": "The remaining 75–80% covers communication, memory movement, imbalance, bubbles and recomputation. Under unchanged work, moving from 20% to 25% utilization reduces device-time by 20%; the gain can also fund larger models, faster releases or more experiments. Meta GEM.",
+        "links": [
+          {
+            "start": 258,
+            "end": 266,
+            "href": "https://engineering.fb.com/2026/08/03/ml-applications/training-gem-at-llm-scale-meta-ads-recommendation-foundation-model/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "A request narrows learned retrieval state into a shortlist while the runtime places indexes, embeddings, weights and buffers across on-chip cache, HBM, host DRAM and remote CPU-host DRAM. The shortlist is output; HBM holds selected retrieval state. SilverTorch’s A100 40 GB configuration is an evaluation case whose production-fleet scale remains undisclosed. Meta SilverTorch.",
+        "links": [
+          {
+            "start": 360,
+            "end": 376,
+            "href": "https://engineering.fb.com/2026/05/26/ml-applications/silvertorch-index-as-model-new-retrieval-paradigm-recommendation-systems/"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/b25c34cff3ca99773b39269a2369464994a3e87f74a79d6f5e4c2e183feec778.png"
+      },
+      {
+        "type": "paragraph",
+        "text": " Figure 3. Search narrows candidates while placement keeps reusable state near compute; serving and training disclosures are separate, and their fleet relationship is undisclosed."
+      },
+      {
+        "type": "heading",
+        "text": "2.3 Image and video generation: work integral and residency peak",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "Generated media produces two hardware measures. The work integral accumulates temporal windows, sampling or refinement steps and rejected variants. The residency peak counts only state live together: weight shards, latents, activations, reusable scratch and runtime headroom. Forecast accepted images or video-minutes at fixed spatial size, duration, iteration policy, quality and deadline."
+      },
+      {
+        "type": "paragraph",
+        "text": "Memory reuse across disjoint lifetimes means serial work can extend accelerator-time while leaving the peak unchanged. Slicing, tiling and CPU offload exchange local capacity for time or traffic."
+      },
+      {
+        "type": "paragraph",
+        "text": "In 2024, Runway said A3 H100 VMs supported Gen-2 training and inference at fabric scale while GPUs per job and occupancy remained undisclosed. Separately, A3 High 8G specifies eight 80 GB H100s—640 GB aggregate nominal HBM3 across device-local memories. NVIDIA’s L4 uses 24 GB GDDR6 for video and generative workloads; accepted assets, codecs, storage and egress follow separate paths. NVIDIA TensorRT memory; Diffusers memory optimization; Runway deployment; Google Cloud GPU configurations; NVIDIA L4.",
+        "links": [
+          {
+            "start": 386,
+            "end": 408,
+            "href": "https://docs.nvidia.com/deeplearning/tensorrt/latest/architecture/how-trt-works.html"
+          },
+          {
+            "start": 410,
+            "end": 439,
+            "href": "https://huggingface.co/docs/diffusers/optimization/memory"
+          },
+          {
+            "start": 441,
+            "end": 458,
+            "href": "https://nvidianews.nvidia.com/news/google-cloud-ai-development"
+          },
+          {
+            "start": 460,
+            "end": 491,
+            "href": "https://cloud.google.com/compute/docs/gpus"
+          },
+          {
+            "start": 493,
+            "end": 502,
+            "href": "https://www.nvidia.com/en-us/data-center/l4/"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/3b33082c5189682f60cde0af352a5b8878d6a56e49b81f77ef771abfb073ff9e.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Figure 4. Generative media separates cumulative work from the live-memory peak; Runway job allocation remains undisclosed, and L4 is a separate platform example."
+      },
+      {
+        "type": "heading",
+        "text": "2.4 Physical AI: central campaigns and deployed machines",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "Physical AI separates offboard campaigns from onboard runtime. Wayve’s GAIA-2 report gives two training configurations: a 300,000-step, batch-128 video tokenizer on 128 H100s, and a 460,000-step, batch-256 latent world model on 256 H100s. A 20,000-step decoder GAN fine-tune omits hardware, so it remains outside the 128-H100 run."
+      },
+      {
+        "type": "paragraph",
+        "text": "Model the two published configurations separately; installed stock, H100 SKU, HBM per GPU, topology and elapsed hours remain undisclosed. Wayve GAIA-2; technical report; NVIDIA H100.",
+        "links": [
+          {
+            "start": 138,
+            "end": 150,
+            "href": "https://wayve.ai/thinking/gaia-2/"
+          },
+          {
+            "start": 152,
+            "end": 168,
+            "href": "https://wayve.ai/wp-content/uploads/2025/03/GAIA_2_Technical_Report.pdf"
+          },
+          {
+            "start": 170,
+            "end": 181,
+            "href": "https://www.nvidia.com/en-us/data-center/h100/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "The endpoint evidence follows a separate lane. Wayve announced that its Gen 3 robot vehicle platform will be built on NVIDIA DRIVE AGX Thor. Public disclosures leave any GAIA-2-to-Thor model assignment undisclosed. They also leave the Gen 3 production memory bill and deployment count unresolved."
+      },
+      {
+        "type": "paragraph",
+        "text": "NVIDIA separately specifies one Thor SoC, 64 GB LPDDR5X and up to 273 GB/s for its DRIVE AGX Thor developer kit; treat those as developer-platform specifications rather than Wayve’s production vehicle bill."
+      },
+      {
+        "type": "paragraph",
+        "text": "Forecast central campaigns by accelerator-hours, completion window and overlap. Forecast endpoint attachment as qualified platforms × disclosed memory; survivors, spares and timing determine modeled additions. Wayve AV2.0; Wayve Gen 3; NVIDIA DRIVE AGX Thor.",
+        "links": [
+          {
+            "start": 210,
+            "end": 221,
+            "href": "https://wayve.ai/technology/av2-0/"
+          },
+          {
+            "start": 223,
+            "end": 234,
+            "href": "https://wayve.ai/thinking/wayve-gen-3/"
+          },
+          {
+            "start": 236,
+            "end": 257,
+            "href": "https://developer.nvidia.com/drive/agx/"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/cd0ab9716ff81844d164852a1e5f10e0596c8e6b2e2f094cff6b7f81452aba2f.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Figure 5. Physical AI creates separate offboard HBM and onboard LPDDR ledgers; model linkage, production memory and deployment count remain undisclosed."
+      },
+      {
+        "type": "heading",
+        "text": "2.5 Scientific AI: three demand clocks",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "Scientific AI runs on three clocks across owned, rented or shared fleets: training campaigns by qualified work and deadline; operational forecasts by on-time issuance plus reserve; and discovery loops by accepted experiments per lab-compute cycle. Each clock counts different work; combine mapped, compatible schedules."
+      },
+      {
+        "type": "paragraph",
+        "text": "ECMWF’s AIFS Single v1.1 model card discloses 64 A100 GPUs with 40 GB each for about one week. Converting one week to seven days gives roughly 448 A100-device-days by author arithmetic. That figure covers the disclosed training procedure; full program work and annual cadence remain outside its scope. ECMWF AIFS Single v1.1.",
+        "links": [
+          {
+            "start": 302,
+            "end": 324,
+            "href": "https://huggingface.co/ecmwf/aifs-single-1.1"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "AIFS Single v2 entered operations on 12 May 2026. It issues one 15-day global trajectory with 6-hourly outputs four times daily. Training used 16 120 GB GH200 GPUs for about four days; the production fleet, allocation, reserve and purchases remain undisclosed."
+      },
+      {
+        "type": "paragraph",
+        "text": "AIFS ENS v2 is separate: 51 members trained on 32 GH200 GPUs for about one week. Keep the denominators separate. ECMWF AIFS Single v2; ECMWF AIFS ENS v2; ECMWF operational dataset status.",
+        "links": [
+          {
+            "start": 113,
+            "end": 133,
+            "href": "https://huggingface.co/ecmwf/aifs-single-2.0"
+          },
+          {
+            "start": 135,
+            "end": 152,
+            "href": "https://huggingface.co/ecmwf/aifs-ens-2.0"
+          },
+          {
+            "start": 154,
+            "end": 186,
+            "href": "https://www.ecmwf.int/en/forecasts/datasets/aifs-machine-learning-data"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Recursion discloses BioHive-2 as installed infrastructure: 63 DGX H100 systems, 504 H100 GPUs and Quantum-2 InfiniBand. NVIDIA specifies eight 80 GB H100 GPUs, or 640 GB aggregate HBM3, per DGX H100; 63 systems therefore imply 40.32 decimal TB of nominal aggregate HBM3. This is distributed installed stock; pool capacity, consumption, allocation and scientific throughput require separate evidence."
+      },
+      {
+        "type": "paragraph",
+        "text": "“Accepted experiments per lab-compute cycle” is author-defined; BioHive-2 discloses installed infrastructure. Keep device-days, operational issuances and lab outcomes separate."
+      },
+      {
+        "type": "paragraph",
+        "text": "Map each lane to qualified replicas by configuration, deadline and time bucket. FP&A can then compare owned, rented or reserved capacity across compatible schedules. Recursion BioHive-2; NVIDIA DGX H100.",
+        "links": [
+          {
+            "start": 166,
+            "end": 185,
+            "href": "https://ir.recursion.com/news-releases/news-release-details/recursion-announces-completion-nvidia-powered-biohive-2-largest"
+          },
+          {
+            "start": 187,
+            "end": 202,
+            "href": "https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-h100/latest/dgx-superpod-components.html"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/3ff8d7104bb91c3c40a6d137a82b6e33a4ecc514f4bdee9ba42842c486854b72.png"
+      },
+      {
+        "type": "paragraph",
+        "text": " Figure 6. Scientific AI uses separate training, forecast and lab denominators. Map by qualified configuration and deadline; operating allocation and lab throughput remain undisclosed."
+      },
+      {
+        "type": "heading",
+        "text": "3 Four memory-system jobs determine qualified goodput",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "HBM is one component inside a qualified path. Four modular jobs determine qualified goodput: HOLD capacity, FEED compute, EXCHANGE distributed state and TIER colder state. Every required job must clear the same operating boundary."
+      },
+      {
+        "type": "paragraph",
+        "text": "Figure 7 separates two planning questions on the same qualified configuration. RUNTIME QUALIFICATION measures accepted work per active replica within quality, latency, availability, software, topology, power and thermal limits. DEPLOYABLE SUPPLY asks how many compatible complete systems can be manufactured, allocated, integrated, sited and accepted by date; HBM and logic availability, packaging yield, substrates and test bind that ledger. TSMC CoWoS; AMD CDNA 3.",
+        "links": [
+          {
+            "start": 443,
+            "end": 453,
+            "href": "https://3dfabric.tsmc.com/english/dedicatedFoundry/technology/cowos.htm"
+          },
+          {
+            "start": 455,
+            "end": 465,
+            "href": "https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-3-white-paper.pdf"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/5e9efa4bf8e8d4eef9566239765d43f66110543856802da35926fb0070262570.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Figure 7. Runtime qualification measures accepted work; deployable supply counts compatible systems manufactured, allocated, integrated, sited and accepted by date."
+      },
+      {
+        "type": "paragraph",
+        "text": "HOLD — Capacity. Peak simultaneous state sets capacity; lifetime bytes belong to the work ledger. Agents retain weights, live KV and runtime buffers. Recommendation keeps the latency-critical hot set. Media holds live tensors and workspaces. Central physical-AI and scientific runs retain model, batch or simulation state. Other catalogues, completed assets, archives, datasets and endpoint windows usually occupy larger tiers."
+      },
+      {
+        "type": "paragraph",
+        "text": "FEED — Delivery. Fit establishes capacity; sustained byte delivery establishes feed. Decode rereads weights and KV; recommendation gathers and refreshes sparse state; media updates spatial and temporal tensors; training and science move activations, gradients, optimizer state, fields and buffers. The sustained access pattern determines whether the target clears. Roofline treatment.",
+        "links": [
+          {
+            "start": 365,
+            "end": 383,
+            "href": "https://jax-ml.github.io/scaling-book/roofline/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "EXCHANGE — Topology. Scale-up coordinates shards and collectives; scale-out connects nodes and replicas. Disaggregated serving can turn KV into a network payload. A constrained fabric can strand installed HBM or reduce useful output. Splitwise; NVIDIA Dynamo.",
+        "links": [
+          {
+            "start": 234,
+            "end": 243,
+            "href": "https://arxiv.org/abs/2311.18677"
+          },
+          {
+            "start": 245,
+            "end": 258,
+            "href": "https://docs.nvidia.com/dynamo/dev/knowledge-base/concepts/system-architecture/disaggregated-serving"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "TIER — Placement. HBM serves hot state; SRAM, host DRAM, optional CXL Type-3 memory and NVMe or remote storage serve other patterns. Runtime policy promotes, evicts, prefetches, pins, recomputes or offloads. NVMe uses explicit I/O; DRAM and CXL use load/store semantics. Tiering saves HBM only when reload or recompute meets the target. NVIDIA GPUDirect Storage; CXL 3.0 specification.",
+        "links": [
+          {
+            "start": 337,
+            "end": 361,
+            "href": "https://docs.nvidia.com/gpudirect-storage/design-guide/index.html"
+          },
+          {
+            "start": 363,
+            "end": 384,
+            "href": "https://computeexpresslink.org/wp-content/uploads/2024/02/CXL-3.0-Specification.pdf"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Key distinction — qualified goodput is the result. It measures useful work per active replica on the full configuration at the required quality, latency or deadline and placement. Failover remains a qualification test. The planned active-duty fraction separately states the installed share expected to serve simultaneously; apply it once. More HBM leaves output unchanged when fabric, reloads, compute, software, power or thermals bind first."
+      },
+      {
+        "type": "heading",
+        "text": "3.1 Fit is necessary; qualified goodput decides",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "In an illustrative two-package 70-billion-parameter replica, evenly shard two-byte weights and logical KV. Each package holds 70 decimal GB of weights plus approximately 48.318 decimal GB of KV for 64 live 4,608-token sequences. Add a hypothetical 20 decimal GB runtime allowance: 138.318 decimal GB per package."
+      },
+      {
+        "type": "paragraph",
+        "text": "A 200 decimal GB package with 10% reserve provides a 180 decimal GB budget and 41.682 decimal GB headroom. This establishes fit; full-system qualification supplies fleet-bridge performance and eligibility. Meta model configurations; vLLM memory categories.",
+        "links": [
+          {
+            "start": 206,
+            "end": 231,
+            "href": "https://github.com/meta-llama/llama-models/blob/main/models/sku_list.py"
+          },
+          {
+            "start": 233,
+            "end": 255,
+            "href": "https://docs.vllm.ai/en/latest/api/vllm/utils/mem_utils/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Sharding sets packages per replica; replication sets replica count—forecast topology, then packages and HBM."
+      },
+      {
+        "type": "heading",
+        "text": "4 The fleet bridge: from qualified work to a modeled requirement",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Here engineering hands qualified goodput to planning. The bridge produces a modeled hardware requirement; FP&A and S&OP/IBP synchronize capital timing and deployable capacity against one deployment window. An order still requires operator action."
+      },
+      {
+        "type": "paragraph",
+        "text": "Active replicas: round up workload ÷ qualified goodput. \nInstalled replicas: divide by planned active-duty fraction and round up. \nRequired packages: multiply by packages per replica. \nModeled gross additions: subtract complete qualified survivors once and floor at zero. Multiply by HBM per package for modeled new attachment."
+      },
+      {
+        "type": "paragraph",
+        "text": "Consider a hypothetical recurring scientific-forecasting service—not an ECMWF fleet disclosure. Its workload unit is one forecast-member trajectory delivered by the deadline."
+      },
+      {
+        "type": "paragraph",
+        "text": "Workload. One deadline window requires 960 on-time forecast-member trajectories.\nActive fleet. Assume a two-package replica with 200 GB of HBM per package. At qualified goodput of 2.0 on-time trajectories per deadline window per active replica, the service needs 480 active replicas.\nInstalled fleet. A planned active-duty fraction of 80% requires 600 installed replicas, or 1,200 packages.\nSurvivors. Start with 1,000 opening packages. Retirement, reassignment or incompatibility removes 100 from this application lane, leaving 900 qualified survivors that form 450 complete, assignable two-package replicas in the same lane."
+      },
+      {
+        "type": "paragraph",
+        "text": "Amazon reports accounting lives of five to six years for servers and networking equipment; Meta reports five to 5.5 years. Those schedules differ from operational eligibility, which follows memory fit, topology, software support, power and SLA. Amazon 2025 Form 10-K; Meta 2025 Form 10-K.",
+        "links": [
+          {
+            "start": 245,
+            "end": 266,
+            "href": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm"
+          },
+          {
+            "start": 268,
+            "end": 287,
+            "href": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025534/meta-12312025x10kars.htm"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Modeled addition. The baseline requires 300 gross package additions, or 60 decimal TB of new HBM attachment. FP&A compares deployment date, budget and owned-versus-rented options. S&OP tests whether exact packages can be sourced, qualified, integrated and accepted in time. Orders, shipments and installed stock remain separate ledgers."
+      },
+      {
+        "type": "paragraph",
+        "text": "Now vary qualified goodput alone."
+      },
+      {
+        "type": "paragraph",
+        "text": "Higher-goodput case. At 2.5 on-time trajectories per window per active two-package replica, the fleet needs 960 packages and 60 gross additions containing 12 decimal TB."
+      },
+      {
+        "type": "paragraph",
+        "text": "Lower-goodput case. At an illustrative 1.6 on the same denominator, the fleet needs 1,500 packages and 600 gross additions containing 120 decimal TB."
+      },
+      {
+        "type": "paragraph",
+        "text": "Hold workload, topology, active-duty fraction, HBM per package and 900 qualified survivors fixed. A 20% goodput decline, 2.0→1.6, raises required packages 25%, 1,200→1,500. The same survivor subtraction doubles the gap: max(0, 1,200−900)=300; max(0, 1,500−900)=600."
+      },
+      {
+        "type": "paragraph",
+        "text": "Key distinction — in this one-factor case, a 20% goodput decline raises required packages 25% and modeled gross additions 100% against 900 qualified survivors."
+      },
+      {
+        "type": "paragraph",
+        "text": "The doubling is specific to this survivor ratio. Figure 8 shows the full bridge and its fixed-fleet sensitivity."
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/b2da2fdeb37d7c836a294ae21c21251e85df13e351b1d3d395f07917605b52b3.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Figure 8. Only goodput varies; with 900 qualified survivors, a 20% drop raises required packages 25% and modeled gross additions 100%. Doubling is ratio-specific; ordering requires action."
+      },
+      {
+        "type": "heading",
+        "text": "5 Each optimization changes a different system ledger",
+        "level": 2
+      },
+      {
+        "type": "paragraph",
+        "text": "Exact-prefix reuse changes repeated model work and, where the runtime physically shares blocks, duplicate local KV residence. Tiering changes placement and transfer traffic. Software and scheduling change accepted work per active replica. Replatforming changes the complete compute–memory system."
+      },
+      {
+        "type": "paragraph",
+        "text": "Each lever creates a changed integrated configuration whose HBM effect appears only after requalification on the same model, precision, workload mix, quality, tail-latency target, availability and topology."
+      },
+      {
+        "type": "paragraph",
+        "text": "Prefix caching spends cache capacity to skip repeated prefill while decode continues. In the fixed attention example, sixteen 4,608-token sequences containing the same exact 4,096-token prefix occupy 22.5 GiB with independent copies. Perfect physical block sharing reduces the arithmetic total to 3.75 GiB—an upper bound of 18.75 GiB. Measured savings depend on prefix overlap, hit distribution, eviction, transfer bandwidth and the SLA. vLLM prefix caching.",
+        "links": [
+          {
+            "start": 438,
+            "end": 457,
+            "href": "https://docs.vllm.ai/en/v0.25.0/features/automatic_prefix_caching/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "KV offload relocates reusable blocks from HBM to host memory or storage and later reloads them. Lower local residence is exchanged for transfer traffic, lower-tier capacity and latency. Host DRAM and optional CXL-attached memory are memory tiers; SSD is storage. NVIDIA Dynamo cache offload; CXL active memory tiering.",
+        "links": [
+          {
+            "start": 263,
+            "end": 290,
+            "href": "https://docs.nvidia.com/dynamo/dev/cli/kv-cache-offloading/overview"
+          },
+          {
+            "start": 292,
+            "end": 317,
+            "href": "https://computeexpresslink.org/blog/cxl-type-2-use-cases-for-active-memory-tiering-and-near-memory-accelerators-3989/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Platform crossover thresholds are workload-, SLA- and system-specific. NVIDIA’s H200 offers an HBM3e envelope; its RTX PRO 6000 Blackwell Server Edition uses GDDR7 for enterprise AI, graphics and simulation; Jetson Thor uses LPDDR5X at the edge. These are complete architecture envelopes with tightly coupled compute, memory, software, power and topology choices. Replatforming can also change packages per replica and which opening systems remain qualified survivors. H200; RTX PRO 6000; Jetson Thor.",
+        "links": [
+          {
+            "start": 469,
+            "end": 473,
+            "href": "https://www.nvidia.com/en-us/data-center/h200/"
+          },
+          {
+            "start": 475,
+            "end": 487,
+            "href": "https://www.nvidia.com/en-us/data-center/rtx-pro-6000-blackwell-server-edition/"
+          },
+          {
+            "start": 489,
+            "end": 500,
+            "href": "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-thor/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Custom silicon can continue using HBM: Trainium, Google TPUs and Microsoft Maia provide examples. Complete architecture determines the memory path. Google TPU v5p; Maia 200.",
+        "links": [
+          {
+            "start": 148,
+            "end": 162,
+            "href": "https://docs.cloud.google.com/tpu/docs/v5p"
+          },
+          {
+            "start": 164,
+            "end": 172,
+            "href": "https://blogs.microsoft.com/blog/2026/01/26/maia-200-the-ai-accelerator-built-for-inference/"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "At fixed approved work, requalify and recompute the fleet gap: the first-order effect. A passing change can lower residence, reduce or defer packages, or redirect work. Figure 8’s ceilings, complete-replica survivors and zero floor still govern; failure leaves the baseline requirement."
+      },
+      {
+        "type": "paragraph",
+        "text": "Lower cost creates an option, not automatic demand. Rebound enters only after an operator approves additional work as a separate second-order scenario and reruns the bridge."
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/77869aedf981151abaeca2fedd2fa985ef69f3e35c12689585e1c508bfb2b088.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "Figure 9. Qualified system changes drive first-order fleet effects; rebound requires operator-approved work, and package reduction requires measured fleet impact."
+      },
+      {
+        "type": "heading",
+        "text": "The watchlist",
+        "level": 3
+      },
+      {
+        "type": "paragraph",
+        "text": "1. Workload and memory signature: accepted outcomes, model executions and simultaneous resident state."
+      },
+      {
+        "type": "paragraph",
+        "text": "2. Qualified service performance: quality, percentile latency or deadline and goodput on the actual topology."
+      },
+      {
+        "type": "paragraph",
+        "text": "3. Fleet conversion: active and installed replicas, modeled required packages, qualified survivors, modeled gross package additions and modeled new memory attachment by class."
+      },
+      {
+        "type": "paragraph",
+        "text": "4. Commercial conversion: approval, commitment, purchase order, shipment, installed system and accepted service, each with its date and quantity."
+      },
+      {
+        "type": "paragraph",
+        "text": "Article 1 ends at a modeled gross hardware requirement: packages by named configuration, location and deployment date. The requirement becomes a commercial order only when an operator issues a purchase order or draws against an approved commitment."
+      },
+      {
+        "type": "paragraph",
+        "text": "Article 2 asks how many exact systems can clear the memory, logic, stack, package, test, platform and site gates in the same period—and what happens to supplier economics as capacity responds."
+      },
+      {
+        "type": "paragraph",
+        "text": "Which gate do you expect to bind next: memory, advanced packaging, platform qualification or site power?"
+      }
+    ],
+    "media": [
+      {
+        "src": "/_marketing/media/c9990d6b7af388f1f52af5d19d35eb0addce6a26624b6ab0eca800a8b13a4e76.png",
+        "alt": "Article cover: What Turns AI Growth Into HBM Demand? An accelerator package with stacked memory connects to data-center systems.",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "src": "/_marketing/media/cba8ce85eaca71307da5ded8adfa4902bdf9b1d138a501c24eac66d72c2f084b.png",
+        "alt": "Five AI application families pass through workload and system qualification to select HBM, tiered memory, GDDR, or LPDDR.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/65d40e97a0b1e0d65f60f114649b3680265cdd89e031fd127669b8572265309b.png",
+        "alt": "Four retained contexts raise illustrated raw logical KV memory from 2.5 to 10 GiB; runtime placement determines the local HBM requirement.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/b25c34cff3ca99773b39269a2369464994a3e87f74a79d6f5e4c2e183feec778.png",
+        "alt": "Retrieval selects a shortlist while runtime placement chooses the hot state in HBM; a separate MTIA 300 example illustrates training memory.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/3b33082c5189682f60cde0af352a5b8878d6a56e49b81f77ef771abfb073ff9e.png",
+        "alt": "A generative-media timeline distinguishes accumulated work from the memory state live at the busiest instant.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/cd0ab9716ff81844d164852a1e5f10e0596c8e6b2e2f094cff6b7f81452aba2f.png",
+        "alt": "Separate physical-AI diagrams show offboard HBM training and onboard LPDDR inference; the public examples do not establish a model linkage.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/3ff8d7104bb91c3c40a6d137a82b6e33a4ecc514f4bdee9ba42842c486854b72.png",
+        "alt": "Scientific AI uses distinct demand units for a training campaign, forecast issuance, and a discovery lab loop.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/5e9efa4bf8e8d4eef9566239765d43f66110543856802da35926fb0070262570.png",
+        "alt": "An accelerator diagram separates four memory-system jobs: hold, feed, exchange, and tier, with runtime qualification distinct from deployable supply.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/b2da2fdeb37d7c836a294ae21c21251e85df13e351b1d3d395f07917605b52b3.png",
+        "alt": "A hypothetical fleet model subtracts qualified survivors; a 20 percent goodput drop raises required packages 25 percent and modeled gross additions 100 percent.",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "src": "/_marketing/media/77869aedf981151abaeca2fedd2fa985ef69f3e35c12689585e1c508bfb2b088.png",
+        "alt": "Four optimization levers change an integrated system; it must pass the same operating targets before the fleet requirement is recalculated.",
+        "width": 800,
+        "height": 1000
+      }
+    ]
+  },
+  {
+    "id": "7461536035911393280",
+    "slug": "industrial-policy-and-corporate-strategy-in-semiconductors",
+    "title": "Bridging Industrial Policy and Corporate Strategy in Semiconductor Value Chains",
+    "excerpt": "Connecting semiconductor demand and value-chain constraints with public policy, investment, and corporate strategy.",
+    "publishedAt": "2026-05-16",
+    "author": "Ujjal Dutta",
+    "sourceUrl": "https://www.linkedin.com/pulse/bridging-industrial-policy-corporate-strategy-value-chains-dutta-qoc6e/",
+    "topics": [
+      "Semiconductors",
+      "Industrial strategy"
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "src": "/_marketing/media/3697d1aa4c8d34b2c030cbe611df6d119e22758f29aa9268776c32bad19b8914.png"
+      },
+      {
+        "type": "paragraph",
+        "text": "I recently completed my MBA thesis at MIT, focused on resilience and policy in Wide-Bandgap semiconductor value chains, particularly Silicon Carbide and Gallium Nitride."
+      },
+      {
+        "type": "paragraph",
+        "text": "As part of this research, I modeled demand across critical applications, including data centers, electric vehicles, and power grids. I then used an algorithmic decision-support framework to map that demand against capacity, yield, sourcing, and backend constraints across the value chain."
+      },
+      {
+        "type": "paragraph",
+        "text": "The framework was designed to connect technical value-chain realities with stakeholder decisions. For policymakers, it helps test whether industrial goals are realistic against capacity, yield, and material constraints. For manufacturers and suppliers, it highlights where CapEx, sourcing, and backend investments may be needed. For investors and downstream customers, it provides visibility into where resilience risks may emerge."
+      },
+      {
+        "type": "paragraph",
+        "text": "A few themes stood out: projected demand may outpace declared capacity, backend stages such as testing and packaging remain under-invested, and upstream inputs such as gallium and substrates will require much tighter coordination between government and industry."
+      },
+      {
+        "type": "paragraph",
+        "text": "One of my biggest takeaways is that the same macro-level visibility needed for sovereign policy is also critical for corporate strategy. Companies navigating this complex business environment will need to embed that visibility into CapEx and strategic decisions to build resilient organizations."
+      },
+      {
+        "type": "paragraph",
+        "text": "A sincere thank you to Professor Saurabh Amin and Professor Alexandre Jacquillat for their guidance, support, and feedback throughout this work.",
+        "links": [
+          {
+            "start": 33,
+            "end": 45,
+            "href": "https://www.linkedin.com/in/saurabh-amin-361463239/"
+          },
+          {
+            "start": 60,
+            "end": 80,
+            "href": "https://www.linkedin.com/in/alexandre-jacquillat-02499b19/"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "/_marketing/media/d05b06023c6f5287be05729ae84e0c6205fe6147600618a86efb51e5ef88c11a.png"
+      }
+    ],
+    "media": [
+      {
+        "src": "/_marketing/media/3697d1aa4c8d34b2c030cbe611df6d119e22758f29aa9268776c32bad19b8914.png",
+        "alt": "Article cover: WBG Semiconductor Value Chain Resilience, from sovereign policy visibility to corporate strategy.",
+        "width": 1144,
+        "height": 644
+      },
+      {
+        "src": "/_marketing/media/d05b06023c6f5287be05729ae84e0c6205fe6147600618a86efb51e5ef88c11a.png",
+        "alt": "Data centers, electric vehicles, and power grids connect to a WBG value chain, highlighting material bottlenecks, capacity mismatch, and under-invested test and packaging stages.",
+        "width": 1000,
+        "height": 1000
+      }
+    ]
+  }
+]
