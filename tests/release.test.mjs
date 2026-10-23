@@ -14,6 +14,11 @@ const tags = (source, name) => [...source.matchAll(new RegExp(`<${name}\\b[^>]*>
 const attr = (tag, key) => tag.match(new RegExp(`(?:^|\\s)${key}="([^"]*)"`))?.[1];
 const decode = value => value.replaceAll('&amp;', '&').replaceAll('&quot;', '"').replaceAll('&lt;', '<').replaceAll('&gt;', '>');
 const pageHTML = () => [...production.files].filter(([name]) => name.endsWith('.html'));
+const founderProfiles = [
+  ['Ujjal Dutta', 'https://www.linkedin.com/in/ujjaldutta/'],
+  ['Saurabh Amin', 'https://www.linkedin.com/in/saurabh-amin-361463239/'],
+  ['Mathieu Dahan', 'https://www.linkedin.com/in/mathieudahan/'],
+];
 const migration = JSON.parse(fs.readFileSync(path.join(root, 'config/route-migration.json'), 'utf8'));
 const expectedRedirects = {
   ...migration.retiredPages,
@@ -75,6 +80,11 @@ test('page metadata, unique IDs, internal links, anchors, and control references
     for (const [, encoded] of source.matchAll(/\s(?:href|src)="([^"]+)"/g)) {
       let ref = decode(encoded);
       if (ref.startsWith('mailto:')) { assert.equal(ref, releaseConfig.contactUrl); continue; }
+      if (founderProfiles.some(([, url]) => ref === url)) {
+        assert.equal(name, 'company/index.html', 'Founder profiles belong only on Company');
+        assert.ok(source.includes(`<a href="${ref}"`), 'Profiles must be links, not embedded resources');
+        continue;
+      }
       if (ref.startsWith(releaseConfig.siteUrl)) {
         const url = new URL(ref);
         assert.equal(url.origin, releaseConfig.siteUrl);
@@ -204,6 +214,23 @@ test('search output covers canonical marketing pages only; preview is not indexa
   assert.equal(get(preview, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
   assert.ok(get(production, 'robots.txt').includes(`Sitemap: ${releaseConfig.siteUrl}/sitemap.xml`));
   assert.equal(get(production, 'robots.txt').includes('Disallow: /\n'), false);
+});
+
+test('co-founders have exactly three named LinkedIn links and unchanged roles', () => {
+  const list = html('/company/').match(/<ul class="compact-list founder-list">([\s\S]*?)<\/ul>/)?.[1];
+  assert.ok(list);
+  const rows = [...list.matchAll(/<li>([\s\S]*?)<\/li>/g)].map(match => match[1]);
+  assert.equal(rows.length, founderProfiles.length);
+  for (const [index, [name, url]] of founderProfiles.entries()) {
+    const row = rows[index];
+    assert.ok(row.includes(`<strong>${name}</strong><span>Co-founder</span>`));
+    const anchors = tags(row, 'a');
+    assert.equal(anchors.length, 1);
+    assert.equal(attr(anchors[0], 'href'), url);
+    assert.equal(attr(anchors[0], 'aria-label'), `${name} on LinkedIn`);
+    assert.equal(attr(anchors[0], 'target'), undefined, 'Do not open unexpected new windows');
+    assert.match(row, />LinkedIn<\/a>/);
+  }
 });
 
 test('approved email opens the mail application and never claims a submitted form', () => {
