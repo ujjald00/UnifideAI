@@ -21,7 +21,7 @@ The default build is non-indexable preview output. Production builds require an 
 
 ## Public scope and routes
 
-`config/routes.json` is the complete marketing route allowlist, plus exact legacy redirects. The site has 13 canonical marketing pages: six scrollable categories, three cases, the homepage, Security & Trust, the diagnostic page, and Privacy. Navigation links open categories directly; small on-page links jump to sections. The mobile menu uses a native disclosure and works without JavaScript.
+`config/routes.json` is the complete marketing route allowlist, plus exact legacy redirects. The site has 13 canonical marketing pages: six scrollable categories, three cases, the homepage, Security & Trust, the diagnostic page, and Privacy. Navigation links open categories directly. Short pages omit duplicate section-shortcut rows; section bookmarks still work. The mobile menu uses a native disclosure and works without JavaScript.
 
 Category copy lives in `src/category-content.mjs`; `src/content.json` contains the three case records. Shared markup lives in `src/render.mjs`. The equipment case retains its interactive value chain; manufacturing and WBG use short static summaries. The full WBG report and detailed research module remain excluded. `config/route-migration.json` records all 16 retired pages and the 23 previous redirects. Every one points directly to a retained page or a validated section ID; no broad SPA fallback is generated. See [Scrollable-page contract](docs/scrollable-pages.md).
 

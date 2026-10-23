@@ -2,7 +2,7 @@
 
 The six primary links open Solutions, Platform, Technology, Industries, Resources, and Company directly. Their URLs remain `/solutions/`, `/product/`, `/capabilities/`, `/industries/`, `/resources/`, and `/company/`.
 
-Each page has one introduction, compact section links, and visible sections. Solutions covers business needs; Platform describes a proposed user workflow; Technology explains methods. Industry expansion is explicitly exploratory. Company combines purpose, co-founders, and contact. Resources links to three separate cases: an interactive equipment case, a short manufacturing case, and the cleared WBG research summary. Controls and IDs remain page-specific.
+Each short page has one introduction and visible sections, without a duplicate “On this page” shortcut row. Solutions covers business needs; Platform describes a proposed user workflow; Technology explains methods. Industry expansion is explicitly exploratory. Company combines purpose, co-founders, and contact. Resources links to three separate cases: an interactive equipment case, a short manufacturing case, and the cleared WBG research summary. The longer equipment case retains its section shortcuts. Controls and IDs remain page-specific.
 
 ## Migration
 
@@ -13,7 +13,7 @@ Redirect destinations with explicit fragments replace an incoming old fragment, 
 ## Interaction and accessibility
 
 - Native links preserve browser history and work without scripting.
-- Section links move keyboard focus to a focusable section without cancelling native fragment navigation.
+- Section IDs and focusable targets remain for existing bookmarks and redirects. Skip links move keyboard focus to main content without cancelling native fragment navigation.
 - The native mobile disclosure works without scripting. Enhancement closes it on selection, Escape, outside focus/click, and a switch to desktop width. Escape returns focus to its summary.
 - Only the global header is sticky. Section scroll margins clear it; no sticky local bar or forced scrolling is added.
 - Layouts are single-column on narrow screens. Category main content stays below 250 words. Short case summaries have three sections; the equipment case retains its interactive detail.

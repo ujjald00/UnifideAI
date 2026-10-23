@@ -311,10 +311,10 @@ test('manufacturing case has only three short summary sections and preserves old
 test('Resources includes three distinct cases and the WBG summary stays short and static', () => {
   const listing = html('/resources/');
   for (const slug of ['optimization-methods', 'manufacturing-decisions', 'wbg-policy-research']) {
-    assert.match(listing, new RegExp(`href="#${slug}"`));
+    assert.match(listing, new RegExp(`id="${slug}"`));
     assert.match(listing, new RegExp(`href="/resources/${slug}/"`));
   }
-  assert.match(listing, /href="#wbg-policy-research">WBG policy research<\/a>/);
+  assert.match(listing, /<h2 id="wbg-policy-research-title">WBG policy research<\/h2>/);
   const source = html('/resources/wbg-policy-research/');
   const summary = source.match(/<article class="wrap category-content" aria-label="Case study summary">([\s\S]*?)<\/article>/)?.[1];
   assert.ok(summary);
