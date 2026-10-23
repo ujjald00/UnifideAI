@@ -1,8 +1,8 @@
 export const manufacturingChain = {
   kind: 'manufacturing',
   title: 'From customer request to shipment',
-  intro: 'Follow one synthetic commitment and inspect the evidence needed at each handoff.',
-  scope: 'Synthetic records · Illustrative review roles · No live integrations or approval workflow',
+  intro: 'Follow one example commitment and check the evidence at each handoff.',
+  scope: 'Example records · Read-only review',
   defaultStage: 'order',
   stages: [
     {
@@ -16,7 +16,7 @@ export const manufacturingChain = {
       value: 'Keep customer intent visible before accepting a commitment.',
       evidence: {
         label: 'Source fact',
-        text: 'Synthetic CRM record DS-0054 requests 26 units for commitment COM-0054.',
+        text: 'Example CRM record DS-0054 requests 26 units for commitment COM-0054.',
       },
       next: 'Compare the request with the recorded sales order.',
     },
@@ -27,7 +27,7 @@ export const manufacturingChain = {
       owner: 'A sales operations planner would review the order.',
       question: 'Does the recorded order match the customer request?',
       work: 'Compare ERP record SO-SCH-0054 with the linked CRM request.',
-      constraint: 'The records disagree about quantity, and the prototype does not decide which source should be corrected.',
+      constraint: 'The records disagree about quantity. A person must decide which source needs correction.',
       value: 'Expose the mismatch before treating either quantity as the agreed commitment.',
       evidence: {
         label: 'Rule-derived finding',
@@ -46,7 +46,7 @@ export const manufacturingChain = {
       value: 'Separate allocated supply from requested and ordered quantities.',
       evidence: {
         label: 'Source fact',
-        text: 'Synthetic allocation ALLOC-0054 records five units against COM-0054.',
+        text: 'Example allocation ALLOC-0054 records five units against COM-0054.',
       },
       next: 'Inspect the work-order link before relying on production evidence.',
     },
@@ -72,7 +72,7 @@ export const manufacturingChain = {
       owner: 'A quality or test lead would check the evidence.',
       question: 'Is there a valid test result for this commitment and configuration?',
       work: 'Identify a traceable test record and check its configuration, specification, result, and date.',
-      constraint: 'The demo derives a Held flag from a risk label, not from a verified test result for this commitment.',
+      constraint: 'A risk label is not a verified test result for this commitment.',
       value: 'Keep missing test evidence distinct from a passed or failed test.',
       evidence: {
         label: 'Not verified',
@@ -87,11 +87,11 @@ export const manufacturingChain = {
       owner: 'An authorized quality or release owner would make this decision.',
       question: 'Who has approved the product for release, and on what evidence?',
       work: 'A future workflow would record release evidence and the authorized decision maker.',
-      constraint: 'The demo’s Planned label is not an approval or a release event.',
+      constraint: 'A Planned label is not an approval or a release event.',
       value: 'Keep evidence review separate from authority to release a product.',
       evidence: {
         label: 'Not verified',
-        text: 'This prototype has no implemented approval workflow or verified release event for the example.',
+        text: 'No approval or verified release event is shown in this example.',
       },
       next: 'A real shipment would need an authorized release and linked dispatch evidence.',
     },
@@ -106,15 +106,15 @@ export const manufacturingChain = {
       value: 'Separate the intended delivery from an observed shipment.',
       evidence: {
         label: 'Not verified',
-        text: 'No verified shipment event for COM-0054 is shown, and the prototype performs no operational writeback.',
+        text: 'No verified shipment event is shown for COM-0054. The review does not change operating records.',
       },
       next: 'A later evaluation could compare the recorded shipment with the original commitment.',
     },
   ],
   records: [
-    { value: '26', label: 'Units requested', note: 'The synthetic CRM request is not an accepted delivery promise.' },
-    { value: '20', label: 'Units on the order', note: 'The synthetic ERP order disagrees with the requested quantity.' },
-    { value: '5', label: 'Units allocated', note: 'The synthetic allocation does not establish qualification or readiness to ship.' },
+    { value: '26', label: 'Units requested', note: 'A request is not an accepted delivery promise.' },
+    { value: '20', label: 'Units on the order', note: 'The order differs from the requested quantity.' },
+    { value: '5', label: 'Units allocated', note: 'Allocation does not mean ready to ship.' },
   ],
   findings: [
     { stage: 'order', label: 'Quantity disagreement', text: 'CRM requests 26 units while ERP records 20, so a person must investigate the difference.' },

@@ -3,7 +3,7 @@ import { manufacturingChain } from './manufacturing.mjs';
 
 export const valueChains = {
   'optimization-methods': equipmentChain,
-  'glasswing-hackathon': manufacturingChain,
+  'manufacturing-decisions': manufacturingChain,
 };
 
 const esc = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
@@ -57,7 +57,7 @@ export function renderChainExample(chain, study) {
       <details class="vc-evidence"><summary>How the constraint moves through the chain</summary><p>Less supplier capacity narrows purchasing options. Fewer complete component sets limit production. Lower production reduces the demand that can be served. This is aggregate model behavior, not a diagnosis of a named supplier.</p></details>
     </section>`;
   }
-  return `<section class="vc-worked-example" id="findings" aria-labelledby="findings-title"><p class="vc-kicker">Synthetic example · COM-0054</p><h2 id="findings-title">One commitment. Three different records.</h2><p class="vc-example-intro">These quantities describe different planning states. They are not interchangeable.</p><dl class="vc-records">${chain.records.map(record => `<div><dt>${esc(record.label)}</dt><dd><strong>${esc(record.value)}</strong><span>${esc(record.note)}</span></dd></div>`).join('')}</dl>
+  return `<section class="vc-worked-example" id="findings" aria-labelledby="findings-title"><p class="vc-kicker">Illustrative example · COM-0054</p><h2 id="findings-title">One commitment. Three different records.</h2><p class="vc-example-intro">These quantities describe different planning states. They are not interchangeable.</p><dl class="vc-records">${chain.records.map(record => `<div><dt>${esc(record.label)}</dt><dd><strong>${esc(record.value)}</strong><span>${esc(record.note)}</span></dd></div>`).join('')}</dl>
     <div class="vc-findings"><p class="vc-kicker">Follow this commitment</p>${chain.findings.map((finding, index) => `<button type="button" data-vc-jump="${finding.stage}"><span class="vc-finding-number" aria-hidden="true">${index + 1}</span><span><strong>${esc(finding.label)}</strong><span>${esc(finding.text)}</span></span><span aria-hidden="true">↗</span></button>`).join('')}</div>
-    <details class="vc-evidence"><summary>What comes after review?</summary><p>Human review → authorized system change → outcome tracking.</p><p>This is a proposed next step, not part of the read-only prototype. An explanation does not approve a commitment or update an operating system.</p></details></section>`;
+    <details class="vc-evidence"><summary>What comes after review?</summary><p>Human review → authorized system change → outcome tracking.</p><p>A proposed next step. Reviewing evidence does not approve a commitment or change an operating system.</p></details></section>`;
 }

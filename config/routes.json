@@ -4,7 +4,7 @@
     "/product/", "/product/adapt-ai-to-your-business/", "/product/deploy-ai-efficiently/", "/product/decide-and-act-with-confidence/",
     "/capabilities/", "/capabilities/model-post-training-and-evaluation/", "/capabilities/model-compression-and-efficient-inference/", "/capabilities/decision-optimization/",
     "/industries/", "/industries/semiconductor-and-advanced-manufacturing/", "/industries/data-centres/", "/industries/energy-and-grid-infrastructure/",
-    "/resources/", "/resources/optimization-methods/", "/resources/glasswing-hackathon/",
+    "/resources/", "/resources/optimization-methods/", "/resources/manufacturing-decisions/",
     "/security/", "/security/data-and-access-controls/", "/security/deployment-options/", "/security/human-approval-and-controlled-writeback/",
     "/company/", "/company/contact/", "/diagnostic/", "/privacy/"
   ],
@@ -30,6 +30,7 @@
     "/industries/complex-asset-operations/": "/industries/",
     "/resources/semiconductor-planning-brief/": "/industries/semiconductor-and-advanced-manufacturing/",
     "/resources/platform-architecture/": "/product/",
+    "/resources/glasswing-hackathon/": "/resources/manufacturing-decisions/",
     "/company/programs-and-affiliations/": "/company/"
   }
 }
