@@ -50,7 +50,7 @@ export function renderSite(config, assets, { production = false } = {}) {
   add({ route: '/privacy/', title: 'Website privacy', lede: 'This notice covers the marketing pages only, not the UNIFIDE application.', body: `<section class="wrap page-summary" aria-labelledby="privacy-title"><div class="page-summary-inner"><h2 id="privacy-title">Contact and website requests</h2><p>Email buttons open your email application. You choose what to send. UNIFIDE uses enquiries to reply to you. Please do not send confidential business data.</p><p>Hosting through Cloudflare involves processing technical request data to deliver and protect these pages.</p><p>For privacy questions, ${config.contactUrl ? `<a href="${esc(config.contactUrl)}">email us</a>` : '<a href="/company/#contact">visit the contact page</a>'}.</p></div></section>` });
   for (const study of content.cases) {
     if (study.summary) {
-      add({ route: `/resources/${study.slug}/`, title: study.title, lede: study.lede, eyebrow: study.status, active: 'resources', categoryPage: true, body: `<article class="wrap category-content" aria-label="Case study summary">${study.summary.map((item, index) => sectionRow(item, index, `<p>${esc(item.text)}</p>`)).join('')}</article>` });
+      add({ route: `/resources/${study.slug}/`, title: study.title, lede: study.lede, active: 'resources', categoryPage: true, body: `<article class="wrap category-content" aria-label="Case study summary">${study.summary.map((item, index) => sectionRow(item, index, `<p>${esc(item.text)}</p>`)).join('')}</article>` });
       continue;
     }
     const chain = valueChains[study.slug];
