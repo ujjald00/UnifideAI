@@ -74,12 +74,12 @@ export const categoryContent = {
       {
         id: 'data-centres',
         title: 'Data centres',
-        text: 'This is an exploratory focus on capacity planning around power, equipment, and site readiness. The starting question is which capacity could be delivered, when, and with what trade-offs.',
+        text: 'Capacity planning around power, equipment, and site readiness. The starting question is which capacity could be delivered, when, and with what trade-offs.',
       },
       {
         id: 'energy-and-grid-infrastructure',
         title: 'Energy and grid infrastructure',
-        text: 'This is an exploratory focus on choosing project priorities when grid access, equipment, or delivery capacity is limited. The starting question is which projects could move forward under those conditions.',
+        text: 'Choosing project priorities when grid access, equipment, or delivery capacity is limited. The starting question is which projects could move forward under those conditions.',
       },
     ],
   },
