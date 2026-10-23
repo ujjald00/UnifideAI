@@ -110,6 +110,42 @@
       },
       "kind": "Illustrative example",
       "status": "Illustrative example—not a customer deployment."
+    },
+    {
+      "slug": "wbg-policy-research",
+      "title": "WBG policy research",
+      "nav": "WBG policy research",
+      "kind": "Research case study",
+      "lede": "Wide-bandgap semiconductors: from investment to usable supply.",
+      "summary": [
+        {
+          "id": "challenge",
+          "title": "Overall problem",
+          "text": "Building a semiconductor factory does not automatically create usable supply. Chips still need packaging, application testing, customer acceptance, dependable supply access, and long-term support. This research asks how policy can connect investment with technology that people can actually use."
+        },
+        {
+          "id": "approach",
+          "title": "Value chain",
+          "text": "Example route: silicon carbide for electric-vehicle traction.",
+          "steps": [
+            { "title": "Materials", "text": "Prepare suitable material and substrates" },
+            { "title": "Epitaxy", "text": "Build the required semiconductor layers" },
+            { "title": "Device fabrication", "text": "Turn prepared wafers into devices" },
+            { "title": "Packaging & test", "text": "Connect, protect, cool, and test devices" },
+            { "title": "System integration", "text": "Assess the device in its application" },
+            { "title": "Operation & support", "text": "Keep accepted supply available and supportable" }
+          ]
+        },
+        {
+          "id": "findings",
+          "title": "Key outcomes",
+          "outcomes": [
+            { "title": "Assess usable supply", "text": "A framework that looks beyond factory capacity to qualification, access, and support." },
+            { "title": "Target policy support", "text": "A way to examine where packaging, testing, customer acceptance, or supply continuity needs attention." },
+            { "title": "Keep applications separate", "text": "Assess each technology route against its intended use, rather than combining unlike demand totals." }
+          ]
+        }
+      ]
     }
   ]
 }

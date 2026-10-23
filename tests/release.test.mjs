@@ -25,11 +25,12 @@ const expectedRedirects = {
   ...Object.fromEntries(Object.entries(migration.previousRedirects).map(([source, previous]) => [source, migration.legacyDestinationOverrides[source] || migration.retiredPages[previous] || previous])),
 };
 
-test('reviewed migration retains twelve pages and flattens every retired or prior route', () => {
+test('reviewed migration retains thirteen pages and flattens every retired or prior route', () => {
   assert.equal(migration.schemaVersion, 1);
   assert.deepEqual(migration.canonicalPages, [
     '/', '/solutions/', '/product/', '/capabilities/', '/industries/',
     '/resources/', '/resources/optimization-methods/', '/resources/manufacturing-decisions/',
+    '/resources/wbg-policy-research/',
     '/security/', '/company/', '/diagnostic/', '/privacy/',
   ]);
   assert.equal(Object.keys(migration.retiredPages).length, 16);
@@ -305,6 +306,30 @@ test('manufacturing case has only three short summary sections and preserves old
   assert.doesNotMatch(source, /class="eyebrow"|Illustrative example—not a customer deployment/);
   assert.doesNotMatch(source, /case-facts|case-jump|case-related|data-value-chain|data-vc-|Worked example|5 personas|<button|<details(?! class="mobile-menu")/);
   assert.doesNotMatch(html('/resources/'), /Follow a customer commitment/);
+});
+
+test('Resources includes three distinct cases and the WBG summary stays short and static', () => {
+  const listing = html('/resources/');
+  for (const slug of ['optimization-methods', 'manufacturing-decisions', 'wbg-policy-research']) {
+    assert.match(listing, new RegExp(`href="#${slug}"`));
+    assert.match(listing, new RegExp(`href="/resources/${slug}/"`));
+  }
+  assert.match(listing, /href="#wbg-policy-research">WBG policy research<\/a>/);
+  const source = html('/resources/wbg-policy-research/');
+  const summary = source.match(/<article class="wrap category-content" aria-label="Case study summary">([\s\S]*?)<\/article>/)?.[1];
+  assert.ok(summary);
+  assert.deepEqual([...summary.matchAll(/<h2\b[^>]*>([^<]+)<\/h2>/g)].map(match => match[1]), ['Overall problem', 'Value chain', 'Key outcomes']);
+  assert.deepEqual(tags(summary, 'section').map(tag => attr(tag, 'id')), ['challenge', 'approach', 'findings']);
+  const chain = summary.match(/<ol class="summary-chain"[^>]*>([\s\S]*?)<\/ol>/)?.[1];
+  const outcomes = summary.match(/<ul class="summary-outcomes">([\s\S]*?)<\/ul>/)?.[1];
+  assert.equal(tags(chain, 'li').length, 6);
+  assert.equal(tags(outcomes, 'li').length, 3);
+  assert.match(source, /Wide-bandgap semiconductors/);
+  assert.match(summary, /Example route: silicon carbide for electric-vehicle traction/);
+  assert.match(outcomes, /A framework/);
+  assert.match(outcomes, /A way to examine/);
+  assert.ok(summary.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).length <= 200);
+  assert.doesNotMatch(source, /case-facts|case-jump|case-related|data-value-chain|data-vc-|<button|<details(?! class="mobile-menu")|\.pdf|\.docx|external release|on hold|Local draft/i);
 });
 
 test('minimal public copy excludes retired labels and routes while preserving example context', () => {
