@@ -304,9 +304,11 @@ test('approved email opens the mail application and never claims a submitted for
     const contact = tags(source, 'a').filter(tag => tag.includes('data-contact-link'));
     assert.equal(contact.length, 1);
     assert.equal(decode(attr(contact[0], 'href')), releaseConfig.contactUrl);
-    assert.ok(source.includes('The website does not submit or store your email message.'));
+    assert.doesNotMatch(source, /Opens your email app to|The website does not submit or store your email message\./);
+    assert.equal(tags(source, 'form').length, 0);
     assert.doesNotMatch(source, /message (?:sent|received)|thanks for submitting|six.week/i);
   }
+  for (const [, bytes] of pageHTML()) assert.doesNotMatch(bytes.toString(), /Opens your email app to|The website does not submit or store your email message\./);
   assert.throws(() => createArtifact({ production: true, config: { ...releaseConfig, contactUrl: '' } }), /requires an approved/);
   const noContact = createArtifact({ config: { ...releaseConfig, contactUrl: '' } });
   assert.match(html('/company/', noContact), /disabled>Contact unavailable/);
