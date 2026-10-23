@@ -60,7 +60,7 @@
         {
           "id": "approach",
           "title": "The overall approach",
-          "text": "Bring ERP, CRM, and MES records into one view. Flag conflicting or missing information for people to review."
+          "text": "Use AI post-trained for manufacturing tasks with ERP, CRM, and MES data. Compare planning options across the value chain, accounting for uncertain demand, supply, and production. Keep human approval. Optimize inference for faster token generation."
         },
         {
           "id": "findings",

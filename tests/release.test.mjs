@@ -296,9 +296,13 @@ test('manufacturing case has only three short summary sections and preserves old
   assert.deepEqual(tags(summary, 'section').map(tag => attr(tag, 'id')), ['challenge', 'approach', 'findings']);
   assert.equal(tags(summary, 'p').length, 3);
   const words = summary.replace(/<[^>]+>/g, ' ').trim().split(/\s+/);
-  assert.ok(words.length <= 90, `Summary grew to ${words.length} words`);
+  assert.ok(words.length <= 110, `Summary grew to ${words.length} words`);
   assert.match(summary, /ERP, CRM, and MES/);
-  assert.match(summary, /for people to review/);
+  assert.match(summary, /AI post-trained for manufacturing tasks/);
+  assert.match(summary, /uncertain demand, supply, and production/);
+  assert.match(summary, /Keep human approval/);
+  assert.match(summary, /Optimize inference for faster token generation/);
+  assert.doesNotMatch(summary, /3[×x]|target awaiting benchmarking/);
   assert.match(source, /Illustrative example—not a customer deployment/);
   assert.doesNotMatch(source, /case-facts|case-jump|case-related|data-value-chain|data-vc-|Worked example|5 personas|<button|<details(?! class="mobile-menu")/);
   assert.doesNotMatch(html('/resources/'), /Follow a customer commitment/);
