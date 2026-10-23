@@ -284,7 +284,6 @@ test('equipment case keeps paired controls, defaults, and reported scenario boun
   const manufacturing = valueChains['manufacturing-decisions'];
   assert.deepEqual(manufacturing.records.map(item => item.value), ['26', '20', '5']);
   for (const id of ['test', 'release', 'ship']) assert.equal(manufacturing.stages.find(stage => stage.id === id).evidence.label, 'Not verified');
-  assert.ok(html('/resources/manufacturing-decisions/').includes('not a customer deployment'));
 });
 
 test('manufacturing case has only three short summary sections and preserves old anchors', () => {
@@ -303,7 +302,7 @@ test('manufacturing case has only three short summary sections and preserves old
   assert.match(summary, /Keep human approval/);
   assert.match(summary, /Optimize inference for faster token generation/);
   assert.doesNotMatch(summary, /3[×x]|target awaiting benchmarking/);
-  assert.match(source, /Illustrative example—not a customer deployment/);
+  assert.doesNotMatch(source, /class="eyebrow"|Illustrative example—not a customer deployment/);
   assert.doesNotMatch(source, /case-facts|case-jump|case-related|data-value-chain|data-vc-|Worked example|5 personas|<button|<details(?! class="mobile-menu")/);
   assert.doesNotMatch(html('/resources/'), /Follow a customer commitment/);
 });
@@ -315,7 +314,7 @@ test('minimal public copy excludes retired labels and routes while preserving ex
   assert.doesNotMatch(get(production, 'sitemap.xml'), /glasswing|glassing/i);
   assert.equal(routeConfig.redirects['/resources/glasswing-hackathon/'], '/resources/manufacturing-decisions/');
   assert.equal(production.files.has('resources/glasswing-hackathon/index.html'), false);
-  assert.match(html('/resources/manufacturing-decisions/'), /Illustrative example—not a customer deployment/);
+  assert.match(html('/resources/'), /Illustrative example/);
   assert.match(html('/resources/optimization-methods/'), /Modeled example/);
 });
 
