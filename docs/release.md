@@ -12,14 +12,14 @@ Use Node 24.19.0. The website has no package dependencies. For local Cloudflare 
 2. Run `npm run build:production`, `node scripts/compose-release.mjs`, and `node scripts/verify-composition.mjs`.
 3. Serve **dist**, not marketing-dist, using the pinned Wrangler: `wrangler pages dev dist --ip 127.0.0.1 --port 4175`.
 4. Run `npm run test:http`. Review the server log for rejected redirect/header rules.
-5. Test desktop/mobile navigation, keyboard controls, both case studies, email-link destinations, and app entry/deep links. Do not submit production scenarios, upload data, or access business API records as a website test.
+5. Test desktop/mobile navigation, keyboard controls, all three case summaries, email-link destinations, and app entry/deep links. Do not submit production scenarios, upload data, or access business API records as a website test.
 6. Review the exact source diff and run `node scripts/verify-public-source.mjs --staged` before committing. This scan complements, not replaces, manual permission and content review.
 7. Record the source commit, exact file inventory and artifact hash from `artifacts/composition-state.json`, test results, and screenshots in a private release record. Do not publish local evidence notes or credentials.
 
 ## Publication gates
 
 - Confirm the repository owner and visibility before sending source. Publish only this curated project, never a parent workspace or the original research prototype.
-- Obtain approval for the exact two-case public copy and deployment artifact. Held research remains excluded from source and web output.
+- Obtain approval for the exact public copy and deployment artifact. Only the cleared short WBG summary is included; its full report and detailed research remain excluded from source and web output.
 - Explicitly disclose and accept the preserved application's unverified backend. Frontend smoke checks cannot establish product functionality.
 - Confirm the existing Pages project and rollback deployment immediately before upload. Do not substitute a newly built artifact after approval without rechecking its hash.
 - Use existing approved access. Creating OAuth access, API tokens, permissions, or domain changes requires separate authorization. Do not store credentials in this repository.

@@ -252,39 +252,34 @@ test('approved email opens the mail application and never claims a submitted for
   }
 });
 
-test('equipment case keeps paired controls, defaults, and reported scenario bounds', () => {
-  for (const [slug, chain] of Object.entries(valueChains).filter(([, chain]) => chain.kind === 'equipment')) {
-    const source = html(`/resources/${slug}/`);
-    const buttons = tags(source, 'button').filter(tag => attr(tag, 'data-vc-stage'));
-    const panels = tags(source, 'section').filter(tag => attr(tag, 'data-vc-panel'));
-    assert.equal(buttons.length, 5);
-    assert.equal(panels.length, buttons.length);
-    assert.equal(buttons.filter(tag => attr(tag, 'aria-pressed') === 'true').length, 1);
-    assert.equal(panels.filter(tag => !/\shidden(?:\s|>)/.test(tag)).length, 1);
-    assert.equal(attr(buttons.find(tag => attr(tag, 'aria-pressed') === 'true'), 'data-vc-stage'), chain.defaultStage);
-    for (const button of buttons) {
-      const id = attr(button, 'data-vc-stage');
-      assert.ok(panels.some(panel => attr(panel, 'data-vc-panel') === id && attr(panel, 'id') === attr(button, 'aria-controls')));
-    }
-    assert.ok(source.includes('id="challenge"') && source.includes('id="approach"') && source.includes('id="findings"'));
-    assert.equal(source.includes('id="details"'), false);
-    assert.equal(source.includes('href="#details"'), false);
-    assert.doesNotMatch(source, /Academic case study/);
-    assert.ok(html('/resources/').includes(`<p class="resource-kind">${chain.kind === 'equipment' ? 'Model' : 'Example'}</p>`));
-  }
+test('retained case source preserves reported scenario bounds and evidence status', () => {
   const equipment = valueChains['optimization-methods'];
   assert.deepEqual(equipment.scenarios.map(item => [item.capacity, item.served]), [[100, 97.5], [90, 88.1], [70, 68.1]]);
-  const equipmentHTML = html('/resources/optimization-methods/');
-  assert.ok(equipmentHTML.includes('not a live optimization run'));
-  assert.ok(equipmentHTML.includes('not measured company performance'));
-  assert.equal(tags(equipmentHTML, 'button').filter(tag => attr(tag, 'data-vc-scenario')).length, 3);
   for (const scenario of equipment.scenarios) {
     assert.ok(scenario.served >= 0 && scenario.served <= scenario.capacity);
-    assert.ok(equipmentHTML.includes(`class="vc-percent-${String(scenario.served).replace('.', '-')}"`));
   }
   const manufacturing = valueChains['manufacturing-decisions'];
   assert.deepEqual(manufacturing.records.map(item => item.value), ['26', '20', '5']);
   for (const id of ['test', 'release', 'ship']) assert.equal(manufacturing.stages.find(stage => stage.id === id).evidence.label, 'Not verified');
+});
+
+test('equipment case is a brief model summary with three sections and preserved bookmarks', () => {
+  const source = html('/resources/optimization-methods/');
+  const summary = source.match(/<article class="wrap category-content" aria-label="Case study summary">([\s\S]*?)<\/article>/)?.[1];
+  assert.ok(summary);
+  assert.deepEqual([...summary.matchAll(/<h2\b[^>]*>([^<]+)<\/h2>/g)].map(match => match[1]), ['The problem', 'The overall approach', 'The value']);
+  assert.equal(tags(source, 'h2').length, 3);
+  assert.deepEqual(tags(summary, 'section').map(tag => attr(tag, 'id')), ['challenge', 'approach', 'findings']);
+  assert.equal(tags(summary, 'p').length, 3);
+  assert.ok(summary.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).length <= 70);
+  assert.match(summary, /An optimization model/);
+  assert.match(summary, /purchasing, production, inventory, and shipments/);
+  assert.match(summary, /how much customer demand/);
+  assert.doesNotMatch(source, /case-facts|case-jump|case-related|data-value-chain|data-vc-|Reported model results|Academic case study|<button|<details(?! class="mobile-menu")/);
+  const paragraphs = [...summary.matchAll(/<p>([^<]+)<\/p>/g)].map(match => match[1]).join(' ');
+  assert.doesNotMatch(paragraphs, /\d|%|which supplier|customer orders|measured improvement/i);
+  assert.match(html('/resources/'), /<p class="resource-kind">Model<\/p>/);
+  assert.doesNotMatch(html('/resources/'), /Explore the value chain and compare reported supply scenarios/);
 });
 
 test('manufacturing case has only three short summary sections and preserves old anchors', () => {
@@ -340,11 +335,11 @@ test('minimal public copy excludes retired labels and routes while preserving ex
   assert.equal(routeConfig.redirects['/resources/glasswing-hackathon/'], '/resources/manufacturing-decisions/');
   assert.equal(production.files.has('resources/glasswing-hackathon/index.html'), false);
   assert.match(html('/resources/'), /<p class="resource-kind">Example<\/p>/);
-  assert.match(html('/resources/optimization-methods/'), /<p class="eyebrow">Model<\/p>/);
+  assert.match(html('/resources/'), /<p class="resource-kind">Model<\/p>/);
   for (const route of ['/resources/', '/resources/optimization-methods/', '/resources/manufacturing-decisions/']) {
     assert.doesNotMatch(html(route), /Illustrative model|Illustrative example/, route);
   }
-  assert.match(html('/resources/optimization-methods/'), /Modeled example/);
+  assert.match(html('/resources/optimization-methods/'), /An optimization model/);
 });
 
 test('repeated approach notice is removed everywhere without changing specific status copy', () => {
