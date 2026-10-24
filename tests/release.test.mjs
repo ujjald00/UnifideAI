@@ -109,7 +109,7 @@ test('page metadata, unique IDs, internal links, anchors, and control references
     for (const [, attribute, encoded] of source.matchAll(/\s(href|src)="([^"]+)"/g)) {
       let ref = decode(encoded);
       if (ref.startsWith('mailto:')) { assert.equal(ref, releaseConfig.contactUrl); continue; }
-      if (name === 'company/index.html' && founderProfiles.some(([, url]) => ref === url)) {
+      if (['index.html', 'company/index.html'].includes(name) && founderProfiles.some(([, url]) => ref === url)) {
         assert.equal(attribute, 'href', 'Profiles must be links, not embedded resources');
         assert.ok(tags(source, 'a').some(tag => attr(tag, 'href') === encoded), 'Profiles must be anchor links');
         continue;
@@ -281,19 +281,21 @@ test('search output covers canonical marketing pages only; preview is not indexa
 });
 
 test('co-founders have exactly three named LinkedIn links and unchanged roles', () => {
-  const list = html('/company/').match(/<ul class="compact-list founder-list">([\s\S]*?)<\/ul>/)?.[1];
-  assert.ok(list);
-  const rows = [...list.matchAll(/<li>([\s\S]*?)<\/li>/g)].map(match => match[1]);
-  assert.equal(rows.length, founderProfiles.length);
-  for (const [index, [name, url]] of founderProfiles.entries()) {
-    const row = rows[index];
-    assert.ok(row.includes(`<strong>${name}</strong><span>Co-founder</span>`));
-    const anchors = tags(row, 'a');
-    assert.equal(anchors.length, 1);
-    assert.equal(attr(anchors[0], 'href'), url);
-    assert.equal(attr(anchors[0], 'aria-label'), `${name} on LinkedIn`);
-    assert.equal(attr(anchors[0], 'target'), undefined, 'Do not open unexpected new windows');
-    assert.match(row, />LinkedIn<\/a>/);
+  for (const route of ['/', '/company/']) {
+    const list = html(route).match(/<ul class="compact-list founder-list">([\s\S]*?)<\/ul>/)?.[1];
+    assert.ok(list);
+    const rows = [...list.matchAll(/<li>([\s\S]*?)<\/li>/g)].map(match => match[1]);
+    assert.equal(rows.length, founderProfiles.length);
+    for (const [index, [name, url]] of founderProfiles.entries()) {
+      const row = rows[index];
+      assert.ok(row.includes(`<strong>${name}</strong><span>Co-founder</span>`));
+      const anchors = tags(row, 'a');
+      assert.equal(anchors.length, 1);
+      assert.equal(attr(anchors[0], 'href'), url);
+      assert.equal(attr(anchors[0], 'aria-label'), `${name} on LinkedIn`);
+      assert.equal(attr(anchors[0], 'target'), undefined, 'Do not open unexpected new windows');
+      assert.match(row, />LinkedIn<\/a>/);
+    }
   }
 });
 

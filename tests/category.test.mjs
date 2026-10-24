@@ -8,18 +8,19 @@ import { categoryContent } from '../src/category-content.mjs';
 const artifact = createArtifact({ production: true });
 const html = route => artifact.files.get(routeFile(route)).toString();
 const categoryRoutes = ['/solutions/', '/product/', '/capabilities/', '/industries/', '/resources/', '/company/'];
+const homeAnchors = ['solutions', 'platform', 'technology', 'industries', 'resources', 'company'].map(id => `/#${id}`);
 const links = text => [...text.matchAll(/<a\b[^>]*href="([^"]+)"/g)].map(match => match[1]);
 const textOnly = text => text.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 
-test('every page offers six direct links and a native, unnested mobile menu', () => {
+test('every page offers six homepage anchor links and a native, unnested mobile menu', () => {
   for (const [name, bytes] of artifact.files) {
     if (!name.endsWith('.html')) continue;
     const source = bytes.toString();
     const desktop = source.match(/<nav class="desktop-nav"[^>]*>([\s\S]*?)<\/nav>/)?.[1];
     const mobile = source.match(/<details class="mobile-menu">([\s\S]*?)<\/details>/)?.[1];
     assert.ok(desktop && mobile, name);
-    assert.deepEqual(links(desktop), categoryRoutes, name);
-    assert.deepEqual(links(mobile), categoryRoutes, name);
+    assert.deepEqual(links(desktop), homeAnchors, name);
+    assert.deepEqual(links(mobile), homeAnchors, name);
     assert.match(mobile, /<summary class="menu-button" aria-label="Navigation menu">/);
     assert.doesNotMatch(mobile, /<details|<button|\shidden/);
     assert.doesNotMatch(source, /data-dropdown|nav-trigger|menu-children/);
@@ -87,7 +88,7 @@ function menuHarness() {
   };
   const document = {
     querySelector: selector => selector === 'details.mobile-menu' ? menu : null,
-    querySelectorAll: selector => selector === '.on-page a, .skip-link' ? [jump] : [],
+    querySelectorAll: selector => selector === '.on-page a, .skip-link, [data-section-link], .home-explore' ? [jump] : [],
     getElementById: id => id === 'main' ? target : null,
     addEventListener: listen('document'),
   };

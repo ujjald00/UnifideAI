@@ -1,4 +1,4 @@
-// Native disclosure keeps the six category links usable without JavaScript.
+// Native disclosure keeps the six homepage section links usable without JavaScript.
 const mobileMenu = document.querySelector('details.mobile-menu');
 const menuButton = mobileMenu?.querySelector('summary');
 mobileMenu?.querySelectorAll('a').forEach(link => {
@@ -22,12 +22,44 @@ window.matchMedia('(min-width: 1121px)').addEventListener('change', event => {
 });
 
 // Keep native fragment navigation/history, while placing keyboard focus at the section.
-document.querySelectorAll('.on-page a, .skip-link').forEach(link => {
-  link.addEventListener('click', () => {
+document.querySelectorAll('.on-page a, .skip-link, [data-section-link], .home-explore').forEach(link => {
+  link.addEventListener('click', event => {
+    if (event.defaultPrevented || event.button > 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    if (link.pathname && link.pathname !== window.location.pathname) return;
     const target = document.getElementById(link.hash.slice(1));
     target?.focus({ preventScroll: true });
   });
 });
+
+// Observe scrolling without rewriting the URL, moving focus, or controlling scrolling.
+const homeSections = [...document.querySelectorAll('[data-home-section]')];
+if (homeSections.length) {
+  const sectionLinks = [...document.querySelectorAll('[data-section-link]')];
+  let scheduled = false;
+  const updateSection = () => {
+    scheduled = false;
+    const marker = (document.querySelector('.site-header')?.getBoundingClientRect().bottom || 68) + 32;
+    let active = '';
+    for (const section of homeSections) if (section.getBoundingClientRect().top <= marker) active = section.id;
+    if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) active = homeSections.at(-1).id;
+    for (const link of sectionLinks) {
+      const current = link.dataset.sectionLink === active;
+      link.classList.toggle('is-active', current);
+      if (current) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    }
+  };
+  const scheduleSection = () => {
+    if (scheduled) return;
+    scheduled = true;
+    window.requestAnimationFrame(updateSection);
+  };
+  window.addEventListener('scroll', scheduleSection, { passive: true });
+  window.addEventListener('resize', scheduleSection);
+  window.addEventListener('hashchange', scheduleSection);
+  window.addEventListener('pageshow', scheduleSection);
+  updateSection();
+}
 
 function arrowNavigate(event, items, activate) {
   const keys = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
